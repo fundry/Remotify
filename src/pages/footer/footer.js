@@ -9,10 +9,41 @@ const Footer = () => {
     width : 100%
   `
 
+  const Head = styled.p`
+    font-size : 0.9em
+    font-weight : bold
+  `
+
+  const Title = styled.p`
+    font-size : 0.8em
+  `
+
   return (
     <Div>
-      <div style = {{padding : '2%'}}>
-        <h1> OTEHR CONTENT HERE </h1>
+      <div style={{ padding: "2%" }}>
+        <Flex justifyAround>
+          <h4 style={{ marginTop: "2em" }}> Remotify </h4>
+
+          <Flex column>
+            <Head> PRODUCT </Head>
+            <Title> Integrations </Title>
+            <Title> Integrations </Title>
+            <Title> Integrations </Title>
+          </Flex>
+          <Flex column>
+            <Head> GET HELP </Head>
+            <Title> Integrations </Title>
+            <Title> Integrations </Title>
+            <Title> Integrations </Title>
+          </Flex>
+
+          <Flex column>
+            <Head> MORE </Head>
+            <Title> Integrations </Title>
+            <Title> Integrations </Title>
+            <Title> Integrations </Title>
+          </Flex>
+        </Flex>
       </div>
 
       <div

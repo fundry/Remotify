@@ -12,8 +12,9 @@ const Home = () => {
   const Text = styled.p`
     font-size: 1em;
     text-align : center
-    padding-left : 7em
-    padding-right : 7em
+    padding-left : 25px
+    padding-right : 25px
+    color : #0e2f5a
   `
 
   return (
