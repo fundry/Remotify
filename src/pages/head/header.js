@@ -3,7 +3,7 @@ import React from "react"
 import Img from "react-image"
 import styled from "styled-components"
 import Flex from "styled-flex-component"
-import useWindowWidth from "../../hook_style"
+// import useWindowWidth from "../../hook_style"
 import { Icon } from "semantic-ui-react"
 
 const Header = () => {
@@ -49,10 +49,10 @@ const Header = () => {
     margin-left: 4%;
   `
 
-  const hooks = useWindowWidth()
+  // const hooks = useWindowWidth()
   return (
     <div>
-      {hooks >= 720 ? (
+      
         <Div style={{ paddingTop: "1%" }}>
           <nav>
             <Flex justifyBetween>
@@ -86,7 +86,7 @@ const Header = () => {
             </Flex>
           </nav>
         </Div>
-      ) : (
+     
         <Div style={{ height: "5.5vh", paddingTop: "2%", paddingRight: "3%" }}>
           <nav>
             <Flex justifyBetween>
@@ -105,7 +105,7 @@ const Header = () => {
             </Flex>
           </nav>
         </Div>
-      )}
+     
     </div>
   )
 }

@@ -5,7 +5,7 @@ import Flex from "styled-flex-component"
 import Power from "./power"
 import Integrate from "./integrate"
 import Sample from "./svg/console_sample.svg"
-import useWindowWidth from '../../hook_style'
+// import useWindowWidth from '../../hook_style'
 
 
 const Home = () => {
@@ -54,7 +54,7 @@ const Home = () => {
     background: transparent;
   }
 `
-const hooks = useWindowWidth()
+// const hooks = useWindowWidth()
 
   return (
     <div>
