@@ -1,5 +1,8 @@
 import React from "react"
 import styled from "styled-components"
+import Flex from "styled-flex-component"
+
+import Power from "./power"
 
 const Home = () => {
   const Title = styled.p`
@@ -17,18 +20,37 @@ const Home = () => {
     color : #0e2f5a
   `
 
+  const Button = styled.button`
+    background: #361f94;
+    text-align: right;
+    border-radius: 3px;
+    height: 30px;
+    border: 1px solid #0e2f5a;
+    color: #fff;
+    margin: 0 1em;
+    padding: 0.25em 4em;
+    font-size: 0.8em;
+    &:hover {
+      color: #0e2f5a;
+      background: transparent;
+    }
+  `
+
   return (
-    <div style={{ backgroundColor : '#f2f5ff' ,
-    padding : '2em'
-  }}>
-      <div>
-        <Title> Maximising the Remote Worker </Title>
-        <Text>
-          Remotify is an Open Sourced , Customizable and Flexible remote office
-          for Remote workers with tools to increase productivity and reduce
-          distractions
-        </Text>
-      </div>
+    <div style={{ backgroundColor: "#f2f5ff", padding: "2em" }}>
+      <Title> Maximising the Remote Worker </Title>
+      <Text>
+        Remotify is an Open Sourced , Customizable and Flexible remote office
+        for Remote workers with tools to increase productivity and reduce
+        distractions
+      </Text>
+      <Flex justifyCenter>
+        <Button> Get Started </Button>
+      </Flex>
+
+      <>
+        <Power />
+      </>
     </div>
   )
 }

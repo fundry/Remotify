@@ -32,8 +32,8 @@ const Header = () => {
   const Button = styled.button`
     background: #361F94;
     text-align: right;
-    border-radius: 5px;
-    height: 40px;
+    border-radius: 3px;
+    height: 35px;
     border: 1px solid #0e2f5a;
     color: #fff;
     margin: 0 1em;
@@ -74,9 +74,9 @@ const Header = () => {
                     <Title> Team </Title>
                   </Link>
                 </div>
-                <div style={{ paddingRight: "30px" }}>
+                <div style={{ paddingRight: "50px" }}>
                   <Link to="/apply">
-                    <Title> Apply </Title>
+                    <Title> Resources </Title>
                   </Link>
                 </div>
                 <Link to="/login">

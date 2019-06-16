@@ -29,6 +29,10 @@ const Layout = ({ children }) => (
           />
           <link
             rel="stylesheet"
+            href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.11/semantic.min.css"
+          />
+          <link
+            rel="stylesheet"
             href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           />
           <link
