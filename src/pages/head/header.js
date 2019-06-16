@@ -86,25 +86,7 @@ const Header = () => {
             </Flex>
           </nav>
         </Div>
-     
-        <Div style={{ height: "5.5vh", paddingTop: "2%", paddingRight: "3%" }}>
-          <nav>
-            <Flex justifyBetween>
-              <NameDiv>
-                <Flex>
-                  <Image
-                    src={
-                      "https://res.cloudinary.com/dkfptto8m/image/upload/v1558070244/Mongodb%20hackathon%20project/thunder.png"
-                    }
-                  />
-                  <Link href="/">
-                    <A>Remotify</A>
-                  </Link>
-                </Flex>
-              </NameDiv>
-            </Flex>
-          </nav>
-        </Div>
+      
      
     </div>
   )
