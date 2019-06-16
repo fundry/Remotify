@@ -6,25 +6,26 @@ import { Icon } from "semantic-ui-react"
 const Footer = () => {
   const Div = styled.footer`
     background : grey
-    color : #fff
     width : 100%
   `
 
   const Head = styled.p`
     font-size : 0.9em
     font-weight : bold
+    color : #0b33a2
   `
 
   const Title = styled.p`
     font-size: 0.8em;
+    color: #0e2f5a
   `
 
   return (
     <Div>
       <div style={{ padding: "2%" }}>
         <Flex justifyAround>
-          <div>
-            <h5 style={{ marginTop: "1em" }}> Remotify.Inc </h5>
+          <div  >
+            <h5 style={{ marginTop: "1em" ,  color : '#361f94'}}> Remotify.Inc </h5>
 
             <Flex justifyCenter>
               <Icon name="facebook" color="blue" />
@@ -39,7 +40,7 @@ const Footer = () => {
             <Title> Integrations </Title>
           </Flex>
           <Flex column>
-            <Head> GET HELP </Head>
+            <Head> HELP </Head>
             <Title> Integrations </Title>
             <Title> Guides </Title>
             <Title> About Us </Title>
@@ -60,11 +61,12 @@ const Footer = () => {
           padding: "0.7%",
           backgroundColor: " #444444",
           fontSize: "0.8em",
+          color : '#fff'
         }}
       >
         <p>
           Copyright© {new Date().getFullYear()} , a subsidiary of the
-          <a href="/"> Fundry Program </a>
+          <a href="/"> Fundry Program </a>.
           <br /> <a href="/"> Terms of Service </a> or{" "}
           <a href="/"> Privacy Policies </a>{" "}
         </p>

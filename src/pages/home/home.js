@@ -3,6 +3,10 @@ import styled from "styled-components"
 import Flex from "styled-flex-component"
 
 import Power from "./power"
+import Integrate from "./integrate"
+import Sample from "./svg/console_sample.svg"
+import useWindowWidth from '../../hook_style'
+
 
 const Home = () => {
   const Title = styled.p`
@@ -28,13 +32,29 @@ const Home = () => {
     border: 1px solid #0e2f5a;
     color: #fff;
     margin: 0 1em;
-    padding: 0.25em 4em;
+    padding: 0.25em 3em;
     font-size: 0.8em;
     &:hover {
       color: #0e2f5a;
       background: transparent;
     }
   `
+
+  const Buttons = styled.button`
+  background: #361f94;
+  text-align: right;
+  height: 35px;
+  border: 1px solid #0e2f5a;
+  color: #fff;
+  margin: 0 1em;
+  padding: 0.25em 3em;
+  font-size: 0.7em;
+  &:hover {
+    color: #0e2f5a;
+    background: transparent;
+  }
+`
+const hooks = useWindowWidth()
 
   return (
     <div>
@@ -45,13 +65,23 @@ const Home = () => {
           for Remote workers with tools to increase productivity and reduce
           distractions
         </Text>
-        <Flex justifyCenter>
-          <Button> Get Started </Button>
-        </Flex>
+
+        <div style={{ padding: "2em" }}>
+          <Flex justifyCenter>
+            <img src={Sample} style={{ maxWidth: "80%" }} />
+          </Flex>
+          <Flex justifyCenter>
+            <Button>Watch Demo</Button>
+            <Buttons>Download</Buttons>
+          </Flex>
+        </div>
       </div>
       <>
         <Power />
       </>
+
+      <br />
+      <Integrate />
     </div>
   )
 }

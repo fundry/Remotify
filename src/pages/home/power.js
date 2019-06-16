@@ -16,25 +16,27 @@ const Power = () => {
     text-align : right
     font-weight : bold
     color : #0b33a2
+    padding-right : 10%
 `
-  const Title = styled.p`
+  const Title = styled.li`
     font-size: 0.8em;
   `
   return (
     <Div>
       <Head>
-        Enhance Production, <br /> Reduce Distractions.
+        Enhance Performance, <br /> Reduce Distractions.
       </Head>
 
       <div style={{ padding: "1em" }}>
         <Flex justifyBetween>
-          <img src={Worker} />
+          <img src={Worker}  style={{ paddingLeft : '10%' }}/>
 
-          <div style={{marginRight: '10%'}}>
+          <div style={{ marginRight: "10%",  paddingTop: '20px'  ,color: "#0e2f5a" }}>
             <Flex column>
-              <Title> Integrations </Title>
-              <Title> Integrations </Title>
-              <Title> Integrations </Title>
+              <Title> Customizable Interface </Title>
+              <Title> Integrate external tools </Title>
+              <Title> Monitor Perfomance </Title>
+              <Title> Control over time spent. </Title>
             </Flex>
           </div>
         </Flex>

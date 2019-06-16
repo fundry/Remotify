@@ -60,7 +60,7 @@ const Header = () => {
                 <Flex>
                   <Image
                     src={
-                      "https://res.cloudinary.com/dkfptto8m/image/upload/v1558070244/Mongodb%20hackathon%20project/thunder.png"
+                      "https:/a/res.cloudinary.com/dkfptto8m/image/upload/v1558070244/Mongodb%20hackathon%20project/thunder.png"
                     }
                   />
                   <Link href="/">

@@ -10,6 +10,7 @@ exports.components = {
   "component---src-pages-home-home-js": () => import("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\home\\home.js" /* webpackChunkName: "component---src-pages-home-home-js" */),
   "component---src-pages-home-power-js": () => import("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\home\\power.js" /* webpackChunkName: "component---src-pages-home-power-js" */),
   "component---src-pages-index-js": () => import("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\index.js" /* webpackChunkName: "component---src-pages-index-js" */),
-  "component---src-pages-page-2-js": () => import("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\page-2.js" /* webpackChunkName: "component---src-pages-page-2-js" */)
+  "component---src-pages-page-2-js": () => import("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\page-2.js" /* webpackChunkName: "component---src-pages-page-2-js" */),
+  "component---src-pages-home-integrate-js": () => import("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\home\\integrate.js" /* webpackChunkName: "component---src-pages-home-integrate-js" */)
 }
 
