@@ -15,8 +15,14 @@
     "gatsby-transformer-sharp": "^2.1.21",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
+    "react-bootstrap": "^1.0.0-beta.9",
     "react-dom": "^16.8.6",
-    "react-helmet": "^5.2.1"
+    "react-helmet": "^5.2.1",
+    "react-image": "^2.1.3",
+    "react-kawaii": "^0.14.4",
+    "semantic-ui-react": "^0.87.2",
+    "styled-components": "^4.3.1",
+    "styled-flex-component": "^3.0.0"
   },
   "devDependencies": {
     "prettier": "^1.18.2"
