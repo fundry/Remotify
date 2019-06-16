@@ -15,8 +15,8 @@ const Header = () => {
   const A = styled.a`
     color: #0b33a2;
     text-decoration: none;
-    font-size: 20px;
-    height: 10%;
+    font-size: 15px;
+    font-weight: bold;
   `
 
   const Title = styled.a`
@@ -64,7 +64,7 @@ const Header = () => {
                     }
                   />
                   <Link href="/">
-                    <A>Fundry</A>
+                    <A>Remotify</A>
                   </Link>
                 </Flex>
               </NameDiv>
@@ -98,7 +98,7 @@ const Header = () => {
                     }
                   />
                   <Link href="/">
-                    <A>Fundry</A>
+                    <A>Remotify</A>
                   </Link>
                 </Flex>
               </NameDiv>

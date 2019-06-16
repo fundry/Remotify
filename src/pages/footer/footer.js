@@ -42,7 +42,7 @@ const Footer = () => {
             <Head> GET HELP </Head>
             <Title> Integrations </Title>
             <Title> Guides </Title>
-            <Title> About Us  </Title>
+            <Title> About Us </Title>
           </Flex>
 
           <Flex column>
@@ -63,13 +63,10 @@ const Footer = () => {
         }}
       >
         <p>
-          <a href="/"> Terms of Service </a> or{" "}
-          <a href="/"> Privacy Policies </a>{" "}
-        </p>
-
-        <p>
           Copyright© {new Date().getFullYear()} , a subsidiary of the
           <a href="/"> Fundry Program </a>
+          <br /> <a href="/"> Terms of Service </a> or{" "}
+          <a href="/"> Privacy Policies </a>{" "}
         </p>
       </div>
     </Div>

@@ -37,17 +37,18 @@ const Home = () => {
   `
 
   return (
-    <div style={{ backgroundColor: "#f2f5ff", padding: "2em" }}>
-      <Title> Maximising the Remote Worker </Title>
-      <Text>
-        Remotify is an Open Sourced , Customizable and Flexible remote office
-        for Remote workers with tools to increase productivity and reduce
-        distractions
-      </Text>
-      <Flex justifyCenter>
-        <Button> Get Started </Button>
-      </Flex>
-
+    <div>
+      <div style={{ padding: "2em", backgroundColor: "#f2f5ff" }}>
+        <Title> Maximising the Remote Worker </Title>
+        <Text>
+          Remotify is an Open Sourced , Customizable and Flexible remote office
+          for Remote workers with tools to increase productivity and reduce
+          distractions
+        </Text>
+        <Flex justifyCenter>
+          <Button> Get Started </Button>
+        </Flex>
+      </div>
       <>
         <Power />
       </>

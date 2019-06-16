@@ -7,9 +7,9 @@ exports.components = {
   "component---src-pages-footer-footer-js": () => import("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\footer\\footer.js" /* webpackChunkName: "component---src-pages-footer-footer-js" */),
   "component---src-pages-head-banner-js": () => import("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\head\\banner.js" /* webpackChunkName: "component---src-pages-head-banner-js" */),
   "component---src-pages-head-header-js": () => import("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\head\\header.js" /* webpackChunkName: "component---src-pages-head-header-js" */),
-  "component---src-pages-index-js": () => import("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\index.js" /* webpackChunkName: "component---src-pages-index-js" */),
-  "component---src-pages-page-2-js": () => import("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\page-2.js" /* webpackChunkName: "component---src-pages-page-2-js" */),
   "component---src-pages-home-home-js": () => import("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\home\\home.js" /* webpackChunkName: "component---src-pages-home-home-js" */),
-  "component---src-pages-home-power-js": () => import("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\home\\power.js" /* webpackChunkName: "component---src-pages-home-power-js" */)
+  "component---src-pages-home-power-js": () => import("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\home\\power.js" /* webpackChunkName: "component---src-pages-home-power-js" */),
+  "component---src-pages-index-js": () => import("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\index.js" /* webpackChunkName: "component---src-pages-index-js" */),
+  "component---src-pages-page-2-js": () => import("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\page-2.js" /* webpackChunkName: "component---src-pages-page-2-js" */)
 }
 
