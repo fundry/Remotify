@@ -5,23 +5,24 @@ import Flex from "styled-flex-component"
 import Power from "./power"
 import Integrate from "./integrate"
 import Sample from "./svg/console_sample.svg"
-// import useWindowWidth from '../../hook_style'
+import posed from "react-pose"
 
+// import useWindowWidth from '../../hook_style'
 
 const Home = () => {
   const Title = {
-    fontSize : '1.5em' ,
-    textAlign: 'center',
-    fontWeight : 'bold' ,
-    color : '#361F94'
+    fontSize: "1.5em",
+    textAlign: "center",
+    fontWeight: "bold",
+    color: "#361F94",
   }
 
   const Text = {
-    fontSize: '1em' ,
-    textAlign : 'center',
-    paddingLeft : '25px',
-    paddingRight : '25px',
-    color : '#0e2f5a'
+    fontSize: "1em",
+    textAlign: "center",
+    paddingLeft: "25px",
+    paddingRight: "25px",
+    color: "#0e2f5a",
   }
 
   const Button = styled.button`
@@ -39,19 +40,35 @@ const Home = () => {
   `
 
   const Buttons = styled.button`
-  background: #361f94;
-  text-align: right;
-  border: 1px solid #0e2f5a;
-  color: #fff;
-  margin: 0 1em;
-  padding: 0.25em 3em;
-  font-size: 0.7em;
-  &:hover {
-    color: #0e2f5a;
-    background: transparent;
-  }
-`
-// const hooks = useWindowWidth()
+    background: #361f94;
+    text-align: right;
+    border: 1px solid #0e2f5a;
+    color: #fff;
+    margin: 0 1em;
+    padding: 0.25em 3em;
+    font-size: 0.7em;
+    &:hover {
+      color: #0e2f5a;
+      background: transparent;
+    }
+  `
+
+  const Box = posed.div({
+    hoverable: true,
+    init: {
+      scale: 1,
+      boxShadow: "0px 0px 0px rgba(0,0,0,0)",
+      textAlign  : 'center'
+    },
+    hover: {
+      scale: 1.05,
+      boxShadow: "0px 5px 10px rgba(0,0,0,0.2)",
+    },
+    press: {
+      scale: 1.1,
+      boxShadow: "0px 2px 5px rgba(0,0,0,0.1)",
+    },
+  })
 
   return (
     <div>
@@ -65,7 +82,10 @@ const Home = () => {
 
         <div style={{ padding: "2em" }}>
           <Flex justifyCenter>
-            <img src={Sample} style={{ maxWidth: "80%" }} />
+            <Box>
+               
+              <img src={Sample} style={{ maxWidth: "80%" }} />{" "}
+            </Box>
           </Flex>
           <Flex justifyCenter>
             <Button>Watch Demo</Button>
