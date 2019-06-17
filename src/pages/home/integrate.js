@@ -11,25 +11,25 @@ padding : 1em
 margin-top : 2%
 `
 
-  const Head = styled.p`
-font-size : 0.8em
-text-align : left
-color : #0b33a2
-padding-left : 5%
-`
+  const Head = {
+fontSize :' 0.8em' ,
+textAlign :' left' ,
+color : '#0b33a2' ,
+paddingLeft : '5%' ,
+  }
 
-  const Title = styled.p`
-    font-size: 0.8em;
-    text-align : left
-padding-left : 7%
-    color : #0e2f5a
-  `
+  const Title = {
+    fontSize:' 0.8em;',
+    textAlign : 'left',
+paddingLeft : '7%',
+    color : '#0e2f5a',
+  }
   const Integrations = "Integrations"
 
   return (
     <Div>
-      <Head> {Integrations.toUpperCase()} </Head>
-      <Title> Get all your dev tools in one place. </Title>
+      <p style={Head}> {Integrations.toUpperCase()} </p>
+      <p style={Title}> Get all your dev tools in one place. </p>
 
       <Flex justifyCenter>
         <img src={Integration} style={{maxWidth : '40%'}} />

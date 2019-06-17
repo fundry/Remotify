@@ -1,17 +1,16 @@
 import React from "react"
-import Flex from "styled-flex-component"
 import styled from "styled-components"
 
 import Header from "./header"
 
 const Banner = () => {
-  const Div = styled.div`
-  background: #F0B65F 
-  color : #fff
-  `
+  const Contain = {
+  background:' #F0B65F ' ,
+  color : '#fff'
+  }
 
   return (
-    <Div>
+    <div style={Contain}> 
       <Header />
 
       <div
@@ -22,7 +21,7 @@ const Banner = () => {
       >
         <h2 style={{ fontWeight: "bold" }}> Productivity Centralized. </h2>
       </div>
-    </Div>
+    </div>
   )
 }
 

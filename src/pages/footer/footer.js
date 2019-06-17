@@ -4,10 +4,10 @@ import Flex from "styled-flex-component"
 import { Icon } from "semantic-ui-react"
 
 const Footer = () => {
-  const Div = styled.footer`
-    background : grey
-    width : 100%
-  `
+  const Div = {
+    backgroundColor : 'grey' ,
+    width :' 100%' ,
+  }
 
   const Head = styled.p`
     font-size : 0.9em
@@ -21,7 +21,7 @@ const Footer = () => {
   `
 
   return (
-    <Div>
+    <footer style={Div}>
       <div style={{ padding: "2%" }}>
         <Flex justifyAround>
           <div  >
@@ -71,7 +71,7 @@ const Footer = () => {
           <a href="/"> Privacy Policies </a>{" "}
         </p>
       </div>
-    </Div>
+    </footer>
   )
 }
 

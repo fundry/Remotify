@@ -11,21 +11,21 @@ const Power = () => {
         margin-top : 2%
     `
 
-  const Head = styled.p`
-    font-size : 1.05em
-    text-align : right
-    font-weight : bold
-    color : #0b33a2
-    padding-right : 10%
-`
+  const Head = {
+    fontSize : '1.05em' ,
+    textAlign : 'right' ,
+    fontWeight : 'bold' ,
+    color : '#0b33a2' ,
+    paddingRight : '10%' ,
+  }
   const Title = styled.li`
     font-size: 0.8em;
   `
   return (
-    <Div>
-      <Head>
+    <Div> <br />
+      <p style={Head}>
         Enhance Performance, <br /> Reduce Distractions.
-      </Head>
+      </p>
 
       <div style={{ padding: "1em" }}>
         <Flex justifyBetween>

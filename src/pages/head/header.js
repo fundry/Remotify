@@ -7,11 +7,11 @@ import Flex from "styled-flex-component"
 import { Icon } from "semantic-ui-react"
 
 const Header = () => {
-  const Div = styled.div`
-      height: 9vh
-      background : transparent
-      padding-top: 1%;
-    `
+  const Div = {
+      height: '9vh' ,
+      backgroundColor : 'transparent' ,
+      paddingTop: '1%'
+   }
   const A = styled.a`
     color: #0b33a2;
     text-decoration: none;
@@ -53,7 +53,7 @@ const Header = () => {
   return (
     <div>
       
-        <Div style={{ paddingTop: "1%" }}>
+        <div style={Div}>
           <nav>
             <Flex justifyBetween>
               <NameDiv>
@@ -70,22 +70,22 @@ const Header = () => {
               </NameDiv>
               <Flex>
                 <div style={{ paddingRight: "30px" }}>
-                  <Link to="/apply">
+                  <Link to="/">
                     <Title> Team </Title>
                   </Link>
                 </div>
                 <div style={{ paddingRight: "50px" }}>
-                  <Link to="/apply">
+                  <Link to="/">
                     <Title> Resources </Title>
                   </Link>
                 </div>
-                <Link to="/login">
+                <Link to="/">
                   <Button onClick={() => alert("hi")}> Download </Button>
                 </Link>
               </Flex>
             </Flex>
           </nav>
-        </Div>
+        </div>
       
      
     </div>

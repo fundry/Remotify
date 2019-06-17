@@ -4,7 +4,6 @@
       "plugins": [
         {
           "name": "babel-plugin-styled-components",
-          "stage": "develop",
           "options": {
             "plugins": [],
             "ssr": false
@@ -21,7 +20,6 @@
       "plugins": [
         {
           "name": "babel-plugin-styled-components",
-          "stage": "develop-html",
           "options": {
             "plugins": [],
             "ssr": false
@@ -38,7 +36,6 @@
       "plugins": [
         {
           "name": "babel-plugin-styled-components",
-          "stage": "build-html",
           "options": {
             "plugins": [],
             "ssr": true
@@ -55,7 +52,6 @@
       "plugins": [
         {
           "name": "babel-plugin-styled-components",
-          "stage": "build-javascript",
           "options": {
             "plugins": [],
             "ssr": true

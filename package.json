@@ -1,51 +1,49 @@
 {
-  "name": "Remotify",
-  "private": true,
-  "description": "A flexible open source remote office for remote workers ",
-  "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
-  "dependencies": {
-    "babel-plugin-styled-components": "^1.10.1",
-    "gatsby": "^2.9.4",
-    "gatsby-image": "^2.1.4",
-    "gatsby-plugin-manifest": "^2.1.1",
-    "gatsby-plugin-offline": "^2.1.3",
-    "gatsby-plugin-react-helmet": "^3.0.12",
-    "gatsby-plugin-sharp": "^2.1.5",
-    "gatsby-plugin-styled-components": "^3.0.7",
-    "gatsby-source-filesystem": "^2.0.39",
-    "gatsby-transformer-sharp": "^2.1.21",
-    "prop-types": "^15.7.2",
-    "react": "^16.8.6",
-    "react-bootstrap": "^1.0.0-beta.9",
-    "react-dom": "^16.8.6",
-    "react-helmet": "^5.2.1",
-    "react-image": "^2.1.3",
-    "react-kawaii": "^0.14.4",
-    "semantic-ui-react": "^0.87.2",
-    "styled-components": "^4.3.1",
-    "styled-flex-component": "^3.0.0"
-  },
-  "devDependencies": {
-    "prettier": "^1.18.2"
-  },
-  "keywords": [
-    "gatsby"
-  ],
-  "license": "MIT",
-  "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop",
-    "format": "prettier --write src/**/*.{js,jsx}",
-    "start": "npm run develop",
-    "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
-  },
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
-  }
+	"name": "Remotify",
+	"private": true,
+	"description": "A flexible open source remote office for remote workers ",
+	"version": "0.1.0",
+	"author": "Kyle Mathews <mathews.kyle@gmail.com>",
+	"dependencies": {
+		"gatsby": "^2.9.4",
+		"gatsby-image": "^2.1.4",
+		"gatsby-plugin-manifest": "^2.1.1",
+		"gatsby-plugin-offline": "^2.1.3",
+		"gatsby-plugin-react-helmet": "^3.0.12",
+		"gatsby-plugin-sharp": "^2.1.5",
+		"gatsby-source-filesystem": "^2.0.39",
+		"gatsby-transformer-sharp": "^2.1.21",
+		"prop-types": "^15.7.2",
+		"react": "^16.8.6",
+		"react-bootstrap": "^1.0.0-beta.9",
+		"react-dom": "^16.8.6",
+		"react-helmet": "^5.2.1",
+		"react-image": "^2.1.3",
+		"react-kawaii": "^0.14.4",
+		"semantic-ui-react": "^0.87.2",
+		"styled-components": "^4.3.1",
+		"styled-flex-component": "^3.0.0"
+	},
+	"devDependencies": {
+		"babel-plugin-styled-components": "^1.10.1",
+		"gatsby-plugin-styled-components": "^3.0.7",
+		"prettier": "^1.18.2"
+	},
+	"keywords": ["gatsby"],
+	"license": "MIT",
+	"scripts": {
+		"build": "gatsby build",
+		"develop": "gatsby develop",
+		"format": "prettier --write src/**/*.{js,jsx}",
+		"start": "npm run develop",
+		"serve": "gatsby serve",
+		"test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/gatsbyjs/gatsby-starter-default"
+	},
+	"bugs": {
+		"url": "https://github.com/gatsbyjs/gatsby/issues"
+	}
 }
