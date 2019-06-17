@@ -27,8 +27,6 @@ const Home = () => {
   const Button = styled.button`
     background: #361f94;
     text-align: right;
-    border-radius: 3px;
-    height: 30px;
     border: 1px solid #0e2f5a;
     color: #fff;
     margin: 0 1em;
@@ -43,7 +41,6 @@ const Home = () => {
   const Buttons = styled.button`
   background: #361f94;
   text-align: right;
-  height: 35px;
   border: 1px solid #0e2f5a;
   color: #fff;
   margin: 0 1em;

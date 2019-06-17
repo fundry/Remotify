@@ -5,27 +5,27 @@ import { Icon } from "semantic-ui-react"
 
 const Footer = () => {
   const Div = {
-    backgroundColor : 'grey' ,
-    width :' 100%' ,
+    backgroundColor: "#5919AB",
+    width: " 100%",
   }
 
-  const Head = styled.p`
-    font-size : 0.9em
-    font-weight : bold
-    color : #0b33a2
-  `
+  const Head = {
+    fontSize: "0.9em ",
+    fontWeight: "bold",
+    color: "#fff",
+  }
 
-  const Title = styled.p`
-    font-size: 0.8em;
-    color: #0e2f5a
-  `
+  const Title = {
+    fontSize: "0.8em",
+    color: "#fff",
+  }
 
   return (
     <footer style={Div}>
       <div style={{ padding: "2%" }}>
         <Flex justifyAround>
-          <div  >
-            <h5 style={{ marginTop: "1em" ,  color : '#361f94'}}> Remotify.Inc </h5>
+          <div>
+            <h5 style={{ marginTop: "1em", color: "#fff" }}> Remotify.Inc </h5>
 
             <Flex justifyCenter>
               <Icon name="facebook" color="blue" />
@@ -34,23 +34,23 @@ const Footer = () => {
             </Flex>
           </div>
           <Flex column>
-            <Head> PRODUCT </Head>
-            <Title> Integrations </Title>
-            <Title> Integrations </Title>
-            <Title> Integrations </Title>
+            <p style={Head}> PRODUCT </p>
+            <p style={Title}> Integrations </p>
+            <p style={Title}> Integrations </p>
+            <p style={Title}> Integrations </p>
           </Flex>
           <Flex column>
-            <Head> HELP </Head>
-            <Title> Integrations </Title>
-            <Title> Guides </Title>
-            <Title> About Us </Title>
+            <p style={Head}> HELP </p>
+            <p style={Title}> Integrations </p>
+            <p style={Title}> Guides </p>
+            <p style={Title}> About Us </p>
           </Flex>
 
           <Flex column>
-            <Head> MORE </Head>
-            <Title> Social </Title>
-            <Title> Careers </Title>
-            <Title> Legal terms </Title>
+            <p style={Head}> MORE </p>
+            <p style={Title}> Social </p>
+            <p style={Title}> Careers </p>
+            <p style={Title}> Legal terms </p>
           </Flex>
         </Flex>
       </div>
@@ -59,9 +59,9 @@ const Footer = () => {
         style={{
           textAlign: "center",
           padding: "0.7%",
-          backgroundColor: " #444444",
+          backgroundColor: " #361f94",
           fontSize: "0.8em",
-          color : '#fff'
+          color: "#fff",
         }}
       >
         <p>
