@@ -22,6 +22,7 @@ const Integrate = () => {
     textAlign: 'left',
     paddingLeft: '7%',
   };
+
   const Integrations = 'Integrations';
 
   return (

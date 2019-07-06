@@ -2,13 +2,29 @@ import React from 'react';
 import styled from 'styled-components';
 import Flex from 'styled-flex-component';
 import Sample from './svg/console_sample.svg';
+import posed from 'react-pose';
 
 const features = () => {
   const Div = {
-    background: 'linear-gradient(to bottom, #2b44ff, #0C0233)' ,
+    background: 'linear-gradient(to bottom, #2b44ff, #0C0233)',
     color: '#fff',
     padding: '2em',
   };
+
+  const Hover = posed.div({
+    hoverable: true,
+    init: {
+      scale: 1,
+      textAlign: 'center',
+    },
+    hover: {
+      scale: 1.05,
+    },
+    press: {
+      scale: 1.1,
+      boxShadow: '0px 2px 5px rgba(0,0,0,0.1)',
+    },
+  });
 
   return (
     <div style={Div}>
@@ -20,7 +36,9 @@ const features = () => {
             environemt.
           </p>{' '}
           <Flex justifyCenter>
-            <img src={Sample} style={{ maxWidth: '70%' }} />{' '}
+            <Hover>
+              <img src={Sample} style={{ maxWidth: '75%' }} />{' '}
+            </Hover>
           </Flex>
         </div>
       </Flex>
@@ -32,7 +50,9 @@ const features = () => {
             environemt.
           </p>{' '}
           <Flex justifyCenter>
-            <img src={Sample} style={{ maxWidth: '70%' }} />{' '}
+            <Hover>
+              <img src={Sample} style={{ maxWidth: '75%' }} />{' '}
+            </Hover>
           </Flex>
         </div>
       </Flex>
@@ -44,7 +64,9 @@ const features = () => {
             environemt.
           </p>{' '}
           <Flex justifyCenter>
-            <img src={Sample} style={{ maxWidth: '70%' }} />{' '}
+            <Hover>
+              <img src={Sample} style={{ maxWidth: '75%' }} />{' '}
+            </Hover>
           </Flex>
         </div>
       </Flex>{' '}
@@ -56,7 +78,9 @@ const features = () => {
             environemt.
           </p>{' '}
           <Flex justifyCenter>
-            <img src={Sample} style={{ maxWidth: '70%' }} />{' '}
+            <Hover>
+              <img src={Sample} style={{ maxWidth: '75%' }} />{' '}
+            </Hover>
           </Flex>
         </div>
       </Flex>

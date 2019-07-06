@@ -15,7 +15,7 @@ const Banner = () => {
 
       <div
         style={{
-          padding: "5%",
+          padding: "5em",
           textAlign: "center",
         }}
       >
