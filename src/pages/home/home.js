@@ -6,7 +6,7 @@ import Power from "./power"
 import Integrate from "./integrate"
 import Sample from "./svg/console_sample.svg"
 import posed from "react-pose"
-
+import Features from './features'
 // import useWindowWidth from '../../hook_style'
 
 const Home = () => {
@@ -62,7 +62,6 @@ const Home = () => {
     },
     hover: {
       scale: 1.05,
-      boxShadow: "0px 5px 10px rgba(0,0,0,0.2)",
     },
     press: {
       scale: 1.1,
@@ -83,7 +82,6 @@ const Home = () => {
         <div style={{ padding: "2em" }}>
           <Flex justifyCenter>
             <Box>
-               
               <img src={Sample} style={{ maxWidth: "80%" }} />{" "}
             </Box>
           </Flex>
@@ -97,7 +95,9 @@ const Home = () => {
         <Power />
       </>
 
-      <br />
+      <Features />
+
+   
       <Integrate />
     </div>
   )

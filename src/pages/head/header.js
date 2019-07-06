@@ -1,36 +1,38 @@
-import { Link } from "gatsby"
-import React from "react"
-import Img from "react-image"
-import styled from "styled-components"
-import Flex from "styled-flex-component"
+import { Link } from 'gatsby';
+import React from 'react';
+import Img from 'react-image';
+import styled from 'styled-components';
+import Flex from 'styled-flex-component';
 // import useWindowWidth from "../../hook_style"
-import { Icon } from "semantic-ui-react"
+import { Icon } from 'semantic-ui-react';
 
 const Header = () => {
   const Div = {
-      height: '9vh' ,
-      backgroundColor : 'transparent' ,
-      paddingTop: '1%'
-   }
+    padding: '1em',
+    backgroundColor: 'transparent',
+    paddingTop: '1%',
+    boxShadow: '0px 2px 5px rgba(0,0,0,0.1)',
+  };
   const A = styled.a`
     color: #0b33a2;
     text-decoration: none;
-    font-size: 15px;
+    font-size: 20px;
+    font-family: comic sans ms ;
     font-weight: bold;
-  `
+  `;
 
   const Title = styled.a`
 	font-size : 1em
 	color  : white
-  `
+  `;
 
   const Image = styled(Img)`
     width: 7%;
     height: 25px;
-  `
+  `;
 
   const Button = styled.button`
-    background: #361F94;
+    background: #361f94;
     text-align: right;
     border-radius: 3px;
     height: 35px;
@@ -43,53 +45,48 @@ const Header = () => {
       color: #fff;
       background: transparent;
     }
-  `
+  `;
 
-  const NameDiv = styled.div`
-    margin-left: 4%;
-  `
+  const NameDiv = styled.div`margin-left: 4%;`;
 
   // const hooks = useWindowWidth()
   return (
     <div>
-      
-        <div style={Div}>
-          <nav>
-            <Flex justifyBetween>
-              <NameDiv>
-                <Flex>
-                  <Image
-                    src={
-                      "https:/a/res.cloudinary.com/dkfptto8m/image/upload/v1558070244/Mongodb%20hackathon%20project/thunder.png"
-                    }
-                  />
-                  <Link href="/">
-                    <A>Remotify</A>
-                  </Link>
-                </Flex>
-              </NameDiv>
+      <div style={Div}>
+        <nav>
+          <Flex justifyBetween>
+            <NameDiv>
               <Flex>
-                <div style={{ paddingRight: "30px" }}>
-                  <Link to="/">
-                    <Title> Team </Title>
-                  </Link>
-                </div>
-                <div style={{ paddingRight: "50px" }}>
-                  <Link to="/">
-                    <Title> Resources </Title>
-                  </Link>
-                </div>
-                <Link to="/">
-                  <Button onClick={() => alert("hi")}> Download </Button>
+                <Image
+                  src={
+                    'https:/a/res.cloudinary.com/dkfptto8m/image/upload/v1558070244/Mongodb%20hackathon%20project/thunder.png'
+                  }
+                />
+                <Link href="/">
+                  <A>Remotify</A>
                 </Link>
               </Flex>
+            </NameDiv>
+            <Flex>
+              <div style={{ paddingRight: '30px' }}>
+                <Link to="/">
+                  <Title> Team </Title>
+                </Link>
+              </div>
+              <div style={{ paddingRight: '50px' }}>
+                <Link to="/">
+                  <Title> Resources </Title>
+                </Link>
+              </div>
+              <Link to="/">
+                <Button onClick={() => alert('hi')}> Download </Button>
+              </Link>
             </Flex>
-          </nav>
-        </div>
-      
-     
+          </Flex>
+        </nav>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

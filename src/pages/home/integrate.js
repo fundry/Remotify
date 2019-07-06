@@ -1,43 +1,41 @@
-import React from "react"
-import styled from "styled-components"
-import Flex from "styled-flex-component"
+import React from 'react';
+import styled from 'styled-components';
+import Flex from 'styled-flex-component';
 
-import Integration from "./svg/integration.svg"
+import Integration from './svg/integration.svg';
 
 const Integrate = () => {
   const Div = {
-    background: "#f2f5ff",
-    padding: " 1em",
-    marginTop: "2%",
-  }
+    background: '#D87E2C',
+    color: '#0C0233',
+    padding: ' 1em', 
+  };
 
   const Head = {
-    fontSize: " 0.8em",
-    textAlign: " left",
-    color: "#0b33a2",
-    paddingLeft: "5%",
-  }
+    textAlign: ' left',
+    fontWeight: ' bold',
+    paddingLeft: '4%',
+  };
 
   const Title = {
-    fontSize: " 0.8em;",
-    textAlign: "left",
-    paddingLeft: "7%",
-    color: "#0e2f5a",
-  }
-  const Integrations = "Integrations"
+    fontSize: ' 0.8em;',
+    textAlign: 'left',
+    paddingLeft: '7%',
+  };
+  const Integrations = 'Integrations';
 
   return (
     <div style={Div}>
-      <p style={Head}> {Integrations.toUpperCase()} </p>
+      <h5 style={Head}> {Integrations.toUpperCase()} </h5>
       <p style={Title}> Get all your dev tools in one place. </p>
 
       <Flex justifyCenter>
-        <img src={Integration} style={{ maxWidth: "40%" }} />
+        <img src={Integration} style={{ maxWidth: '40%' }} />
       </Flex>
 
       <br />
     </div>
-  )
-}
+  );
+};
 
-export default Integrate
+export default Integrate;

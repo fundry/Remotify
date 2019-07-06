@@ -5,7 +5,7 @@ import Header from "./header"
 
 const Banner = () => {
   const Contain = {
-  background:' #F0B65F ' ,
+  background:' #F0B65F '  ,
   color : '#fff'
   }
 
