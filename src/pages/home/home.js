@@ -24,21 +24,7 @@ const Home = () => {
     paddingRight: '25px',
     color: '#0e2f5a',
   };
-
-  const Button = styled.button`
-    background: #361f94;
-    text-align: right;
-    border: 1px solid #0e2f5a;
-    color: #fff;
-    margin: 0 1em;
-    padding: 0.25em 3em;
-    font-size: 0.8em;
-    &:hover {
-      color: #0e2f5a;
-      background: transparent;
-    }
-  `;
-
+ 
   const Buttons = styled.button`
     background: #361f94;
     text-align: right;
@@ -47,11 +33,9 @@ const Home = () => {
     color: #fff;
     margin: 0 1em;
     padding: 1em 3em;
-    &:hover { 
-    border: 2px solid #0e2f5a;
-    color: #0e2f5a;
-    font-size: 1.1em;
-      background: transparent;
+    :hover {
+      border: 2px solid #0e2f5a;
+      font-size: 1.1em;
     }
   `;
 
@@ -89,7 +73,7 @@ const Home = () => {
           </Flex>
           <Flex justifyCenter>
             <div>
-              <Buttons style={{   boxShadow: '0px 7px 7px #0b33a2' }}>
+              <Buttons style={{ boxShadow: '0px 7px 7px #0b33a2' }}>
                 <Flex>
                   <GoDesktopDownload
                     style={{

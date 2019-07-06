@@ -9,20 +9,21 @@ import { Icon } from 'semantic-ui-react';
 const Header = () => {
   const Div = {
     padding: '1em',
+    paddingTop: '1em',
     backgroundColor: 'transparent',
     paddingTop: '1%',
-    boxShadow: '0px 2px 5px rgba(0,0,0,0.1)',
+    boxShadow: '0px 7px 7px #D87E2C',
   };
   const A = styled.a`
     color: #0b33a2;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 25px;
     font-family: comic sans ms ;
     font-weight: bold;
   `;
 
   const Title = styled.a`
-	font-size : 1em
+	font-size: 17px;
 	color  : white
   `;
 
