@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Flex from 'styled-flex-component';
+import { GoDesktopDownload } from 'react-icons/go';
 
 import Power from './power';
 import Integrate from './integrate';
@@ -11,7 +12,6 @@ import Features from './features';
 
 const Home = () => {
   const Title = {
-    fontSize: '1.5em',
     textAlign: 'center',
     fontWeight: 'bold',
     color: '#361F94',
@@ -43,12 +43,14 @@ const Home = () => {
     background: #361f94;
     text-align: right;
     border: 1px solid #0e2f5a;
+    border-radius: 7px;
     color: #fff;
     margin: 0 1em;
-    padding: 0.70em 3em;
-    font-size: 1em;
-    &:hover {
-      color: #0e2f5a;
+    padding: 1em 3em;
+    &:hover { 
+    border: 2px solid #0e2f5a;
+    color: #0e2f5a;
+    font-size: 1.1em;
       background: transparent;
     }
   `;
@@ -72,7 +74,7 @@ const Home = () => {
   return (
     <div>
       <div style={{ padding: '2em', backgroundColor: '#f2f5ff' }}>
-        <p style={Title}> Maximising the Remote Worker </p>
+        <h3 style={Title}> Maximising the Remote Worker </h3>
         <p style={Text}>
           Remotify is an Open Sourced , Customizable and Flexible remote office
           for Remote workers with features to increase productivity and reduce
@@ -82,13 +84,25 @@ const Home = () => {
         <div style={{ padding: '2em' }}>
           <Flex justifyCenter>
             <Box>
-              <img src={Sample} style={{ maxWidth: '80%' }} />{' '}
+              <img src={Sample} style={{ maxWidth: '80%' }} />
             </Box>
           </Flex>
           <Flex justifyCenter>
             <div>
-              <Buttons>Download</Buttons>
-              <h5 style={{paddingTop : '0.7em'}}> macOs , Windows , Linux </h5>{' '}
+              <Buttons style={{   boxShadow: '0px 7px 7px #0b33a2' }}>
+                <Flex>
+                  <GoDesktopDownload
+                    style={{
+                      color: 'white',
+                      fontSize: '2em',
+                      paddingTop: '1px',
+                      paddingRight: '5px',
+                    }}
+                  />
+                  <p style={{ paddingTop: '5px' }}> Download </p>
+                </Flex>
+              </Buttons>
+              <h5 style={{ paddingTop: '0.7em' }}>macOs , Windows , Linux</h5>
             </div>
           </Flex>
         </div>
@@ -97,7 +111,7 @@ const Home = () => {
       <div>
         <Power />
         <Features />
-        <Integrate />{' '}
+        <Integrate />
       </div>
     </div>
   );

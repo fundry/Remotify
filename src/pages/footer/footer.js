@@ -35,9 +35,9 @@ const Footer = () => {
           </div>
           <Flex column>
             <p style={Head}> PRODUCT </p>
-            <p style={Title}> Integrations </p>
-            <p style={Title}> Integrations </p>
-            <p style={Title}> Integrations </p>
+            <p style={Title}> Create Team  </p>
+            <p style={Title}> Documentation </p>
+            <p style={Title}> Billing </p>
           </Flex>
           <Flex column>
             <p style={Head}> HELP </p>
