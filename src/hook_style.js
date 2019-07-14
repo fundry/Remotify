@@ -1,18 +1,30 @@
-import { useState, useEffect } from "react";
+// import React, { Component } from 'react';
 
-const useWindowWidth = () => {
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+// class Style extends Component {
+//   constructor(props) {
+//     super(props);
+//     this.state = {
+//       windowWidth: null
+//     };
+//   }
 
-  const handleWindowResize = () => {
-    setWindowWidth(window.innerWidth);
-  };
+//   handleResize() {
+//     this.setState({ windowWidth: window.innerWidth });
+//   }
 
-  useEffect(() => {
-    window.addEventListener("resize", handleWindowResize);
-    return () => window.removeEventListener("resize", handleWindowResize);
-  }, []);
+//   componentDidMount() {
+//     window.addEventListener('resize', this.handleResize.bind(this));
+//   }
 
-  return windowWidth;
-};
+//   componentWillUnmount() {
+//     window.removeEventListener('resize', this.handleResize.bind(this));
+//   }
 
-export default useWindowWidth;
+//   renderNavigation() {
+//     if (this.state.windowWidth <= 1080) {
+//       return [<p> q</p>];
+//     }
+//   }
+// }
+
+// export default Style;
