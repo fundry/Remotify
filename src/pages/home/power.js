@@ -12,19 +12,19 @@ const Power = () => {
     `;
 
   const Head = {
-    fontSize: '1.05em',
+    fontSize: '1.5em',
     textAlign: 'right',
     fontWeight: 'bold',
     color: '#0b33a2',
     paddingRight: '10%',
   };
-  const Title = styled.li`font-size: 0.8em;`;
+  const Title = styled.li`font-size: 1.2em;`;
   return (
     <Div>
       <br />
-      <p style={Head}>
+      <h3 style={Head}>
         Enhance Performance, <br /> Reduce Distractions.
-      </p>
+      </h3>
       <div style={{ padding: '1em' }}>
         <Flex justifyBetween>
           <img src={Worker} style={{ paddingLeft: '10%' }} />

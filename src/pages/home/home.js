@@ -24,7 +24,7 @@ const Home = () => {
     paddingRight: '25px',
     color: '#0e2f5a',
   };
- 
+
   const Buttons = styled.button`
     background: #361f94;
     text-align: right;
@@ -35,7 +35,7 @@ const Home = () => {
     padding: 1em 3em;
     :hover {
       border: 2px solid #0e2f5a;
-      font-size: 1.1em;
+      font-size: 1em;
     }
   `;
 
@@ -83,10 +83,10 @@ const Home = () => {
                       paddingRight: '5px',
                     }}
                   />
-                  <p style={{ paddingTop: '5px' }}> Download </p>
+                  <p style={{ paddingTop: '5px' }}> Download v0.0.5(Beta) </p>
                 </Flex>
               </Buttons>
-              <h5 style={{ paddingTop: '0.7em' }}>macOs , Windows , Linux</h5>
+              <h5 style={{ paddingTop: '0.7em'  , paddingLeft :  '50px' }}>macOs , Windows , Linux</h5>
             </div>
           </Flex>
         </div>
