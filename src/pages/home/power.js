@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import Flex from 'styled-flex-component';
-
 import Worker from './svg/worker.svg';
 
 const Power = () => {
@@ -10,6 +9,8 @@ const Power = () => {
         padding : 1em
         margin-top : 2%
     `;
+
+
 
   const Head = {
     fontSize: '1.5em',
@@ -41,6 +42,8 @@ const Power = () => {
           </div>
         </Flex>
       </div>
+
+     
     </Div>
   );
 };

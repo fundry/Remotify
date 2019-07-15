@@ -1,5 +1,4 @@
 import React from 'react';
-import styled from 'styled-components';
 import Flex from 'styled-flex-component';
 
 import Integration from './svg/integration.svg';
@@ -13,7 +12,7 @@ const Integrate = () => {
   return (
     <div style={Div}>
       <Flex justifyCenter>
-        <div style={{ padding: '2em', width: '70%' }}>
+        <div style={{ padding: '2em', width: '80%' }}>
           <h2 style={{ textAlign: 'center' }}>
             Perfect Office for every worker.
           </h2>
@@ -22,8 +21,7 @@ const Integrate = () => {
             external tools to your office.
           </p>
         </div>
-      </Flex>{' '}
-      <br />
+      </Flex> 
     </div>
   );
 };

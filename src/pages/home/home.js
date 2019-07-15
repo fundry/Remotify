@@ -2,13 +2,13 @@ import React from 'react';
 import styled from 'styled-components';
 import Flex from 'styled-flex-component';
 import { GoDesktopDownload } from 'react-icons/go';
+import posed from 'react-pose';
 
 import Power from './power';
 import Integrate from './integrate';
 import Sample from './svg/console_sample.svg';
-import posed from 'react-pose';
 import Features from './features';
-// import useWindowWidth from '../../hook_style'
+import Register from '../register/register';
 
 const Home = () => {
   const Title = {
@@ -86,7 +86,9 @@ const Home = () => {
                   <p style={{ paddingTop: '5px' }}> Download v0.0.5(Beta) </p>
                 </Flex>
               </Buttons>
-              <h5 style={{ paddingTop: '0.7em'  , paddingLeft :  '50px' }}>macOs , Windows , Linux</h5>
+              <h5 style={{ paddingTop: '0.7em', paddingLeft: '50px' }}>
+                macOs , Windows , Linux
+              </h5>
             </div>
           </Flex>
         </div>
@@ -96,6 +98,8 @@ const Home = () => {
         <Power />
         <Features />
         <Integrate />
+        <br />
+        <Register />
       </div>
     </div>
   );
