@@ -15,6 +15,7 @@ class features extends Component {
     this.setState({ windowWidth: window.innerWidth });
   }
 
+
   componentDidMount() {
     window.addEventListener('resize', this.handleResize.bind(this));
   }
@@ -25,7 +26,6 @@ class features extends Component {
 
   render() {
     const width = this.state.windowWidth;
-
     console.log(width);
     const Div = {
       background: 'linear-gradient(to bottom, #2b44ff, #0C0233)',

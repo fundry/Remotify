@@ -98,7 +98,6 @@ const Home = () => {
         <Power />
         <Features />
         <Integrate />
-        <br />
         <Register />
       </div>
     </div>

@@ -10,14 +10,12 @@ const Power = () => {
         margin-top : 2%
     `;
 
-
-
   const Head = {
     fontSize: '1.5em',
     textAlign: 'right',
     fontWeight: 'bold',
     color: '#0b33a2',
-    paddingRight: '10%',
+    paddingRight: '20%',
   };
   const Title = styled.li`font-size: 1.2em;`;
   return (
@@ -28,10 +26,10 @@ const Power = () => {
       </h3>
       <div style={{ padding: '1em' }}>
         <Flex justifyBetween>
-          <img src={Worker} style={{ paddingLeft: '10%' }} />
+          <img src={Worker} style={{ paddingLeft: '20%' }} />
 
           <div
-            style={{ marginRight: '10%', paddingTop: '20px', color: '#0e2f5a' }}
+            style={{ marginRight: '20%', paddingTop: '20px', color: '#0e2f5a' }}
           >
             <Flex column>
               <Title> Customizable Interface </Title>
@@ -42,8 +40,6 @@ const Power = () => {
           </div>
         </Flex>
       </div>
-
-     
     </Div>
   );
 };

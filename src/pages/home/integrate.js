@@ -12,8 +12,8 @@ const Integrate = () => {
   return (
     <div style={Div}>
       <Flex justifyCenter>
-        <div style={{ padding: '2em', width: '80%' }}>
-          <h2 style={{ textAlign: 'center' }}>
+        <div style={{ padding: '2em', width: '80%'  }}>
+          <h2 style={{ textAlign: 'center'  ,  fontWeight : 'bold'}}>
             Perfect Office for every worker.
           </h2>
           <p style={{ textAlign: 'center', fontSize: '1.5em' }}>

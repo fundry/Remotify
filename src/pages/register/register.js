@@ -42,11 +42,20 @@ const register = () => {
       <div style={Div}>
         <Flex justifyCenter>
           <div style={{ padding: '2em', width: '80%' }}>
-            <h2 style={{ textAlign: 'center' }}>Pricing.</h2>
-            <p style={{ color: 'red'  , textAlign : 'center'  , fontSize: '1.2em' }}>
-              Remotify is currently in a Beta release and would remain free
-              untill a stable release.
-            </p>
+            <h2 style={{ textAlign: 'center' , fontWeight : 'bold' }}>Pricing.</h2>
+
+            <code>
+              <p
+                style={{
+                  color: 'red',
+                  textAlign: 'center',
+                  fontSize: '1.2em',
+                }}
+              >
+                Remotify is currently in a Beta release and would remain free
+                untill a stable release.
+              </p>
+            </code>
             <p style={{ textAlign: 'center', fontSize: '1.5em' }}>
               Our Flexible Pricing models are designed to give you the same
               quality of your money.
@@ -56,7 +65,7 @@ const register = () => {
 
         <Flex justifyCenter>
           <Link to="/">
-            <Button> Get Started </Button>
+            <Button> Get Started (Free) </Button>
           </Link>
         </Flex>
       </div>
