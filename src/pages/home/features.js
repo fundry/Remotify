@@ -132,23 +132,6 @@ class features extends Component {
               <div style={{ padding: '2em' }}>
                 <h3 style={{ textAlign: 'center' }}>
                   {' '}
-                  Integrate External Tools{' '}
-                </h3>
-                <p style={{ textAlign: 'center', fontSize: '1.35em' }}>
-                  Switch between colors and lyouts to give the unique
-                  development environemt.
-                </p>{' '}
-                <Flex justifyCenter>
-                  <Hover>
-                    <img src={Sample} style={{ maxWidth: '75%' }} />{' '}
-                  </Hover>
-                </Flex>
-              </div>
-            </Flex>
-            <Flex justifyCenter>
-              <div style={{ padding: '2em' }}>
-                <h3 style={{ textAlign: 'center' }}>
-                  {' '}
                   Monitor working performance{' '}
                 </h3>
                 <p style={{ textAlign: 'center', fontSize: '1.35em' }}>
