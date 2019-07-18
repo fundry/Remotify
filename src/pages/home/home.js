@@ -8,7 +8,7 @@ import Power from './power';
 import Integrate from './integrate';
 import Sample from './svg/console_sample.svg';
 import Features from './features';
-import Register from '../register/register';
+import Pricing from '../register/pricing';
 
 const Home = () => {
   const Title = {
@@ -98,7 +98,7 @@ const Home = () => {
         <Power />
         <Features />
         <Integrate />
-        <Register />
+        <Pricing />
       </div>
     </div>
   );

@@ -13,7 +13,8 @@ exports.components = {
   "component---src-pages-home-power-js": () => import("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\home\\power.js" /* webpackChunkName: "component---src-pages-home-power-js" */),
   "component---src-pages-index-js": () => import("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\index.js" /* webpackChunkName: "component---src-pages-index-js" */),
   "component---src-pages-page-2-js": () => import("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\page-2.js" /* webpackChunkName: "component---src-pages-page-2-js" */),
+  "component---src-pages-register-create-js": () => import("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\register\\create.js" /* webpackChunkName: "component---src-pages-register-create-js" */),
   "component---src-pages-register-integration-js": () => import("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\register\\integration.js" /* webpackChunkName: "component---src-pages-register-integration-js" */),
-  "component---src-pages-register-register-js": () => import("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\register\\register.js" /* webpackChunkName: "component---src-pages-register-register-js" */)
+  "component---src-pages-register-pricing-js": () => import("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\register\\pricing.js" /* webpackChunkName: "component---src-pages-register-pricing-js" */)
 }
 
