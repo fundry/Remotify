@@ -75,6 +75,7 @@ const form = () => {
                     width: '30em',
                     borderRadius: '3px',
                     paddingLeft: '10px',
+                    border: '1px solid  #361f94 ',
                   }}
                   placeholder="DragonFire"
                   type="text"
@@ -90,6 +91,7 @@ const form = () => {
                     width: '30em',
                     borderRadius: '5px',
                     paddingLeft: '10px',
+                    border: '1px solid  #361f94 ',
                   }}
                   type="email"
                   placeholder="team@email.com"
@@ -106,6 +108,7 @@ const form = () => {
                     width: '30em',
                     borderRadius: '5px',
                     paddingLeft: '10px',
+                    border: '1px solid  #361f94 ',
                   }}
                   type="email"
                   placeholder="admin@email.com"
@@ -135,9 +138,9 @@ const form = () => {
                       <h4 style={{ textAlign: 'center' }}> Email Sent </h4>
                     </div>
 
-                    <FiCheck style={{ fontSize: '2.2 em' }} />
+                    <FiCheck style={{ fontSize: '2.2em' }} />
                   </Flex>
-                  <br /> 
+                  <br />
                   <Button>Verify</Button>
                 </div>
               </Flex>
