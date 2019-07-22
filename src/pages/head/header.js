@@ -4,9 +4,9 @@ import Img from 'react-image';
 import styled from 'styled-components';
 import Flex from 'styled-flex-component';
 // import useWindowWidth from "../../hook_style"
-import { Icon } from 'semantic-ui-react';
+ 
 
-const Header = () => {
+const Header = (props) => {
   const Div = {
     padding: '1em',
     paddingTop: '1em',
@@ -14,17 +14,26 @@ const Header = () => {
     paddingTop: '1%',
     boxShadow: '0px 7px 7px #D87E2C',
   };
+
+  const Head = {
+    padding: '1em',
+    paddingTop: '1em',
+    backgroundColor: 'transparent',
+    Color: '#0b33a2',
+    paddingTop: '1%',
+  };
+
   const A = styled.a`
     color: #0b33a2;
     text-decoration: none;
     font-size: 25px;
-    font-family: comic sans ms ;
+    font-family: comic sans ms;
     font-weight: bold;
   `;
 
   const Title = styled.a`
-	font-size: 17px;
-	color  : white
+    font-size: 17px;
+    color: #0b33a2;
   `;
 
   const Image = styled(Img)`
@@ -53,39 +62,75 @@ const Header = () => {
   // const hooks = useWindowWidth()
   return (
     <div>
-      <div style={Div}>
-        <nav>
-          <Flex justifyBetween>
-            <NameDiv>
+      {props.style == false ? (
+        <div style={Head}>
+          <nav>
+            <Flex justifyBetween>
+              <NameDiv>
+                <Flex>
+                  <Image
+                    src={
+                      'https:/a/res.cloudinary.com/dkfptto8m/image/upload/v1558070244/Mongodb%20hackathon%20project/thunder.png'
+                    }
+                  />
+                  <Link href="/">
+                    <A>Remotify</A>
+                  </Link>
+                </Flex>
+              </NameDiv>
               <Flex>
-                <Image
-                  src={
-                    'https:/a/res.cloudinary.com/dkfptto8m/image/upload/v1558070244/Mongodb%20hackathon%20project/thunder.png'
-                  }
-                />
-                <Link href="/">
-                  <A>Remotify</A>
+                <div style={{ paddingRight: '30px' }}>
+                  <Link to="/">
+                    <Title> Team </Title>
+                  </Link>
+                </div>
+                <div style={{ paddingRight: '50px' }}>
+                  <Link to="/">
+                    <Title> Resources </Title>
+                  </Link>
+                </div>
+                <Link to="/">
+                  <Button onClick={() => alert('hi')}> Download </Button>
                 </Link>
               </Flex>
-            </NameDiv>
-            <Flex>
-              <div style={{ paddingRight: '30px' }}>
-                <Link to="/">
-                  <Title> Team </Title>
-                </Link>
-              </div>
-              <div style={{ paddingRight: '50px' }}>
-                <Link to="/">
-                  <Title> Resources </Title>
-                </Link>
-              </div>
-              <Link to="/">
-                <Button onClick={() => alert('hi')}> Download </Button>
-              </Link>
             </Flex>
-          </Flex>
-        </nav>
-      </div>
+          </nav>
+        </div>
+      ) : (
+        <div style={Div}>
+          <nav>
+            <Flex justifyBetween>
+              <NameDiv>
+                <Flex>
+                  <Image
+                    src={
+                      'https:/a/res.cloudinary.com/dkfptto8m/image/upload/v1558070244/Mongodb%20hackathon%20project/thunder.png'
+                    }
+                  />
+                  <Link href="/">
+                    <A>Remotify</A>
+                  </Link>
+                </Flex>
+              </NameDiv>
+              <Flex>
+                <div style={{ paddingRight: '30px' }}>
+                  <Link to="/">
+                    <Title> Team </Title>
+                  </Link>
+                </div>
+                <div style={{ paddingRight: '50px' }}>
+                  <Link to="/">
+                    <Title> Resources </Title>
+                  </Link>
+                </div>
+                <Link to="/">
+                  <Button onClick={() => alert('hi')}> Download </Button>
+                </Link>
+              </Flex>
+            </Flex>
+          </nav>
+        </div>
+      )}
     </div>
   );
 };

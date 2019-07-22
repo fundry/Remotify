@@ -64,7 +64,7 @@ const register = () => {
         </Flex>
 
         <Flex justifyCenter>
-          <Link to="/">
+          <Link to="/register/create">
             <Button> Get Started (Free) </Button>
           </Link>
         </Flex>
