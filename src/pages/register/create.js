@@ -87,6 +87,7 @@ const form = () => {
                 <h5> Team Email Address </h5>
                 <input
                   style={{
+                    
                     height: '7.5vh',
                     width: '30em',
                     borderRadius: '5px',
