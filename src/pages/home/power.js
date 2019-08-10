@@ -11,33 +11,53 @@ const Power = () => {
     `;
 
   const Head = {
-    fontSize: '1.5em',
     textAlign: 'right',
     fontWeight: 'bold',
     color: '#0b33a2',
     paddingRight: '20%',
   };
+  const Header = {
+    color: '#0b33a2',
+  };
   const Title = styled.li`font-size: 1.2em;`;
   return (
     <Div>
-      <br />
-      <h3 style={Head}>
-        Enhance Performance, <br /> Reduce Distractions.
-      </h3>
-      <div style={{ padding: '1em' }}>
-        <Flex justifyBetween>
-          <img src={Worker} style={{ paddingLeft: '20%' }} />
+      <div>
+        <br />
+        <h3 style={Head}>
+          Enhance Performance, <br /> Reduce Distractions.
+        </h3>
+        <div style={{ padding: '1em' }}>
+          <Flex justifyBetween>
+            <img src={Worker} style={{ paddingLeft: '20%' }} />
 
-          <div
-            style={{ marginRight: '20%', paddingTop: '20px', color: '#0e2f5a' }}
-          >
-            <Flex column>
-              <Title> Customizable Interface </Title>
-              <Title> Integrate external tools </Title>
-              <Title> Monitor Perfomance </Title>
-              <Title> Control over time spent. </Title>
+            <div
+              style={{
+                marginRight: '20%',
+                paddingTop: '20px',
+                color: '#0e2f5a',
+              }}
+            >
+              <Flex column>
+                <Title> Customizable Interface </Title>
+                <Title> Integrate external tools </Title>
+                <Title> Monitor Perfomance </Title>
+                <Title> Control over time spent. </Title>
+              </Flex>
+            </div>
+          </Flex>
+        </div>
+      </div>
+      <div>
+        <br />
+        <Flex justifyCenter>
+          <div style={{ padding: '1em' }}>
+            <Flex justifyCenter>
+              <img src={Worker} style={{ maxWidth: '35%' }} />
             </Flex>
-          </div>
+
+            <h4 style={Header}>Your Tools Brought Together.</h4>
+          </div>{' '}
         </Flex>
       </div>
     </Div>

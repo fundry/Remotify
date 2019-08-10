@@ -6,6 +6,9 @@ import { Helmet } from 'react-helmet';
 import { Card } from 'react-bootstrap';
 import { Planet } from 'react-kawaii';
 import { FiCheck } from 'react-icons/fi';
+import { Group } from '../../data/mutations';
+import config from '../../data/config';
+import { Mutation, ApolloProvider } from 'react-apollo';
 
 const form = () => {
   const Button = styled.button`
@@ -26,12 +29,14 @@ const form = () => {
 
   const [Email, sentEmail] = useState(false);
 
-  const _send = () => {
-    sentEmail(true);
-  };
+  const [Text, addText] = useState('');
+
+  const [Mail, addMail] = useState('');
+
+  console.log(Mail);
 
   return (
-    <div>
+    <ApolloProvider client={config}>
       <div>
         <Helmet>
           <meta charSet="utf-8" />
@@ -59,109 +64,147 @@ const form = () => {
 
       <br />
 
-      {!Email ? (
-        <Flex justifyCenter>
-          <div style={{ padding: '1em' }}>
-            <h2 style={{ textAlign: 'center' }}>
-              Create <b> Group Team </b>{' '}
-            </h2>{' '}
-            <hr />
-            <form>
-              <div>
-                <h5> Team Name </h5>
-                <input
-                  style={{
-                    height: '6vh',
-                    width: '30em',
-                    borderRadius: '3px',
-                    paddingLeft: '10px',
-                    border: '1px solid  #361f94 ',
-                  }}
-                  placeholder="DragonFire"
-                  type="text"
-                />
-              </div>
-              <br />
-              <br />
-              <div>
-                <h5> Team Email Address </h5>
-                <input
-                  style={{
-                    
-                    height: '7.5vh',
-                    width: '30em',
-                    borderRadius: '5px',
-                    paddingLeft: '10px',
-                    border: '1px solid  #361f94 ',
-                  }}
-                  type="email"
-                  placeholder="team@email.com"
-                />
-              </div>
-              <br />
-              <br />
-
-              <div>
-                <h5> Administrative Address (optional ) </h5>
-                <input
-                  style={{
-                    height: '7.5vh',
-                    width: '30em',
-                    borderRadius: '5px',
-                    paddingLeft: '10px',
-                    border: '1px solid  #361f94 ',
-                  }}
-                  type="email"
-                  placeholder="admin@email.com"
-                />
-              </div>
-            </form>
-          </div>
-        </Flex>
-      ) : (
-        <Flex justifyCenter>
-          <br />
-          <br />
-          <Card
-            style={{
-              padding: '2em 5em 4em',
-              boxShadow: '0px 7px 7px grey',
-            }}
-          >
-            <div>
-              <Planet />
-
-              <br />
+      <Mutation mutation={Group}>
+        {(createGroup) => (
+          <div>
+            {!Email ? (
               <Flex justifyCenter>
                 <div style={{ padding: '1em' }}>
-                  <Flex>
-                    <div style={{ paddingRight: '10px', paddingTop: '3px' }}>
-                      <h4 style={{ textAlign: 'center' }}> Email Sent </h4>
+                  <h2 style={{ textAlign: 'center' }}>
+                    Create <b> Group Team </b>{' '}
+                  </h2>{' '}
+                  <hr />
+                  <form>
+                    <div>
+                      <h5> Team Name</h5>
+                      <input
+                        style={{
+                          height: '7.5vh',
+                          width: '30em',
+                          borderRadius: '5px',
+                          paddingLeft: '10px',
+                          border: '1px solid  #361f94 ',
+                        }}
+                        type="email"
+                        placeholder="dragonblade"
+                        onChange={(e) => {
+                          addText(e.target.value);
+                        }}
+                      />
                     </div>
+                    <br />
+                    <br />
+                    <div>
+                      <h5> Team Email Address </h5>
+                      <input
+                        style={{
+                          height: '7.5vh',
+                          width: '30em',
+                          borderRadius: '5px',
+                          paddingLeft: '10px',
+                          border: '1px solid  #361f94 ',
+                        }}
+                        onChange={(e) => {
+                          addMail(e.target.value);
+                        }}
+                        type="email"
+                        placeholder="team@email.com"
+                      />
+                    </div>
+                    <br />
+                    <br />
 
-                    <FiCheck style={{ fontSize: '2.2em' }} />
-                  </Flex>
-                  <br />
-                  <Button>Verify</Button>
+                    <div>
+                      <h5> Administrative Address (optional ) </h5>
+                      <input
+                        style={{
+                          height: '7.5vh',
+                          width: '30em',
+                          borderRadius: '5px',
+                          paddingLeft: '10px',
+                          border: '1px solid  #361f94 ',
+                        }}
+                        type="email"
+                        placeholder="admin@email.com"
+                      />
+                    </div>
+                  </form>
                 </div>
               </Flex>
-            </div>
-          </Card>
-        </Flex>
-      )}
+            ) : (
+              <Flex justifyCenter>
+                <br />
+                <br />
+                <Card
+                  style={{
+                    padding: '2em 5em 4em',
+                    boxShadow: '0px 7px 7px grey',
+                  }}
+                >
+                  <div>
+                    <Flex justifyCenter>
+                      <Planet style={{ textAlign: 'center' }} />
+                    </Flex>
 
-      {!Email ? (
-        <Flex justifyCenter>
-          <Button
-            onClick={() => {
-              _send();
-            }}
-          >
-            <p> Continue </p>
-          </Button>
-        </Flex>
-      ) : null}
-    </div>
+                    <br />
+                    <Flex justifyCenter>
+                      <div style={{ padding: '1em', textAlign: 'center' }}>
+                        <FiCheck style={{ fontSize: '3em' }} />
+                        <div
+                          style={{ paddingRight: '10px', paddingTop: '3px' }}
+                        >
+                          <h4 style={{ textAlign: 'center' }}>
+                            An Email has been sent to{' '}
+                              <b> {Mail} </b>
+                            . <br />
+                            Click the confirmation link to begin with Remotify
+                          </h4>
+                        </div>
+
+                        <br />
+                        <Flex justifyCenter>
+                          <div>
+                            <Button>Verify</Button>
+
+                            <br />
+                            <br />
+                            <br />
+                            <div>
+                              <Flex>
+                                <h5 style={{ paddingRight: '20px' }}>
+                                  {' '}
+                                  {" Haven't recieved it?"}{' '}
+                                </h5>
+                                <a href="github.com/vickywane"> Resend Mail </a>
+                              </Flex>
+                            </div>
+                          </div>
+                        </Flex>
+                      </div>
+                    </Flex>
+                  </div>
+                </Card>
+              </Flex>
+            )}
+
+            {!Email ? (
+              <Flex justifyCenter>
+                <Button
+                  onClick={() => {
+                    sentEmail(true);
+                    createGroup({
+                      variables: { name: Text },
+                    });
+                  }}
+                >
+                  <p> Continue </p>
+                </Button>
+              </Flex>
+            ) : null}
+          </div>
+        )}
+      </Mutation>
+    </ApolloProvider>
   );
 };
 
