@@ -15,6 +15,7 @@ exports.components = {
   "component---src-pages-register-create-js": () => import("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\register\\create.js" /* webpackChunkName: "component---src-pages-register-create-js" */),
   "component---src-pages-register-details-js": () => import("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\register\\details.js" /* webpackChunkName: "component---src-pages-register-details-js" */),
   "component---src-pages-register-integration-js": () => import("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\register\\integration.js" /* webpackChunkName: "component---src-pages-register-integration-js" */),
-  "component---src-pages-register-pricing-js": () => import("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\register\\pricing.js" /* webpackChunkName: "component---src-pages-register-pricing-js" */)
+  "component---src-pages-register-pricing-js": () => import("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\register\\pricing.js" /* webpackChunkName: "component---src-pages-register-pricing-js" */),
+  "component---src-pages-user-profile-js": () => import("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\user\\profile.js" /* webpackChunkName: "component---src-pages-user-profile-js" */)
 }
 

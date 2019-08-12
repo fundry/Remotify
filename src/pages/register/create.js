@@ -154,8 +154,8 @@ const form = () => {
                           style={{ paddingRight: '10px', paddingTop: '3px' }}
                         >
                           <h4 style={{ textAlign: 'center' }}>
-                            An Email has been sent to{' '}
-                              <b> {Mail} </b>
+                          An Email has been sent to{' '}
+                          <b> {Mail} </b>
                             . <br />
                             Click the confirmation link to begin with Remotify
                           </h4>
