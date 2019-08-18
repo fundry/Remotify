@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import Flex from 'styled-flex-component';
 import { GoDesktopDownload } from 'react-icons/go';
@@ -55,6 +55,8 @@ const Home = () => {
     },
   });
 
+  const [Download, setDownload] = useState(false);
+
   return (
     <div>
       <div style={{ padding: '2em', backgroundColor: '#f2f5ff' }}>
@@ -71,26 +73,79 @@ const Home = () => {
               <img src={Sample} style={{ maxWidth: '80%' }} />
             </Box>
           </Flex>
-          <Flex justifyCenter>
-            <div>
-              <Buttons style={{ boxShadow: '0px 7px 7px #0b33a2' }}>
-                <Flex>
-                  <GoDesktopDownload
-                    style={{
-                      color: 'white',
-                      fontSize: '2em',
-                      paddingTop: '1px',
-                      paddingRight: '5px',
-                    }}
-                  />
-                  <p style={{ paddingTop: '5px' }}> Download v0.0.5(Beta) </p>
+          <div>
+            {Download ? (
+              <Flex justifyCenter>
+                <Flex justifyAround>
+                  <Buttons style={{ boxShadow: '0px 7px 7px #0b33a2' }}>
+                    <Flex>
+                      <GoDesktopDownload
+                        style={{
+                          color: 'white',
+                          fontSize: '2em',
+                          paddingTop: '1px',
+                          paddingRight: '5px',
+                        }}
+                      />
+                      <p style={{ paddingTop: '5px' }}> macOs</p>
+                    </Flex>
+                  </Buttons>{' '}
+                  <Buttons style={{ boxShadow: '0px 7px 7px #0b33a2' }}>
+                    <Flex>
+                      <GoDesktopDownload
+                        style={{
+                          color: 'white',
+                          fontSize: '2em',
+                          paddingTop: '1px',
+                          paddingRight: '5px',
+                        }}
+                      />
+                      <p style={{ paddingTop: '5px' }}> Windows</p>
+                    </Flex>
+                  </Buttons>{' '}
+                  <Buttons style={{ boxShadow: '0px 7px 7px #0b33a2' }}>
+                    <Flex>
+                      <GoDesktopDownload
+                        style={{
+                          color: 'white',
+                          fontSize: '2em',
+                          paddingTop: '1px',
+                          paddingRight: '5px',
+                        }}
+                      />
+                      <p style={{ paddingTop: '5px' }}> Linux</p>
+                    </Flex>
+                  </Buttons>
                 </Flex>
-              </Buttons>
-              <h5 style={{ paddingTop: '0.7em', paddingLeft: '50px' }}>
-                macOs , Windows , Linux
-              </h5>
-            </div>
-          </Flex>
+              </Flex>
+            ) : (
+              <Flex justifyCenter>
+                <div>
+                  <Buttons
+                    onClick={() => setDownload(true)}
+                    style={{ boxShadow: '0px 7px 7px #0b33a2' }}
+                  >
+                    <Flex>
+                      <GoDesktopDownload
+                        style={{
+                          color: 'white',
+                          fontSize: '2em',
+                          paddingTop: '1px',
+                          paddingRight: '5px',
+                        }}
+                      />
+                      <p style={{ paddingTop: '5px' }}>
+                        Download v0.0.5(Beta){' '}
+                      </p>
+                    </Flex>
+                  </Buttons>
+                  <h5 style={{ paddingTop: '0.7em', paddingLeft: '50px' }}>
+                    macOs , Windows , Linux
+                  </h5>
+                </div>
+              </Flex>
+            )}
+          </div>
         </div>
       </div>
 
