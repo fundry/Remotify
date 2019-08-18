@@ -1,14 +1,21 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import Flex from 'styled-flex-component';
-import Header from '../head/header';
 import { Helmet } from 'react-helmet';
 import { Card } from 'react-bootstrap';
 import { Planet } from 'react-kawaii';
 import { FiCheck } from 'react-icons/fi';
+import { Mutation, ApolloProvider } from 'react-apollo';
+import { Formik, Form , Field } from 'formik';
+import * as Yup from 'yup';
+
 import { Group } from '../../data/mutations';
 import config from '../../data/config';
-import { Mutation, ApolloProvider } from 'react-apollo';
+import Header from '../head/header';
+
+const validation = Yup.object().shape({
+  email: Yup.string().email('invalid email address'),
+});
 
 const form = () => {
   const Button = styled.button`
@@ -33,7 +40,7 @@ const form = () => {
 
   const [Mail, addMail] = useState('');
 
-  console.log(Mail);
+  const [Validity, setValidity] = useState(true);
 
   return (
     <ApolloProvider client={config}>
@@ -72,63 +79,94 @@ const form = () => {
                 <div style={{ padding: '1em' }}>
                   <h2 style={{ textAlign: 'center' }}>
                     Create <b> Group Team </b>{' '}
-                  </h2>{' '}
+                  </h2> 
                   <hr />
-                  <form>
-                    <div>
-                      <h5> Team Name</h5>
-                      <input
-                        style={{
-                          height: '7.5vh',
-                          width: '30em',
-                          borderRadius: '5px',
-                          paddingLeft: '10px',
-                          border: '1px solid  #361f94 ',
-                        }}
-                        type="email"
-                        placeholder="dragonblade"
-                        onChange={(e) => {
-                          addText(e.target.value);
-                        }}
-                      />
-                    </div>
-                    <br />
-                    <br />
-                    <div>
-                      <h5> Team Email Address </h5>
-                      <input
-                        style={{
-                          height: '7.5vh',
-                          width: '30em',
-                          borderRadius: '5px',
-                          paddingLeft: '10px',
-                          border: '1px solid  #361f94 ',
-                        }}
-                        onChange={(e) => {
-                          addMail(e.target.value);
-                        }}
-                        type="email"
-                        placeholder="team@email.com"
-                      />
-                    </div>
-                    <br />
-                    <br />
+                  <Formik
+                    initialValues={{ email: '', name: '' }}
+                    validationSchema={validation}
+                    onSubmit={(values, { setSubmitting }) => {
+                      console.log(values);
+                    }}
+                  >
+                    {({ isSubmitting }) => (
+                      <Form>
+                        <div>
+                          <h5> Team Name</h5>
+                          <input
+                            style={{
+                              height: '7.5vh',
+                              width: '30em',
+                              borderRadius: '5px',
+                              paddingLeft: '10px',
+                              border: '1px solid  #361f94 ',
+                            }}
+                            type="text"
+                            placeholder="dragonblade"
+                            onChange={(e) => {
+                              addText(e.target.value);
+                            }}
+                          />
+                        </div>
+                        <br />
+                        <br />
+                        <div>
+                          <h5> Team Email Address </h5>
+                          <input
+                            style={{
+                              height: '7.5vh',
+                              width: '30em',
+                              borderRadius: '5px',
+                              paddingLeft: '10px',
+                              border: '1px solid  #361f94 ',
+                            }}
+                            onChange={(e) => {
+                              addMail(e.target.value);
+                            }}
+                            type="email"
+                            placeholder="team@email.com"
+                          />
+                        </div>
+                        <br />
+                        <br />
+                        <div>
+                          <h5> Administrative Address (optional ) </h5>
+                          <input
+                            style={{
+                              height: '7.5vh',
+                              width: '30em',
+                              borderRadius: '5px',
+                              paddingLeft: '10px',
+                              border: '1px solid  #361f94 ',
+                            }}
+                            type="email"
+                            placeholder="admin@email.com"
+                          />
+                        </div>
+                        <br />
 
-                    <div>  
-                      <h5> Administrative Address (optional ) </h5>
-                      <input
-                        style={{
-                          height: '7.5vh',
-                          width: '30em',
-                          borderRadius: '5px',
-                          paddingLeft: '10px',
-                          border: '1px solid  #361f94 ',
-                        }}
-                        type="email"
-                        placeholder="admin@email.com"
-                      />
-                    </div>
-                  </form>
+                        {!Email ? (
+                          <Flex justifyCenter>
+                            <Button
+                              onClick={() => {
+                                sentEmail(true);
+                                createGroup({
+                                  variables: { name: Text },
+                                });
+                              }}
+                              disabled={isSubmitting}
+                              style={{
+                                filter: Validity
+                                  ? 'grayscale(40%) blur(1px)'
+                                  : 'grayscale(0%) blur(0px)',
+                              }}
+                            >
+                              <p> Continue </p>
+                            </Button>
+                          </Flex>
+                        ) : null}
+                      </Form>
+                    )}
+                  </Formik>
                 </div>
               </Flex>
             ) : (
@@ -154,8 +192,7 @@ const form = () => {
                           style={{ paddingRight: '10px', paddingTop: '3px' }}
                         >
                           <h4 style={{ textAlign: 'center' }}>
-                          An Email has been sent to{' '}
-                          <b> {Mail} </b>
+                            An Email has been sent to <b> {Mail} </b>
                             . <br />
                             Click the confirmation link to begin with Remotify
                           </h4>
@@ -186,21 +223,6 @@ const form = () => {
                 </Card>
               </Flex>
             )}
-
-            {!Email ? (
-              <Flex justifyCenter>
-                <Button
-                  onClick={() => {
-                    sentEmail(true);
-                    createGroup({
-                      variables: { name: Text },
-                    });
-                  }}
-                >
-                  <p> Continue </p>
-                </Button>
-              </Flex>
-            ) : null}
           </div>
         )}
       </Mutation>
