@@ -10,6 +10,9 @@ var plugins = [{
     },{
       plugin: require('C:/Users/Iamnwani/Desktop/ROJECT/Remotify/node_modules/gatsby-plugin-styled-components/gatsby-ssr'),
       options: {"plugins":[]},
+    },{
+      plugin: require('C:/Users/Iamnwani/Desktop/ROJECT/Remotify/gatsby-ssr'),
+      options: {"plugins":[]},
     }]
 // During bootstrap, we write requires at top of this file which looks like:
 // var plugins = [

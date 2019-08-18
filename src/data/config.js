@@ -3,7 +3,8 @@ import { InMemoryCache } from 'apollo-cache-inmemory';
 import { HttpLink } from 'apollo-link-http';
 import { onError } from 'apollo-link-error';
 import { ApolloLink } from 'apollo-link';
-
+import fetch from 'isomorphic-fetch'
+ 
 const ENDPOINT = 'http://localhost:4000/';
 
 const Client = new ApolloClient({
@@ -22,6 +23,7 @@ const Client = new ApolloClient({
     }),
   ]),
   cache: new InMemoryCache(),
+  fetch
 });
 
 export default Client;
