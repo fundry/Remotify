@@ -1,14 +1,15 @@
 import React from 'react';
 import Header from '../head/header';
+import Layout from '../../components/layout'
 
 const Workers = () => {
   return (
-    <div>
+    <Layout>
       <Header style={false} />
       <div>
         <p> workers</p>
       </div>
-    </div>
+    </Layout>
   );
 };
 
