@@ -16,7 +16,8 @@ exports.components = {
   "component---src-pages-register-details-js": () => import("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\register\\details.js" /* webpackChunkName: "component---src-pages-register-details-js" */),
   "component---src-pages-register-integration-js": () => import("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\register\\integration.js" /* webpackChunkName: "component---src-pages-register-integration-js" */),
   "component---src-pages-register-pricing-js": () => import("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\register\\pricing.js" /* webpackChunkName: "component---src-pages-register-pricing-js" */),
-  "component---src-pages-user-map-js": () => import("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\user\\map.js" /* webpackChunkName: "component---src-pages-user-map-js" */),
-  "component---src-pages-user-profile-js": () => import("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\user\\profile.js" /* webpackChunkName: "component---src-pages-user-profile-js" */)
+  "component---src-pages-user-chart-js": () => import("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\user\\chart.js" /* webpackChunkName: "component---src-pages-user-chart-js" */),
+  "component---src-pages-user-profile-js": () => import("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\user\\profile.js" /* webpackChunkName: "component---src-pages-user-profile-js" */),
+  "component---src-pages-user-workers-js": () => import("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\user\\workers.js" /* webpackChunkName: "component---src-pages-user-workers-js" */)
 }
 

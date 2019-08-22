@@ -1,7 +1,14 @@
 import React, { useState } from 'react';
-import Header from '../head/header';
 import styled from 'styled-components';
 import Flex from 'styled-flex-component';
+import posed from 'react-pose';
+import { Link } from 'gatsby';
+import { FiX } from 'react-icons/fi';
+
+import Charts from './chart';
+import Header from '../head/header';
+import { Modal } from 'react-bootstrap';
+import Layout from '../../components/layout';
 
 const profile = () => {
   const autoGrid = (minColumnWidth = 200, gridGap = 0) => ({
@@ -21,7 +28,7 @@ const profile = () => {
     paddingTop: '2.5em',
     width: '12em',
     borderRadius: '10px',
-    boxShadow: '0px 3px 5px grey',
+    boxShadow: '0px 4px 6px grey',
     background: 'black',
     color: 'white',
     cursor: 'pointer',
@@ -32,6 +39,22 @@ const profile = () => {
     width: '100%',
     background: '#361f94',
     color: 'white',
+  });
+
+  const Bounce = posed.div({
+    hoverable: true,
+    init: {
+      scale: 1,
+      boxShadow: '0px 0px 0px rgba(0,0,0,0)',
+      textAlign: 'center',
+    },
+    hover: {
+      scale: 1.1,
+    },
+    press: {
+      scale: 1.1,
+      boxShadow: '0px 2px 5px rgba(0,0,0,0.1)',
+    },
   });
 
   const Button = styled.button`
@@ -50,19 +73,30 @@ const profile = () => {
     }
   `;
 
+  const ModalHead = styled.div({
+    background: 'black',
+    padding: '0.5em',
+    color: '#fff',
+  });
+
+  const ModalBody = styled.div({
+    padding: '0.5em',
+  });
+
   const Hover = styled.div({
     cursor: 'pointer',
   });
 
   const [Create, setCreate] = useState(false);
   const [Chart, setChart] = useState(false);
+  const [teamModal, setteamModal] = useState(false);
 
   const createButton = () => {
     setCreate(false);
   };
 
   return (
-    <div>
+    <Layout>
       <Header style={false} />
       <Head
         style={{
@@ -121,53 +155,115 @@ const profile = () => {
         </Flex>
       </Head>
 
+      <br />
+      <br />
+
+      <Modal
+        show={teamModal}
+        onhide={() => {
+          setteamModal(false);
+        }}
+        style={{
+          boxShadow: '0px 4px 6px grey',
+        }}
+      >
+        <ModalHead>
+          <Flex justifyBetween>
+            <p> Frontend </p>
+
+            <Hover
+              onClick={() => {
+                setteamModal(false);
+              }}
+            >
+              <FiX />
+            </Hover>
+          </Flex>
+        </ModalHead>
+
+        <ModalBody>
+          <p> Team Details </p>
+        </ModalBody>
+      </Modal>
+
+      <Flex justifyCenter>
+        <Link to="./user/workers">
+          <Hover>
+            <h2> Creatella </h2>
+            <h5 style={{textAlign  : 'center'}} > 205 workers</h5>
+          </Hover>
+        </Link>
+      </Flex>
+
       <div>
         {!Chart ? (
           <Cards>
-            <Card>
-              <div style={{ textAlign: 'center' }}>
-                <h5> Frontend Team </h5>
-                <p> 5 members </p>
-              </div>
-            </Card>
-            <Card>
-              <div style={{ textAlign: 'center' }}>
-                <h5> Frontend Team </h5>
-                <p> 5 members </p>
-              </div>
-            </Card>
-            <Card>
-              <div style={{ textAlign: 'center' }}>
-                <h5> Frontend Team </h5>
-                <p> 5 members </p>
-              </div>
-            </Card>
-            <Card>
-              <div style={{ textAlign: 'center' }}>
-                <h5> Frontend Team </h5>
-                <p> 5 members </p>
-              </div>
-            </Card>
-            <Card>
-              <div style={{ textAlign: 'center' }}>
-                <h5> Frontend Team </h5>
-                <p> 5 members </p>
-              </div>
-            </Card>
-            <Card>
-              <div style={{ textAlign: 'center' }}>
-                <h5> Frontend Team </h5>
-                <p> 5 members </p>
-              </div>
-            </Card>
+            <Bounce
+              onClick={() => {
+                setteamModal(true);
+              }}
+            >
+              <Card>
+                <div style={{ textAlign: 'center' }}>
+                  <h5> Frontend Team </h5>
+                  <p> 5 members </p>
+                </div>
+              </Card>
+            </Bounce>
+
+            <Bounce>
+              <Card>
+                <div style={{ textAlign: 'center' }}>
+                  <h5> Frontend Team </h5>
+                  <p> 5 members </p>
+                </div>
+              </Card>
+            </Bounce>
+
+            <Bounce>
+              <Card>
+                <div style={{ textAlign: 'center' }}>
+                  <h5> Frontend Team </h5>
+                  <p> 5 members </p>
+                </div>
+              </Card>
+            </Bounce>
+
+            <Bounce>
+              <Card>
+                <div style={{ textAlign: 'center' }}>
+                  <h5> Frontend Team </h5>
+                  <p> 5 members </p>
+                </div>
+              </Card>
+            </Bounce>
+
+            <Bounce>
+              <Card>
+                <div style={{ textAlign: 'center' }}>
+                  <h5> Frontend Team </h5>
+                  <p> 5 members </p>
+                </div>
+              </Card>
+            </Bounce>
+
+            <Bounce>
+              <Card>
+                <div style={{ textAlign: 'center' }}>
+                  <h5> Frontend Team </h5>
+                  <p> 5 members </p>
+                </div>
+              </Card>
+            </Bounce>
           </Cards>
         ) : (
           <div>
-            <h3 style={{ textAlign: 'center' }}> D3 team stats here </h3>
+            <Charts />
           </div>
         )}
       </div>
-    </div>
+      <br />
+    </Layout>
   );
 };
 

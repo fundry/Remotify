@@ -6,7 +6,8 @@ import { Helmet } from "react-helmet"
 import "./layout.css"
 import Footer from "../pages/footer/footer"
 
-const Layout = ({ children }) => (
+const Layout = ({ children }, props) => (
+
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -48,7 +49,10 @@ const Layout = ({ children }) => (
           }}
         >
           <main>{children}</main>
+
+       
           <Footer />
+
         </div>
       </>
     )}

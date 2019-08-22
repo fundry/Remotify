@@ -8,12 +8,10 @@ import Home from './home/home';
 //layout component contains the footer component
 // home component holds the landing page component
 const IndexPage = () => (
-  <Layout>
+  <Layout footer={true}>
     <SEO title="Home" />
     <Banner />
-    <div>
-      <Home />
-    </div>
+    <Home />
   </Layout>
 );
 
