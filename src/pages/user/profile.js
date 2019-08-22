@@ -19,14 +19,15 @@ const profile = () => {
 
   const Cards = styled.div({
     ...autoGrid(220, 20),
-    padding: '2em',
+    padding: '3em',
+    marginLeft: '1.5em',
   });
 
   const Card = styled.div({
     height: '20vh',
     padding: '1em',
     paddingTop: '2.5em',
-    width: '12em',
+    width: '15em',
     borderRadius: '10px',
     boxShadow: '0px 4px 6px grey',
     background: 'black',
@@ -122,6 +123,7 @@ const profile = () => {
                   }}
                   placeholder="Team Name"
                 />
+
                 <Button
                   onClick={() => {
                     createButton();
@@ -132,6 +134,8 @@ const profile = () => {
               </Flex>
             </div>
           )}
+
+          <p> Teams / Profile </p>
 
           <Hover>
             {!Chart ? (
@@ -190,7 +194,7 @@ const profile = () => {
         <Link to="./user/workers">
           <Hover>
             <h2> Creatella </h2>
-            <h5 style={{textAlign  : 'center'}} > 205 workers</h5>
+            <h5 style={{ textAlign: 'center' }}> 205 workers</h5>
           </Hover>
         </Link>
       </Flex>

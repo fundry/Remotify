@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import Flex from 'styled-flex-component';
 import { GoDesktopDownload } from 'react-icons/go';
+import { DiApple, DiWindows, DiLinux } from 'react-icons/di';
 import posed from 'react-pose';
 
 import Power from './power';
@@ -79,7 +80,7 @@ const Home = () => {
                 <Flex justifyAround>
                   <Buttons style={{ boxShadow: '0px 7px 7px #0b33a2' }}>
                     <Flex>
-                      <GoDesktopDownload
+                      <DiApple
                         style={{
                           color: 'white',
                           fontSize: '2em',
@@ -92,7 +93,7 @@ const Home = () => {
                   </Buttons>{' '}
                   <Buttons style={{ boxShadow: '0px 7px 7px #0b33a2' }}>
                     <Flex>
-                      <GoDesktopDownload
+                      <DiWindows
                         style={{
                           color: 'white',
                           fontSize: '2em',
@@ -105,7 +106,7 @@ const Home = () => {
                   </Buttons>{' '}
                   <Buttons style={{ boxShadow: '0px 7px 7px #0b33a2' }}>
                     <Flex>
-                      <GoDesktopDownload
+                      <DiLinux
                         style={{
                           color: 'white',
                           fontSize: '2em',
