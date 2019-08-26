@@ -7,17 +7,19 @@ import { Planet } from 'react-kawaii';
 import { FiCheck } from 'react-icons/fi';
 import { Mutation, ApolloProvider } from 'react-apollo';
 import { Formik, Form , Field } from 'formik';
+import { observer, inject } from 'mobx-react';
 import * as Yup from 'yup';
+
 
 import { Group } from '../../data/mutations';
 import config from '../../data/config';
 import Header from '../head/header';
 
-const validation = Yup.object().shape({
+const validation = Yup.object ().shape({
   email: Yup.string().email('invalid email address'),
 });
 
-const form = () => {
+const form = (props) => {
   const Button = styled.button`
     background: #361f94;
     text-align: right;
@@ -78,7 +80,7 @@ const form = () => {
               <Flex justifyCenter>
                 <div style={{ padding: '1em' }}>
                   <h2 style={{ textAlign: 'center' }}>
-                    Create <b> Group Team </b>{' '}
+                    Create <b>{props.Name} </b>{' '}
                   </h2> 
                   <hr />
                   <Formik
@@ -230,4 +232,4 @@ const form = () => {
   );
 };
 
-export default form;
+export default inject('pricingStore')(observer(form));

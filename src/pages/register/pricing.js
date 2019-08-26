@@ -4,6 +4,7 @@ import Flex from 'styled-flex-component';
 import { FiCheck } from 'react-icons/fi';
 import { Card } from 'react-bootstrap';
 import { Link } from 'gatsby';
+import { observer, inject } from 'mobx-react';
 
 const autoGrid = (minColumnWidth = 250, gridGap = 0) => ({
   display: 'grid',
@@ -36,13 +37,15 @@ const Div = {
   padding: ' 1em',
 };
 
-const register = () => {
+const Register = (props) => {
   return (
     <div>
       <div style={Div}>
         <Flex justifyCenter>
           <div style={{ padding: '2em', width: '80%' }}>
-            <h2 style={{ textAlign: 'center' , fontWeight : 'bold' }}>Pricing.</h2>
+            <h2 style={{ textAlign: 'center', fontWeight: 'bold' }}>
+              Pricing.
+            </h2>
 
             <code>
               <p
@@ -50,7 +53,7 @@ const register = () => {
                   color: 'red',
                   textAlign: 'center',
                   fontSize: '1.2em',
-                }}
+                }}        
               >
                 Remotify is currently in a Beta release and would remain free
                 untill a stable release.
@@ -64,7 +67,7 @@ const register = () => {
         </Flex>
 
         <Flex justifyCenter>
-          <Link to="/register/create">
+          <Link to="/register/form">
             <Button> Get Started (Free) </Button>
           </Link>
         </Flex>
@@ -501,4 +504,4 @@ const register = () => {
   );
 };
 
-export default register;
+export default inject('pricingStore')(observer(Register));

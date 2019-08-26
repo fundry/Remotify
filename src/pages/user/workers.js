@@ -1,10 +1,10 @@
 import React from 'react';
-import Header from '../head/header';
-import Layout from '../../components/layout';
 import Flex from 'styled-flex-component';
 import styled from 'styled-components';
 
-import List from './List'
+import List from './List';
+import Header from '../head/header';
+import Layout from '../../components/layout';
 
 const Button = styled.button`
   background: #361f94
@@ -37,11 +37,12 @@ const Box = styled.div({
 });
 
 const Workers = () => {
+
   return (
     <Layout>
       <Header style={false} />
       <div>
-       <List />
+        <List />
 
         <Flex justifyCenter>
           <Box>
@@ -58,4 +59,4 @@ const Workers = () => {
   );
 };
 
-export default Workers;
+export default  Workers;
