@@ -232,4 +232,4 @@ const form = (props) => {
   );
 };
 
-export default inject('pricingStore')(observer(form));
+export default  form;

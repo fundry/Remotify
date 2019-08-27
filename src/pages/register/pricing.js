@@ -501,7 +501,7 @@ const Register = (props) => {
         </Card>
       </Cards>
     </div>
-  );
+  ); 
 };
 
-export default inject('pricingStore')(observer(Register));
+export default Register;

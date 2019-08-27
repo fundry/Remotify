@@ -58,6 +58,7 @@ const Home = () => {
 
   const [Download, setDownload] = useState(false);
 
+
   return (
     <div>
       <div style={{ padding: '2em', backgroundColor: '#f2f5ff' }}>
@@ -156,6 +157,8 @@ const Home = () => {
         <Integrate />
         <Pricing />
       </div>
+
+   
     </div>
   );
 };

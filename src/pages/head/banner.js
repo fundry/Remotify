@@ -1,11 +1,11 @@
 import React from 'react';
-import { observer, inject } from 'mobx-react';
+// import { observer, inject } from 'mobx-react';
 
 import Header from './header';
 import { Query } from 'react-apollo';
 import { Test } from '../../data/queries';
 
-const Banner = ({ Store }) => {
+const Banner = () => {
   const Contain = {
     background: ' #F0B65F ',
     color: '#fff',
@@ -22,9 +22,6 @@ const Banner = ({ Store }) => {
 </Query>
 */
 
-  console.log(Store);
-  console.log(Store.count);
-
   return (
     <div style={Contain}>
       <Header />
@@ -37,10 +34,10 @@ const Banner = ({ Store }) => {
       >
         <h2 style={{ fontWeight: 'bold' }}> Productivity Centralized. </h2>
 
-        <button onClick={() => Store.increase}>Click</button>
       </div>
     </div>
   );
 };
 
-export default inject('Store')(observer(Banner));
+// export default inject('Store')(observer(Banner));
+export default Banner;
