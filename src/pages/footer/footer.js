@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Flex from 'styled-flex-component';
 import { Icon } from 'semantic-ui-react';
-import { Link } from 'gatsby'
+import { Link } from 'gatsby';
 
 const Footer = () => {
   const Div = {
@@ -24,16 +24,15 @@ const Footer = () => {
   const Testing = styled.div({
     textAlign: 'center',
     background: '#0e2f5a',
-    padding: '0.5em',
+    padding: '1em',
     color: '#fff',
   });
 
   const Button = styled.button`
     background: #fff;
-    text-align: right;
     border: 1px solid #0e2f5a;
-    border-radius: 7px;
-    color: #5919AB;
+    border-radius: 4px;
+    color: #5919ab;
     margin: 0 1em;
     padding: 0.50em 1.5em;
     :hover {
@@ -43,18 +42,20 @@ const Footer = () => {
   `;
 
   const Test = styled.p`
-  font-size: 1.2em;
-    padding-top : 10px
+    font-size: 1.2em;
+    padding-top: 10px;
   `;
 
   return (
     <div>
       <Testing>
         <Flex justifyBetween>
-          <Test> Join the Remotify beta testing program !</Test>
+          <Test style={{ paddingLeft: '30px' }}>
+            Join the Remotify beta testing program !
+          </Test>
 
-          <Link to="/testers/testers" >
-          <Button> Join  Program</Button>
+          <Link to="/testers/testers">
+            <Button style={{ paddingRight: '20px' , fontSize: '1.1em' }}> Join Program</Button>
           </Link>
         </Flex>
       </Testing>

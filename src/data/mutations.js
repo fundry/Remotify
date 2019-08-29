@@ -8,4 +8,24 @@ const Group = gql`
   }
 `;
 
-export { Group };
+const Organization = gql`
+  mutation createOrg(
+    $name: String
+    $password: String
+    $description: String
+    $email: String
+    $country: String
+    $state: String
+  ) {
+    createOrganization(
+      name: $name
+      password: $password
+      description: $description
+      state: $state
+      email: $email
+      country: $country
+    )
+  }
+`;
+
+export { Group, Organization };

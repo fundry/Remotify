@@ -53,7 +53,7 @@ const Register = (props) => {
                   color: 'red',
                   textAlign: 'center',
                   fontSize: '1.2em',
-                }}        
+                }}
               >
                 Remotify is currently in a Beta release and would remain free
                 untill a stable release.
@@ -67,7 +67,7 @@ const Register = (props) => {
         </Flex>
 
         <Flex justifyCenter>
-          <Link to="/register/form">
+          <Link to="/register/services">
             <Button> Get Started (Free) </Button>
           </Link>
         </Flex>
@@ -209,9 +209,11 @@ const Register = (props) => {
               </ol>
             </ul>
 
-            <Flex justifyCenter>
-              <Button> Purchase Remote Acess </Button>
-            </Flex>
+            <Link to="/register/group.form">
+              <Flex justifyCenter>
+                <Button> Purchase Remote Acess </Button>
+              </Flex>
+            </Link>
             <br />
           </Card.Body>
         </Card>
@@ -351,9 +353,11 @@ const Register = (props) => {
               </ol>
             </ul>
 
-            <Flex justifyCenter>
-              <Button> Purchase Team Acess </Button>
-            </Flex>
+            <Link to="//register/team.form">
+              <Flex justifyCenter>
+                <Button> Purchase Team Acess </Button>
+              </Flex>
+            </Link>
             <br />
           </Card.Body>
         </Card>
@@ -374,7 +378,7 @@ const Register = (props) => {
               borderRadius: '10px',
             }}
           >
-            <h3 style={{ fontWeight: 'bold' }}> Enterprise </h3>
+            <h3 style={{ fontWeight: 'bold' }}> Organization </h3>
             <h5> 000$ </h5>
           </Card.Header>
           <Card.Body
@@ -493,15 +497,17 @@ const Register = (props) => {
               </ol>
             </ul>
 
-            <Flex justifyCenter>
-              <Button> Purchase Remote Acess </Button>
-            </Flex>
+            <Link to="//register/organization.form">
+              <Flex justifyCenter>
+                <Button> Purchase Enterprise Acess </Button>
+              </Flex>
+            </Link>
             <br />
           </Card.Body>
         </Card>
       </Cards>
     </div>
-  ); 
+  );
 };
 
 export default Register;

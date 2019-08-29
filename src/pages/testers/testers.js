@@ -1,12 +1,18 @@
 import React from 'react';
+
 import Header from '../head/header';
+import Layout from '../../components/layout';
 
 const Testers = () => {
   return (
-    <div>
+    <Layout>
       <Header style={false} />
-      <p> Testers page. </p>
-    </div>
+      
+      <div>
+        <h1> TESTERS PAGE  </h1>
+      </div>
+
+    </Layout>
   );
 };
 
