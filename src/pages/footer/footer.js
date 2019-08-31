@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import Flex from 'styled-flex-component';
 import { Icon } from 'semantic-ui-react';
-import { Link } from 'gatsby';
+import { Modal } from 'react-bootstrap';
 
 const Footer = () => {
   const Div = {
@@ -28,13 +28,28 @@ const Footer = () => {
     color: '#fff',
   });
 
+  const Input = styled.input({
+    padding: '1em',
+    paddingLeft: '2em',
+    width: '26em',
+    border: '0px',
+    background: 'transparent',
+  });
+
+  const Box = styled.div({
+    border: '1px solid #361f94 ',
+    borderRadius: '0px 15px 15px 0px',
+    height: '7vh',
+  });
+
   const Button = styled.button`
-    background: #fff;
+    background: #5919ab;
     border: 1px solid #0e2f5a;
-    border-radius: 4px;
-    color: #5919ab;
+    border-radius: 0px 15px 15px 0px  ;
+    color: #fff;
+    height: 7vh,
     margin: 0 1em;
-    padding: 0.50em 1.5em;
+    padding: 1.27em 1.7em;
     :hover {
       border: 2px solid #0e2f5a;
       font-size: 1em;
@@ -46,17 +61,63 @@ const Footer = () => {
     padding-top: 10px;
   `;
 
+  const [TestModal, setTestModal] = useState(false);
+
+  const Body = styled.div({
+    padding: '1.4em',
+  });
+
+  const Header = styled.h3({
+    textAlign: 'center',
+  });
+
+  const Text = styled.p({
+    padding: '0.5em',
+    textAlign: 'center',
+  });
+
   return (
     <div>
+      <Modal
+        show={TestModal}
+        onHide={() => setTestModal(false)}
+        style={{ paddingTop: '10%' }}
+      >
+        <Body>
+          <Header> Remotify Beta Testing </Header>
+
+          <Text>
+            Testing program Testing program Testing program Testing program
+            Testing program Testing program Testing program Testing program
+            Testing program Testing program
+          </Text>
+
+          <Flex justifyCenter>
+            <Box>
+              <Flex justifyBetween>
+                <Input placeholder="Email Address" />
+
+                <Button> Invite </Button>
+              </Flex>
+            </Box>
+          </Flex>
+        </Body>
+      </Modal>
+
       <Testing>
         <Flex justifyBetween>
           <Test style={{ paddingLeft: '30px' }}>
             Join the Remotify beta testing program !
           </Test>
 
-          <Link to="/testers/testers">
-            <Button style={{ paddingRight: '20px' , fontSize: '1.1em' }}> Join Program</Button>
-          </Link>
+          <Button
+            onClick={() => {
+              setTestModal(true);
+            }}
+            style={{ paddingRight: '20px', fontSize: '1.1em' }}
+          >
+            Join Program
+          </Button>
         </Flex>
       </Testing>
 
