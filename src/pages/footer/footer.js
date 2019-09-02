@@ -49,6 +49,20 @@ const Footer = () => {
     color: #fff;
     height: 7.1vh,
     margin: 0 1em;
+    padding: 0.50em 1.5em;
+    :hover {
+      border: 2px solid #0e2f5a;
+      font-size: 1em;
+    }
+  `;
+
+  const ModalButton = styled.button`
+    background: #5919ab;
+    border: 1px solid #0e2f5a;
+    border-radius: 0px 15px 15px 0px  ;
+    color: #fff;
+    height: 7.1vh,
+    margin: 0 1em;
     padding: 1.25em 1.7em;
     :hover {
       border: 2px solid #0e2f5a;
@@ -97,7 +111,9 @@ const Footer = () => {
               <Flex justifyBetween>
                 <Input placeholder="Email Address" />
 
-                <Button> Invite </Button>
+                <ModalButton
+                  onClick={() => {setTestModal(false)}}
+                > Invite </ModalButton>
               </Flex>
             </Box>
           </Flex>
