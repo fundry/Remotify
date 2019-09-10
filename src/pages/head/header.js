@@ -4,7 +4,6 @@ import Img from 'react-image';
 import styled from 'styled-components';
 import Flex from 'styled-flex-component';
 // import useWindowWidth from "../../hook_style"
- 
 
 const Header = (props) => {
   const Div = {
@@ -89,8 +88,8 @@ const Header = (props) => {
                     <Title> Resources </Title>
                   </Link>
                 </div>
-                <Link to="/">
-                  <Button onClick={() => alert('hi')}> Download </Button>
+                <Link to="/download/download">
+                  <Button> Download </Button>
                 </Link>
               </Flex>
             </Flex>
@@ -123,8 +122,8 @@ const Header = (props) => {
                     <Title> Resources </Title>
                   </Link>
                 </div>
-                <Link to="/">
-                  <Button onClick={() => alert('hi')}> Download </Button>
+                <Link to="/download/download">
+                  <Button> Download </Button>
                 </Link>
               </Flex>
             </Flex>
