@@ -3,12 +3,14 @@ import styled from 'styled-components';
 import Flex from 'styled-flex-component';
 
 const Updates = () => {
+  const Body = styled.div({
+    padding: '1em',
+  });
+
   return (
-    <div>
-      <div>
-        <p> UPDATES PAGE </p>
-      </div>
-    </div>
+    <Body>
+      <p> UPDATES PAGE </p>
+    </Body>
   );
 };
 
