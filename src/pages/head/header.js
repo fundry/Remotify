@@ -56,7 +56,7 @@ const Header = (props) => {
     }
   `;
 
-  const NameDiv = styled.div`margin-left: 4%;`;
+  const NameDiv = styled.div`margin-left: 2%;`;
 
   // const hooks = useWindowWidth()
   return (

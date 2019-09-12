@@ -4,6 +4,7 @@ import Flex from 'styled-flex-component';
 import { GoDesktopDownload } from 'react-icons/go';
 import { DiApple, DiWindows, DiLinux } from 'react-icons/di';
 import posed from 'react-pose';
+import { Link } from 'gatsby';
 
 import Power from './power';
 import Integrate from './integrate';
@@ -58,7 +59,6 @@ const Home = () => {
 
   const [Download, setDownload] = useState(false);
 
-
   return (
     <div>
       <div style={{ padding: '2em', backgroundColor: '#f2f5ff' }}>
@@ -77,49 +77,58 @@ const Home = () => {
           </Flex>
           <div>
             {Download ? (
-              <Flex justifyCenter>
-                <Flex justifyAround>
-                  <Buttons style={{ boxShadow: '0px 7px 7px #0b33a2' }}>
-                    <Flex>
-                      <DiApple
-                        style={{
-                          color: 'white',
-                          fontSize: '2em',
-                          paddingTop: '1px',
-                          paddingRight: '5px',
-                        }}
-                      />
-                      <p style={{ paddingTop: '5px' }}> macOs</p>
-                    </Flex>
-                  </Buttons>{' '}
-                  <Buttons style={{ boxShadow: '0px 7px 7px #0b33a2' }}>
-                    <Flex>
-                      <DiWindows
-                        style={{
-                          color: 'white',
-                          fontSize: '2em',
-                          paddingTop: '1px',
-                          paddingRight: '5px',
-                        }}
-                      />
-                      <p style={{ paddingTop: '5px' }}> Windows</p>
-                    </Flex>
-                  </Buttons>{' '}
-                  <Buttons style={{ boxShadow: '0px 7px 7px #0b33a2' }}>
-                    <Flex>
-                      <DiLinux
-                        style={{
-                          color: 'white',
-                          fontSize: '2em',
-                          paddingTop: '1px',
-                          paddingRight: '5px',
-                        }}
-                      />
-                      <p style={{ paddingTop: '5px' }}> Linux</p>
-                    </Flex>
-                  </Buttons>
+              <div>
+                <Flex justifyCenter>
+                  <Flex justifyAround>
+                    <Buttons style={{ boxShadow: '0px 7px 7px #0b33a2' }}>
+                      <Flex>
+                        <DiApple
+                          style={{
+                            color: 'white',
+                            fontSize: '2em',
+                            paddingTop: '1px',
+                            paddingRight: '5px',
+                          }}
+                        />
+                        <p style={{ paddingTop: '5px' }}> macOs</p>
+                      </Flex>
+                    </Buttons>{' '}
+                    <Buttons style={{ boxShadow: '0px 7px 7px #0b33a2' }}>
+                      <Flex>
+                        <DiWindows
+                          style={{
+                            color: 'white',
+                            fontSize: '2em',
+                            paddingTop: '1px',
+                            paddingRight: '5px',
+                          }}
+                        />
+                        <p style={{ paddingTop: '5px' }}> Windows</p>
+                      </Flex>
+                    </Buttons>{' '}
+                    <Buttons style={{ boxShadow: '0px 7px 7px #0b33a2' }}>
+                      <Flex>
+                        <DiLinux
+                          style={{
+                            color: 'white',
+                            fontSize: '2em',
+                            paddingTop: '1px',
+                            paddingRight: '5px',
+                          }}
+                        />
+                        <p style={{ paddingTop: '5px' }}> Linux</p>
+                      </Flex>
+                    </Buttons>
+                  </Flex>
+                </Flex>{' '}
+                <br />
+                <Flex justifyCenter>
+                  <h6>
+                    By clicking download you agree to the Remotify{' '}
+                    <Link to="/terms"> Terms </Link>
+                  </h6>
                 </Flex>
-              </Flex>
+              </div>
             ) : (
               <Flex justifyCenter>
                 <div>
@@ -157,8 +166,6 @@ const Home = () => {
         <Integrate />
         <Pricing />
       </div>
-
-   
     </div>
   );
 };
