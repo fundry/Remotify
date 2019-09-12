@@ -20,7 +20,11 @@ const download = () => {
   const Linux = styled.div({ padding: '1.5em' });
   const Head = styled.div({
     padding: '1em',
+    paddingTop: '20px',
+    paddingBottom: '20px',
     textAlign: 'center',
+    backgroundColor: '#f2f5ff',
+    boxShadow: '0px 3px 5px grey',
   });
 
   const Button = styled.button`
@@ -54,7 +58,7 @@ const download = () => {
   const [Update, setUpdate] = useState(false);
   return (
     <Layout>
-      <Header style={false} />
+      <Header style="download" />
       <div>
         <Head>
           <Text>

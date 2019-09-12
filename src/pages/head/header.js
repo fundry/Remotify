@@ -9,7 +9,7 @@ const Header = (props) => {
   const Div = {
     padding: '1em',
     paddingTop: '1em',
-    backgroundColor: 'transparent',
+    backgroundColor: props.style == 'download' ? '#f2f5ff' : 'transparent',
     paddingTop: '1%',
     boxShadow: '0px 7px 7px #D87E2C',
   };
