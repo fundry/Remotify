@@ -1,11 +1,7 @@
-// import React from 'react';
-// import { ApolloProvider } from 'react-apollo';
-// import Client from './config';
-// import { Provider } from 'mobx';
-// import { Pricingstore, Teststore } from '../state/';
+import React from 'react';
+import { ApolloProvider } from 'react-apollo';
+import Client from './config';
 
-// export const wrapRootElement = ({ element }) => (
-//   <ApolloProvider client={Client}>
-//       {element}
-//     </ApolloProvider>
-// );
+export const wrapRootElement = ({ element }) => (
+  <ApolloProvider client={Client}>{element}</ApolloProvider>
+);

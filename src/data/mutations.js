@@ -9,13 +9,13 @@ const Group = gql`
 `;
 
 const Organization = gql`
-  mutation createOrg(
-    $name: String
-    $password: String
-    $description: String
-    $email: String
+  mutation createOrganization(
+    $name: String!
     $country: String
     $state: String
+    $description: String
+    $email: String
+    $password: String
   ) {
     createOrganization(
       name: $name
@@ -24,7 +24,9 @@ const Organization = gql`
       state: $state
       email: $email
       country: $country
-    )
+    ) {
+      name
+    }
   }
 `;
 

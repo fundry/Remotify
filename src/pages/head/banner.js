@@ -11,17 +11,7 @@ const Banner = () => {
     color: '#fff',
   };
 
-  /*
-  <Query query={Test}>
-  {({ loading, error, data: { info } }) => {
-    if (loading) return <p> loadinsg </p>;
-    if (error) return <p> error </p>;
-
-    return <p> {info} </p>;
-  }}
-</Query>
-*/
-
+  
   return (
     <div style={Contain}>
       <Header />
@@ -33,6 +23,15 @@ const Banner = () => {
         }}
       >
         <h2 style={{ fontWeight: 'bold' }}> Productivity Centralized. </h2>
+
+  <Query query={Test}>
+    {({ loading, error, data: { info } }) => {
+      if (loading) return <p> loadinsg </p>;
+      if (error) return <p> error </p>;
+
+      return <p> {info} </p>;
+  }}
+</Query>
 
       </div>
     </div>
