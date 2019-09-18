@@ -112,8 +112,13 @@ const Footer = () => {
                 <Input placeholder="Email Address" />
 
                 <ModalButton
-                  onClick={() => {setTestModal(false)}}
-                > Invite </ModalButton>
+                  onClick={() => {
+                    setTestModal(false);
+                  }}
+                >
+                  {' '}
+                  Invite{' '}
+                </ModalButton>
               </Flex>
             </Box>
           </Flex>
@@ -184,8 +189,8 @@ const Footer = () => {
           }}
         >
           <p>
-            Copyright© {new Date().getFullYear()} , a subsidiary of the
-            <a href="/"> Fundry Program </a>.
+            Copyright © {new Date().getFullYear()} , a subsidiary of the
+            <a href="https://www.fundry.netlify.com"> Fundry Program </a>.
             <br /> <a href="/"> Terms of Service </a> or{' '}
             <a href="/"> Privacy Policies </a>{' '}
           </p>

@@ -11,28 +11,29 @@ const Banner = () => {
     color: '#fff',
   };
 
-  
+  const testingGraphql = false;
   return (
     <div style={Contain}>
       <Header />
 
       <div
         style={{
-          padding: '5em',
+          padding: '5.5em',
           textAlign: 'center',
         }}
       >
         <h2 style={{ fontWeight: 'bold' }}> Productivity Centralized. </h2>
 
-  <Query query={Test}>
-    {({ loading, error, data: { info } }) => {
-      if (loading) return <p> loadinsg </p>;
-      if (error) return <p> error </p>;
+        {testingGraphql ? (
+          <Query query={Test}>
+            {({ loading, error, data: { info } }) => {
+              if (loading) return <p> loadinsg </p>;
+              if (error) return <p> error </p>;
 
-      return <p> {info} </p>;
-  }}
-</Query>
-
+              return <p> {info} </p>;
+            }}
+          </Query>
+        ) : null}
       </div>
     </div>
   );
