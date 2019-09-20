@@ -49,7 +49,9 @@ const download = () => {
     color: #000;
     margin: 0 1em;
     padding: 1em 3em;
+    outline : none
     :hover {
+      transition: 24s ease-in-out
       font-size: 1em;
       cursor: pointer;
     }
