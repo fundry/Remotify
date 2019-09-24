@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import Flex from 'styled-flex-component';
-import { Helmet } from 'react-helmet';
 import { Card } from 'react-bootstrap';
 import { Planet } from 'react-kawaii';
 import { FiCheck } from 'react-icons/fi';
@@ -10,16 +9,24 @@ import { Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
 
 import Layout from '../../components/layout';
-import { Group } from '../../data/mutations';
-import config from '../../data/config';
 import Header from '../head/header';
 import { Organization } from '../../data/mutations';
 
 const validation = Yup.object().shape({
-  email: Yup.string().email('invalid email address'),
+  name: Yup.string()
+    .min(3, 'Not less than 3')
+    .max(24, 'More than 24')
+    .required('must have a name '),
+  email: Yup.string()
+    .email('Must be an email')
+    .max(37, 'More than 37')
+    .required('must have a name '),
 });
 
 const form = (props) => {
+  // const data = React.createRef();
+  // console.log(data);
+
   const Button = styled.button`
     background: #361f94;
     text-align: right;
@@ -39,7 +46,7 @@ const form = (props) => {
   const [Email, sentEmail] = useState(false);
 
   const [Text, addText] = useState('');
-
+  console.log(Text);
   const [Mail, addMail] = useState('');
 
   const [Validity, setValidity] = useState(true);
@@ -67,40 +74,55 @@ const form = (props) => {
                       console.log(values);
                     }}
                   >
-                    {({ isSubmitting }) => (
+                    {({
+                      isSubmitting,
+                      handleChange,
+                      handleBlur,
+                      values,
+                      errors,
+                    }) => (
                       <Form>
                         <div>
-                          <h5> Team Name</h5>
+                          <label htmlFor="name" />
+                          <h5> Team Name </h5>
                           <input
                             style={{
                               height: '7.5vh',
                               width: '30em',
                               borderRadius: '5px',
                               paddingLeft: '10px',
-                              border: '1px solid  #361f94 ',
+                              border: !errors.name
+                                ? '1px solid  #361f94 '
+                                : '2.5px solid  red ',
                             }}
+                            id="name"
                             type="text"
+                            value={values.name}
                             placeholder="dragonblade"
-                            onChange={(e) => {
-                              addText(e.target.value);
-                            }}
+                            onChange={handleChange}
+                            onBlur={handleBlur}
                           />
                         </div>
                         <br />
                         <br />
+                        <p> {values.email} </p>
                         <div>
                           <h5> Team Email Address </h5>
+                          <label htmlFor="email" />
                           <input
                             style={{
                               height: '7.5vh',
                               width: '30em',
                               borderRadius: '5px',
                               paddingLeft: '10px',
-                              border: '1px solid  #361f94 ',
+                              border: !errors.email
+                                ? '1px solid  #361f94 '
+                                : '2.5px solid  red ',
                             }}
-                            onChange={(e) => {
-                              addMail(e.target.value);
-                            }}
+                            value={values.email}
+                            onChange={handleChange}
+                            onBlur={handleBlur}
+                            id="email"
                             type="email"
                             placeholder="team@email.com"
                           />
@@ -122,7 +144,6 @@ const form = (props) => {
                           />
                         </div>
                         <br />
-
                         {!Email ? (
                           <Flex justifyCenter>
                             <Button
@@ -130,9 +151,9 @@ const form = (props) => {
                                 sentEmail(true);
                                 createOrganization({
                                   variables: {
-                                    name: Text,
+                                    name: values.name,
                                     password: Text,
-                                    email: Text,
+                                    email: values.email,
                                     description: Text,
                                     country: Text,
                                     state: Text,

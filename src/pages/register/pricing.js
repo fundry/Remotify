@@ -14,7 +14,7 @@ const autoGrid = (minColumnWidth = 250, gridGap = 0) => ({
 
 const Cards = styled.div({
   ...autoGrid(350, 20),
-  padding: '6em',
+  padding: '4em',
 });
 
 const Button = styled.button`
