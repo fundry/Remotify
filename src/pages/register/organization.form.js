@@ -24,9 +24,6 @@ const validation = Yup.object().shape({
 });
 
 const form = (props) => {
-  // const data = React.createRef();
-  // console.log(data);
-
   const Button = styled.button`
     background: #361f94;
     text-align: right;
@@ -45,11 +42,7 @@ const form = (props) => {
 
   const [Email, sentEmail] = useState(false);
 
-  const [Text, addText] = useState('');
-  console.log(Text);
   const [Mail, addMail] = useState('');
-
-  const [Validity, setValidity] = useState(true);
 
   return (
     <Layout>
@@ -64,14 +57,14 @@ const form = (props) => {
               <Flex justifyCenter>
                 <div style={{ padding: '1em' }}>
                   <h2 style={{ textAlign: 'center' }}>
-                    Create <b> Organization </b>{' '}
+                    Create <b> Organization </b>
                   </h2>
                   <hr />
                   <Formik
                     initialValues={{ email: '', name: '' }}
                     validationSchema={validation}
                     onSubmit={(values, { setSubmitting }) => {
-                      console.log(values);
+                      addMail(values.email);
                     }}
                   >
                     {({
@@ -105,7 +98,6 @@ const form = (props) => {
                         </div>
                         <br />
                         <br />
-                        <p> {values.email} </p>
                         <div>
                           <h5> Team Email Address </h5>
                           <label htmlFor="email" />
@@ -152,19 +144,19 @@ const form = (props) => {
                                 createOrganization({
                                   variables: {
                                     name: values.name,
-                                    password: Text,
+                                    password: values.name,
                                     email: values.email,
-                                    description: Text,
-                                    country: Text,
-                                    state: Text,
+                                    description: values.name,
+                                    country: values.name,
+                                    state: values.name,
                                   },
                                 });
                               }}
                               disabled={isSubmitting}
                               style={{
-                                filter: Validity
-                                  ? 'grayscale(0.01%) blur(0.01px)'
-                                  : 'grayscale(0%) blur(0px)',
+                                background: !errors.name
+                                  ? '#361f94'
+                                  : 'transparent',
                               }}
                             >
                               <p> Continue </p>
@@ -182,7 +174,7 @@ const form = (props) => {
                 <br />
                 <Card
                   style={{
-                    padding: '2em 5em 4em',
+                    padding: '2em 4em 3em',
                     boxShadow: '0px 7px 7px grey',
                   }}
                 >
@@ -216,8 +208,7 @@ const form = (props) => {
                             <div>
                               <Flex>
                                 <h5 style={{ paddingRight: '20px' }}>
-                                  {' '}
-                                  {" Haven't recieved it?"}{' '}
+                                  {" Haven't recieved it?"}
                                 </h5>
                                 <a href="github.com/vickywane"> Resend Mail </a>
                               </Flex>
@@ -226,7 +217,8 @@ const form = (props) => {
                         </Flex>
                       </div>
                     </Flex>
-                  </div>
+                  </div>{' '}
+                  <br />
                 </Card>
               </Flex>
             )}
