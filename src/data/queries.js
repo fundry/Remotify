@@ -6,4 +6,18 @@ const Test = gql`
   }
 `;
 
-export { Test };
+const Organization = gql`
+  query {
+    organization(where: { id: "cjzuenzqh007k0a34qveq8o08" }) {
+      name
+      type
+      email
+      country
+      state
+      createdAt
+      id
+    }
+  }
+`;
+
+export { Test, Organization };

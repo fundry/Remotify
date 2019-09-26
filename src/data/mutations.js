@@ -30,4 +30,20 @@ const Organization = gql`
   }
 `;
 
-export { Group, Organization };
+const loginOrganization = gql`
+  mutation loginOrg {
+    loginOrganization(
+      where: { id: "ck00ir66t000v0734swie9sxf" }
+      name: "google"
+      password: "wegoogle"
+    ) {
+      token
+      organization {
+        name
+        password
+      }
+    }
+  }
+`;
+
+export { Group, Organization, loginOrganization };

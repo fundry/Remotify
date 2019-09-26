@@ -78,14 +78,19 @@ const Header = (props) => {
                 </Flex>
               </NameDiv>
               <Flex>
-                <div style={{ paddingRight: '30px' }}>
+                <div style={{ paddingRight: '20px' }}>
                   <Link to="/">
                     <Title> Team </Title>
                   </Link>
                 </div>
-                <div style={{ paddingRight: '50px' }}>
+                <div style={{ paddingRight: '20px' }}>
                   <Link to="/">
                     <Title> Resources </Title>
+                  </Link>
+                </div>{' '}
+                <div style={{ paddingRight: '20px' }}>
+                  <Link to="user/login">
+                    <Title> Login </Title>
                   </Link>
                 </div>
                 <Link to="/download/download">
@@ -117,9 +122,14 @@ const Header = (props) => {
                     <Title> Team </Title>
                   </Link>
                 </div>
-                <div style={{ paddingRight: '50px' }}>
+                <div style={{ paddingRight: '30px' }}>
                   <Link to="/">
                     <Title> Resources </Title>
+                  </Link>
+                </div>{' '}
+                <div style={{ paddingRight: '30px' }}>
+                  <Link to="user/login">
+                    <Title> Login </Title>
                   </Link>
                 </div>
                 <Link to="/download/download">
