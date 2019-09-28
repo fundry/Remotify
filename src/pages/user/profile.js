@@ -93,6 +93,7 @@ const profile = () => {
   const [Create, setCreate] = useState(false);
   const [Chart, setChart] = useState(false);
   const [teamModal, setteamModal] = useState(false);
+  const [Error, setError] = useState(false);
 
   const createButton = () => {
     setCreate(false);
@@ -102,8 +103,9 @@ const profile = () => {
     <Layout>
       <Header style={false} />
       <Query query={Organization}>
-        {({ loading, data }) => {
+        {({ loading, data, error }) => {
           if (loading) return <p> loadinsg </p>;
+          if (error) setError('Network Error');
           console.log(data);
           return (
             <div>
@@ -201,8 +203,9 @@ const profile = () => {
                     <h2> Cretella</h2>
                     <h5 style={{ textAlign: 'center' }}> 205 workers</h5>
                   </Hover>
-                </Link>
+                </Link>{' '}
               </Flex>
+              <h4 style={{ textAlign: 'center' }}> {Error} </h4>
               <div>
                 {!Chart ? (
                   <Cards>
