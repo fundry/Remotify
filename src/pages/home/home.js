@@ -123,10 +123,16 @@ const Home = () => {
                 </Flex>{' '}
                 <br />
                 <Flex justifyCenter>
-                  <h6>
-                    By clicking download you agree to the Remotify{' '}
-                    <Link to="/terms"> Terms </Link>
-                  </h6>
+                  <div>
+                    <div style={{ textAlign: 'center' }}>
+                      <h6> Version 0.9(beta) </h6>
+                      <Link to="/download/download"> View Changelog</Link>
+                    </div>
+                    <h6>
+                      By clicking download you agree to the Remotify{' '}
+                      <Link to="/terms"> Terms </Link>
+                    </h6>
+                  </div>
                 </Flex>
               </div>
             ) : (
