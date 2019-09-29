@@ -16,11 +16,10 @@ const login = () => {
     height: 35px;
     border: 1px solid #0e2f5a;
     color: #fff;
-    margin: 0 1em;
-    padding: 0.25em 1.5em;
-    font-size: 1em;
+    padding: 0.50em 3em;
+    font-size: 1.1em;
     &:hover {
-      color: #fff;
+      color: #361f94;
       background: transparent;
     }
   `;
@@ -68,7 +67,7 @@ const login = () => {
                   style={{
                     border: !errors.email
                       ? '1px solid  #361f94 '
-                      : '2.5px solid  red ',
+                      : '2px solid  red ',
                   }}
                 />
               </div>
@@ -84,12 +83,12 @@ const login = () => {
                   style={{
                     border: !errors.email
                       ? '1px solid  #361f94 '
-                      : '2.5px solid  red ',
+                      : '2px solid  red ',
                   }}
                 />
               </div>{' '}
               <br />
-              <div>
+              <div style={{ textAlign: 'center' }}>
                 <Link to="/user/profile">
                   <Button> Login </Button>
                 </Link>{' '}
