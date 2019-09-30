@@ -126,6 +126,25 @@ const Lite = () => {
             <DiTrello style={{ fontSize: '3.5em' }} />
           </Card>
         </Bounce>
+
+     <Bounce>
+          <Card>
+            <DiCloud9 style={{ fontSize: '3.5em' }} />
+          </Card>
+        </Bounce>
+
+        <Bounce>
+          <Card>
+            <FiCodesandbox style={{ fontSize: '3.5em' }} />
+          </Card>
+        </Bounce>
+
+        <Bounce>
+          <Card>
+            <DiTrello style={{ fontSize: '3.5em' }} />
+          </Card>
+        </Bounce>
+
       </Apps>{' '}
     </Body>
   );
