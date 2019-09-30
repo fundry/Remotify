@@ -8,7 +8,10 @@ import Flex from 'styled-flex-component';
 const Lite = () => {
   const Body = styled.div`padding: 1em;`;
 
-  const Title = styled.h3`font-weight: bold;`;
+  const Title = styled.h3`
+    font-weight: bold;
+    color: #361f94;
+  `;
   const Header = styled.div`text-align: center;`;
 
   const Text = styled.p`
@@ -61,7 +64,7 @@ const Lite = () => {
     border: 1.3px solid #0e2f5a;
     border-radius: 2px;
     color: #361f94;
-    padding: 0.50em 2.75em;
+    padding: 0.50em 2.50em;
     :hover {
       border: 2px solid #0e2f5a;
       font-size: 1em;
@@ -88,11 +91,7 @@ const Lite = () => {
         </Button>
       </Header>
       <Apps>
-        <Bounce
-          onClick={() => {
-            alert('true');
-          }}
-        >
+        <Bounce>
           <Card>
             <DiTrello style={{ fontSize: '3.5em' }} />
           </Card>
