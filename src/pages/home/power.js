@@ -50,15 +50,6 @@ const Power = () => {
       </div>
       <div>
         <br />
-        <Flex justifyCenter>
-          <div style={{ padding: '1em' }}>
-            <Flex justifyCenter>
-              <img src={Worker} style={{ maxWidth: '35%' }} />
-            </Flex>
-
-            <h4 style={Header}>Your Tools Brought Together.</h4>
-          </div>{' '}
-        </Flex>
       </div>
     </Div>
   );

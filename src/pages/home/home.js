@@ -11,6 +11,7 @@ import Integrate from './integrate';
 import Sample from './svg/console_sample.svg';
 import Features from './features';
 import Pricing from '../register/pricing';
+import Lite from './lite';
 
 const Home = () => {
   const Title = {
@@ -168,6 +169,7 @@ const Home = () => {
 
       <div>
         <Power />
+        <Lite />
         <Features />
         <Integrate />
         <Pricing />
