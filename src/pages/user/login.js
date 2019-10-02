@@ -4,9 +4,11 @@ import { Link } from 'gatsby';
 import Flex from 'styled-flex-component';
 import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
+import {Mutation } from 'react-apollo'
 
 import Layout from '../../components/layout';
 import Header from '../head/header';
+import {Login } from '../../data/mutations'
 
 const login = () => {
   const Button = styled.button`
@@ -49,13 +51,36 @@ const login = () => {
 
       <br />
       <Flex justifyCenter>
+
+        <Mutation mutation={Login}>
+          {(loginOrganization) => (
         <Formik
-          initialValues={{ email: '', password: '' }}
+          initialValues={{ email: '', name : '' ,  password: '' }}
           validationSchema={validation}
           onSubmit={(values, { setSubmitting }) => {}}
         >
           {({ isSubmitting, handleChange, handleBlur, values, errors }) => (
             <Form>
+
+<br />
+<  div>
+                <Input
+                  value={values.name}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  id="name"
+                  type="name"
+                  placeholder="Name"
+                  style={{
+                    border: !errors.name
+                      ? '1px solid  #361f94 '
+                      : '2px solid  red ',
+                  }}
+                />
+              </div>
+
+  <br />
+
               <div>
                 <Input
                   value={values.email}
@@ -74,7 +99,7 @@ const login = () => {
               <br />
               <div>
                 <Input
-                  value={values.email}
+                  value={values.password}
                   onChange={handleChange}
                   onBlur={handleBlur}
                   id="password"
@@ -90,13 +115,27 @@ const login = () => {
               <br />
               <div style={{ textAlign: 'center' }}>
                 <Link to="/user/profile">
-                  <Button> Login </Button>
+                  <Button
+                  onClick = {() => {
+                      loginOrganization({
+                            variables: {
+                              name: values.name,
+                              email: values.email,
+                              password: values.password,
+                            },
+                          });
+                  }}
+                  
+                  > Login </Button>
                 </Link>{' '}
+              <br />
                 <br />
               </div>{' '}
             </Form>
           )}
         </Formik>
+          )}
+</Mutation>
       </Flex>
     </Layout>
   );

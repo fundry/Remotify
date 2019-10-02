@@ -30,8 +30,8 @@ const Organization = gql`
   }
 `;
 
-const loginOrganization = gql`
-  mutation loginOrg($email: String!, $name: String!, $passwordl: String!) {
+const Login = gql`
+  mutation loginOrg($email: String!, $name: String!, $password: String!) {
     loginOrganization(
       where: { email: $email }
       name: $name
@@ -46,4 +46,4 @@ const loginOrganization = gql`
   }
 `;
 
-export { Group, Organization, loginOrganization };
+export { Group, Organization, Login };
