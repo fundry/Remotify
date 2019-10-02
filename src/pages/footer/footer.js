@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import Flex from 'styled-flex-component';
-import { Icon } from 'semantic-ui-react';
 import { Modal } from 'react-bootstrap';
+
+import { FiGithub, FiTwitter, FiFacebook } from 'react-icons/fi';
 
 const Footer = () => {
   const Div = {
@@ -116,8 +117,7 @@ const Footer = () => {
                     setTestModal(false);
                   }}
                 >
-                  {' '}
-                  Invite{' '}
+                  Invite
                 </ModalButton>
               </Flex>
             </Box>
@@ -146,15 +146,12 @@ const Footer = () => {
         <div style={{ padding: '2%' }}>
           <Flex justifyAround>
             <div>
-              <h5 style={{ marginTop: '1em', color: '#fff' }}>
-                {' '}
-                Remotify.Inc{' '}
-              </h5>
+              <h5 style={{ marginTop: '1em', color: '#fff' }}>Remotify.Inc</h5>
 
               <Flex justifyCenter>
-                <Icon name="facebook" color="blue" />
-                <Icon name="twitter" color="blue" />
-                <Icon name="github" color="black" />
+                <FiFacebook style={{ color: 'black', fontSize: '1.5em' }} />
+                <FiTwitter style={{ color: 'blue', fontSize: '1.5em' }} />
+                <FiGithub style={{ color: 'black', fontSize: '1.5em' }} />
               </Flex>
             </div>
             <Flex column>
@@ -191,8 +188,8 @@ const Footer = () => {
           <p>
             Copyright © {new Date().getFullYear()} , a subsidiary of the
             <a href="https://www.fundry.netlify.com"> Fundry Program </a>.
-            <br /> <a href="/"> Terms of Service </a> or{' '}
-            <a href="/"> Privacy Policies </a>{' '}
+            <br /> <a href="/"> Terms of Service </a> or
+            <a href="/"> Privacy Policies </a>
           </p>
         </div>
       </footer>
