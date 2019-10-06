@@ -4,11 +4,11 @@ import { Link } from 'gatsby';
 import Flex from 'styled-flex-component';
 import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
-import {Mutation } from 'react-apollo'
+import { useMutation } from '@apollo/react-hooks';
 
 import Layout from '../../components/layout';
 import Header from '../head/header';
-import {Login } from '../../data/mutations'
+import { Login } from '../../data/mutations';
 
 const login = () => {
   const Button = styled.button`
@@ -45,25 +45,24 @@ const login = () => {
       .required('must have a name '),
   });
 
+  const [loginOrganization, { error, loading, data }] = useMutation(Login);
+  console.log(error, loading, data);
+
   return (
     <Layout>
       <Header style={false} />
 
       <br />
       <Flex justifyCenter>
-
-        <Mutation mutation={Login}>
-          {(loginOrganization) => (
         <Formik
-          initialValues={{ email: '', name : '' ,  password: '' }}
+          initialValues={{ email: '', name: '', password: '' }}
           validationSchema={validation}
           onSubmit={(values, { setSubmitting }) => {}}
         >
           {({ isSubmitting, handleChange, handleBlur, values, errors }) => (
             <Form>
-
-<br />
-<  div>
+              <br />
+              <div>
                 <Input
                   value={values.name}
                   onChange={handleChange}
@@ -78,9 +77,7 @@ const login = () => {
                   }}
                 />
               </div>
-
-  <br />
-
+              <br />
               <div>
                 <Input
                   value={values.email}
@@ -116,26 +113,26 @@ const login = () => {
               <div style={{ textAlign: 'center' }}>
                 <Link to="/user/profile">
                   <Button
-                  onClick = {() => {
+                    onClick={() => {
                       loginOrganization({
-                            variables: {
-                              name: values.name,
-                              email: values.email,
-                              password: values.password,
-                            },
-                          });
-                  }}
-                  
-                  > Login </Button>
+                        variables: {
+                          name: values.name,
+                          email: values.email,
+                          password: values.password,
+                        },
+                      });
+                    }}
+                  >
+                    {' '}
+                    Login{' '}
+                  </Button>
                 </Link>{' '}
-              <br />
+                <br />
                 <br />
               </div>{' '}
             </Form>
           )}
         </Formik>
-          )}
-</Mutation>
       </Flex>
     </Layout>
   );

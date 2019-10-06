@@ -50,7 +50,7 @@ const form = (props) => {
 
       <br />
 
-      <Mutation mutation={Group}>
+      <Mutation mutation={Group} ignoreResults={false}>
         {(createGroup) => (
           <div>
             {!Email ? (

@@ -5,6 +5,7 @@ import posed from 'react-pose';
 import { Link } from 'gatsby';
 import { FiX } from 'react-icons/fi';
 import { Query } from 'react-apollo';
+import { useQuery } from '@apollo/react-hooks';
 
 import Charts from './chart';
 import Header from '../head/header';
@@ -102,182 +103,174 @@ const profile = () => {
   return (
     <Layout>
       <Header style={false} />
-      <Query query={Organization}>
-        {({ loading, data, error }) => {
-          if (loading) return <p> loadinsg </p>;
-          if (error) setError('Network Error');
-          console.log(data);
-          return (
-            <div>
-              <Head
-                style={{
-                  boxShadow: '0px 3px 5px grey',
-                }}
-              >
-                <Flex justifyBetween>
-                  {!Create ? (
-                    <Button onClick={() => setCreate(true)}>
-                      <p>Create Team </p>
-                    </Button>
-                  ) : (
-                    <div>
-                      <Flex>
-                        <input
-                          style={{
-                            background: 'transparent',
-                            color: 'white',
-                            border: '0.7px solid white ',
-                            padding: '0.5em',
-                            paddingLeft: '2em',
-                            width: '20em',
-                          }}
-                          placeholder="Team Name"
-                        />
+      <div>
+        <Head
+          style={{
+            boxShadow: '0px 3px 5px grey',
+          }}
+        >
+          <Flex justifyBetween>
+            {!Create ? (
+              <Button onClick={() => setCreate(true)}>
+                <p>Create Team </p>
+              </Button>
+            ) : (
+              <div>
+                <Flex>
+                  <input
+                    style={{
+                      background: 'transparent',
+                      color: 'white',
+                      border: '0.7px solid white ',
+                      padding: '0.5em',
+                      paddingLeft: '2em',
+                      width: '20em',
+                    }}
+                    placeholder="Team Name"
+                  />
 
-                        <Button
-                          onClick={() => {
-                            createButton();
-                          }}
-                        >
-                          Create{' '}
-                        </Button>
-                      </Flex>
-                    </div>
-                  )}
-
-                  <p> Teams / Profile </p>
-
-                  <Hover>
-                    {!Chart ? (
-                      <div
-                        onClick={() => {
-                          setChart(true);
-                        }}
-                      >
-                        <p> Charts View </p>
-                      </div>
-                    ) : (
-                      <div
-                        onClick={() => {
-                          setChart(false);
-                        }}
-                      >
-                        <p> Board View </p>
-                      </div>
-                    )}
-                  </Hover>
+                  <Button
+                    onClick={() => {
+                      createButton();
+                    }}
+                  >
+                    Create{' '}
+                  </Button>
                 </Flex>
-              </Head>
-              <br />
-              <br />
-              <Modal
-                show={teamModal}
-                onhide={() => {
+              </div>
+            )}
+
+            <p> Teams / Profile </p>
+
+            <Hover>
+              {!Chart ? (
+                <div
+                  onClick={() => {
+                    setChart(true);
+                  }}
+                >
+                  <p> Charts View </p>
+                </div>
+              ) : (
+                <div
+                  onClick={() => {
+                    setChart(false);
+                  }}
+                >
+                  <p> Board View </p>
+                </div>
+              )}
+            </Hover>
+          </Flex>
+        </Head>
+        <br />
+        <br />
+        <Modal
+          show={teamModal}
+          onhide={() => {
+            setteamModal(false);
+          }}
+          style={{
+            boxShadow: '0px 4px 6px grey',
+          }}
+        >
+          <ModalHead>
+            <Flex justifyBetween>
+              <p> Frontend </p>
+
+              <Hover
+                onClick={() => {
                   setteamModal(false);
                 }}
-                style={{
-                  boxShadow: '0px 4px 6px grey',
+              >
+                <FiX />
+              </Hover>
+            </Flex>
+          </ModalHead>
+
+          <ModalBody>
+            <p> Team Details </p>
+          </ModalBody>
+        </Modal>
+        <Flex justifyCenter>
+          <Link to="./user/workers">
+            <Hover>
+              <h2> Cretella</h2>
+              <h5 style={{ textAlign: 'center' }}> 205 workers</h5>
+            </Hover>
+          </Link>{' '}
+        </Flex>
+        <h4 style={{ textAlign: 'center' }}> {Error} </h4>
+        <div>
+          {!Chart ? (
+            <Cards>
+              <Bounce
+                onClick={() => {
+                  setteamModal(true);
                 }}
               >
-                <ModalHead>
-                  <Flex justifyBetween>
-                    <p> Frontend </p>
-
-                    <Hover
-                      onClick={() => {
-                        setteamModal(false);
-                      }}
-                    >
-                      <FiX />
-                    </Hover>
-                  </Flex>
-                </ModalHead>
-
-                <ModalBody>
-                  <p> Team Details </p>
-                </ModalBody>
-              </Modal>
-              <Flex justifyCenter>
-                <Link to="./user/workers">
-                  <Hover>
-                    <h2> Cretella</h2>
-                    <h5 style={{ textAlign: 'center' }}> 205 workers</h5>
-                  </Hover>
-                </Link>{' '}
-              </Flex>
-              <h4 style={{ textAlign: 'center' }}> {Error} </h4>
-              <div>
-                {!Chart ? (
-                  <Cards>
-                    <Bounce
-                      onClick={() => {
-                        setteamModal(true);
-                      }}
-                    >
-                      <Card>
-                        <div style={{ textAlign: 'center' }}>
-                          <h5> Frontend Team </h5>
-                          <p> 5 members </p>
-                        </div>
-                      </Card>
-                    </Bounce>
-
-                    <Bounce>
-                      <Card>
-                        <div style={{ textAlign: 'center' }}>
-                          <h5> Frontend Team </h5>
-                          <p> 5 members </p>
-                        </div>
-                      </Card>
-                    </Bounce>
-
-                    <Bounce>
-                      <Card>
-                        <div style={{ textAlign: 'center' }}>
-                          <h5> Frontend Team </h5>
-                          <p> 5 members </p>
-                        </div>
-                      </Card>
-                    </Bounce>
-
-                    <Bounce>
-                      <Card>
-                        <div style={{ textAlign: 'center' }}>
-                          <h5> Frontend Team </h5>
-                          <p> 5 members </p>
-                        </div>
-                      </Card>
-                    </Bounce>
-
-                    <Bounce>
-                      <Card>
-                        <div style={{ textAlign: 'center' }}>
-                          <h5> Frontend Team </h5>
-                          <p> 5 members </p>
-                        </div>
-                      </Card>
-                    </Bounce>
-
-                    <Bounce>
-                      <Card>
-                        <div style={{ textAlign: 'center' }}>
-                          <h5> Frontend Team </h5>
-                          <p> 5 members </p>
-                        </div>
-                      </Card>
-                    </Bounce>
-                  </Cards>
-                ) : (
-                  <div>
-                    <Charts />
+                <Card>
+                  <div style={{ textAlign: 'center' }}>
+                    <h5> Frontend Team </h5>
+                    <p> 5 members </p>
                   </div>
-                )}
-              </div>
-              <br />{' '}
+                </Card>
+              </Bounce>
+
+              <Bounce>
+                <Card>
+                  <div style={{ textAlign: 'center' }}>
+                    <h5> Frontend Team </h5>
+                    <p> 5 members </p>
+                  </div>
+                </Card>
+              </Bounce>
+
+              <Bounce>
+                <Card>
+                  <div style={{ textAlign: 'center' }}>
+                    <h5> Frontend Team </h5>
+                    <p> 5 members </p>
+                  </div>
+                </Card>
+              </Bounce>
+
+              <Bounce>
+                <Card>
+                  <div style={{ textAlign: 'center' }}>
+                    <h5> Frontend Team </h5>
+                    <p> 5 members </p>
+                  </div>
+                </Card>
+              </Bounce>
+
+              <Bounce>
+                <Card>
+                  <div style={{ textAlign: 'center' }}>
+                    <h5> Frontend Team </h5>
+                    <p> 5 members </p>
+                  </div>
+                </Card>
+              </Bounce>
+
+              <Bounce>
+                <Card>
+                  <div style={{ textAlign: 'center' }}>
+                    <h5> Frontend Team </h5>
+                    <p> 5 members </p>
+                  </div>
+                </Card>
+              </Bounce>
+            </Cards>
+          ) : (
+            <div>
+              <Charts />
             </div>
-          );
-        }}
-      </Query>
+          )}
+        </div>
+        <br />{' '}
+      </div>
+      );
     </Layout>
   );
 };

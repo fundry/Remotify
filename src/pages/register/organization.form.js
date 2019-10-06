@@ -1,16 +1,16 @@
+import { useMutation } from '@apollo/react-hooks';
+import { Form, Formik } from 'formik';
 import React, { useState } from 'react';
+import { Card } from 'react-bootstrap';
+import { FiCheck } from 'react-icons/fi';
+import { Planet } from 'react-kawaii';
 import styled from 'styled-components';
 import Flex from 'styled-flex-component';
-import { Card } from 'react-bootstrap';
-import { Planet } from 'react-kawaii';
-import { FiCheck } from 'react-icons/fi';
-import { Mutation } from 'react-apollo';
-import { Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
 
 import Layout from '../../components/layout';
-import Header from '../head/header';
 import { Organization } from '../../data/mutations';
+import Header from '../head/header';
 
 const validation = Yup.object().shape({
   name: Yup.string()
@@ -23,7 +23,7 @@ const validation = Yup.object().shape({
     .required('must have a name '),
 });
 
-const form = (props) => {
+const form = () => {
   const Button = styled.button`
     background: #361f94;
     text-align: right;
@@ -44,187 +44,186 @@ const form = (props) => {
 
   const [Mail, addMail] = useState('');
 
+  const [createOrganization, { error, loading, data }] = useMutation(
+    Organization
+  );
+  console.log(error, loading, data);
+
   return (
     <Layout>
       <Header style={false} />
 
       <br />
 
-      <Mutation mutation={Organization}>
-        {(createOrganization) => (
-          <div>
-            {!Email ? (
-              <Flex justifyCenter>
-                <div style={{ padding: '1em' }}>
-                  <h2 style={{ textAlign: 'center' }}>
-                    Create <b> Organization </b>
-                  </h2>
-                  <hr />
-                  <Formik
-                    initialValues={{ email: '', name: '' }}
-                    validationSchema={validation}
-                    onSubmit={(values, { setSubmitting }) => {
-                      addMail(values.email);
-                    }}
-                  >
-                    {({
-                      isSubmitting,
-                      handleChange,
-                      handleBlur,
-                      values,
-                      errors,
-                    }) => (
-                      <Form>
-                        <div>
-                          <label htmlFor="name" />
-                          <h5> Team Name </h5>
-                          <input
-                            style={{
-                              height: '7.5vh',
-                              width: '30em',
-                              borderRadius: '5px',
-                              paddingLeft: '10px',
-                              border: !errors.name
-                                ? '1px solid  #361f94 '
-                                : '2.5px solid  red ',
-                            }}
-                            id="name"
-                            type="text"
-                            value={values.name}
-                            placeholder="dragonblade"
-                            onChange={handleChange}
-                            onBlur={handleBlur}
-                          />
-                        </div>
-                        <br />
-                        <br />
-                        <div>
-                          <h5> Team Email Address </h5>
-                          <label htmlFor="email" />
-                          <input
-                            style={{
-                              height: '7.5vh',
-                              width: '30em',
-                              borderRadius: '5px',
-                              paddingLeft: '10px',
-                              border: !errors.email
-                                ? '1px solid  #361f94 '
-                                : '2.5px solid  red ',
-                            }}
-                            value={values.email}
-                            onChange={handleChange}
-                            onBlur={handleBlur}
-                            id="email"
-                            type="email"
-                            placeholder="team@email.com"
-                          />
-                        </div>
-                        <br />
-                        <br />
-                        <div>
-                          <h5> Administrative Address (optional ) </h5>
-                          <input
-                            style={{
-                              height: '7.5vh',
-                              width: '30em',
-                              borderRadius: '5px',
-                              paddingLeft: '10px',
-                              border: '1px solid  #361f94 ',
-                            }}
-                            type="email"
-                            placeholder="admin@email.com"
-                          />
-                        </div>
-                        <br />
-                        {!Email ? (
-                          <Flex justifyCenter>
-                            <Button
-                              onClick={() => {
-                                sentEmail(true);
-                                createOrganization({
-                                  variables: {
-                                    name: values.name,
-                                    password: values.name,
-                                    email: values.email,
-                                    description: values.name,
-                                    country: values.name,
-                                    state: values.name,
-                                  },
-                                });
-                              }}
-                              disabled={isSubmitting}
-                              style={{
-                                background: !errors.name
-                                  ? '#361f94'
-                                  : 'transparent',
-                              }}
-                            >
-                              <p> Continue </p>
-                            </Button>
-                          </Flex>
-                        ) : null}
-                      </Form>
-                    )}
-                  </Formik>
-                </div>
-              </Flex>
-            ) : (
-              <Flex justifyCenter>
+      <div>
+        {!Email ? (
+          <Flex justifyCenter>
+            <div style={{ padding: '1em' }}>
+              <h2 style={{ textAlign: 'center' }}>
+                Create <b> Organization </b>
+              </h2>
+              <hr />
+              <Formik
+                initialValues={{ email: '', name: '' }}
+                validationSchema={validation}
+                onSubmit={(values, { setSubmitting }) => {
+                  addMail(values.email);
+                }}
+              >
+                {({
+                  isSubmitting,
+                  handleChange,
+                  handleBlur,
+                  values,
+                  errors,
+                }) => (
+                  <Form>
+                    <div>
+                      <label htmlFor="name" />
+                      <h5> Team Name </h5>
+                      <input
+                        style={{
+                          height: '7.5vh',
+                          width: '30em',
+                          borderRadius: '5px',
+                          paddingLeft: '10px',
+                          border: !errors.name
+                            ? '1px solid  #361f94 '
+                            : '2.5px solid  red ',
+                        }}
+                        id="name"
+                        type="text"
+                        value={values.name}
+                        placeholder="dragonblade"
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                      />
+                    </div>
+                    <br />
+                    <br />
+                    <div>
+                      <h5> Team Email Address </h5>
+                      <label htmlFor="email" />
+                      <input
+                        style={{
+                          height: '7.5vh',
+                          width: '30em',
+                          borderRadius: '5px',
+                          paddingLeft: '10px',
+                          border: !errors.email
+                            ? '1px solid  #361f94 '
+                            : '2.5px solid  red ',
+                        }}
+                        value={values.email}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        id="email"
+                        type="email"
+                        placeholder="team@email.com"
+                      />
+                    </div>
+                    <br />
+                    <br />
+                    <div>
+                      <h5> Administrative Address (optional ) </h5>
+                      <input
+                        style={{
+                          height: '7.5vh',
+                          width: '30em',
+                          borderRadius: '5px',
+                          paddingLeft: '10px',
+                          border: '1px solid  #361f94 ',
+                        }}
+                        type="email"
+                        placeholder="admin@email.com"
+                      />
+                    </div>
+                    <br />
+                    {!Email ? (
+                      <Flex justifyCenter>
+                        <Button
+                          onClick={() => {
+                            sentEmail(true);
+                            createOrganization({
+                              variables: {
+                                name: values.name,
+                                password: values.name,
+                                email: values.email,
+                                description: values.name,
+                                country: values.name,
+                                state: values.name,
+                              },
+                            });
+                          }}
+                          disabled={isSubmitting}
+                          style={{
+                            background: !errors.name
+                              ? '#361f94'
+                              : 'transparent',
+                          }}
+                        >
+                          <p> Continue </p>
+                        </Button>
+                      </Flex>
+                    ) : null}
+                  </Form>
+                )}
+              </Formik>
+            </div>
+          </Flex>
+        ) : (
+          <Flex justifyCenter>
+            <br />
+            <br />
+            <Card
+              style={{
+                padding: '2em 4em 3em',
+                boxShadow: '0px 7px 7px grey',
+              }}
+            >
+              <div>
+                <Flex justifyCenter>
+                  <Planet style={{ textAlign: 'center' }} />
+                </Flex>
+
                 <br />
-                <br />
-                <Card
-                  style={{
-                    padding: '2em 4em 3em',
-                    boxShadow: '0px 7px 7px grey',
-                  }}
-                >
-                  <div>
-                    <Flex justifyCenter>
-                      <Planet style={{ textAlign: 'center' }} />
-                    </Flex>
+                <Flex justifyCenter>
+                  <div style={{ padding: '1em', textAlign: 'center' }}>
+                    <FiCheck style={{ fontSize: '3em' }} />
+                    <div style={{ paddingRight: '10px', paddingTop: '3px' }}>
+                      <h4 style={{ textAlign: 'center' }}>
+                        An Email has been sent to <b> {Mail} </b>
+                        . <br />
+                        Click the confirmation link to begin with Remotify
+                      </h4>
+                    </div>
 
                     <br />
                     <Flex justifyCenter>
-                      <div style={{ padding: '1em', textAlign: 'center' }}>
-                        <FiCheck style={{ fontSize: '3em' }} />
-                        <div
-                          style={{ paddingRight: '10px', paddingTop: '3px' }}
-                        >
-                          <h4 style={{ textAlign: 'center' }}>
-                            An Email has been sent to <b> {Mail} </b>
-                            . <br />
-                            Click the confirmation link to begin with Remotify
-                          </h4>
-                        </div>
+                      <div>
+                        <Button>Verify</Button>
 
                         <br />
-                        <Flex justifyCenter>
-                          <div>
-                            <Button>Verify</Button>
-
-                            <br />
-                            <br />
-                            <br />
-                            <div>
-                              <Flex>
-                                <h5 style={{ paddingRight: '20px' }}>
-                                  {" Haven't recieved it?"}
-                                </h5>
-                                <a href="github.com/vickywane"> Resend Mail </a>
-                              </Flex>
-                            </div>
-                          </div>
-                        </Flex>
+                        <br />
+                        <br />
+                        <div>
+                          <Flex>
+                            <h5 style={{ paddingRight: '20px' }}>
+                              {" Haven't recieved it?"}
+                            </h5>
+                            <a href="github.com/vickywane"> Resend Mail </a>
+                          </Flex>
+                        </div>
                       </div>
                     </Flex>
-                  </div>{' '}
-                  <br />
-                </Card>
-              </Flex>
-            )}
-          </div>
+                  </div>
+                </Flex>
+              </div>{' '}
+              <br />
+            </Card>
+          </Flex>
         )}
-      </Mutation>
+      </div>
     </Layout>
   );
 };
