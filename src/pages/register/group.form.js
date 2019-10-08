@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import styled from 'styled-components';
 import Flex from 'styled-flex-component';
 import { Card } from 'react-bootstrap';
@@ -42,8 +42,9 @@ const form = (props) => {
   `;
 
   const [Email, sentEmail] = useState(false);
-
   const [Mail, addMail] = useState('');
+  const refText = useRef('');
+
   const [createGroup, { error, loading, data }] = useMutation(Group);
   return (
     <Layout>
@@ -78,6 +79,7 @@ const form = (props) => {
                       <label htmlFor="name" />
                       <h5> Team Name </h5>
                       <input
+                        ref={refText}
                         style={{
                           height: '7.5vh',
                           width: '30em',
@@ -139,6 +141,7 @@ const form = (props) => {
                       <Flex justifyCenter>
                         <Button
                           onClick={() => {
+                            addMail(refText.current.value);
                             sentEmail(true);
                             createGroup({
                               variables: {

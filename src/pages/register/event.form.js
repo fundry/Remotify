@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import styled from 'styled-components';
 import Flex from 'styled-flex-component';
 import { Card } from 'react-bootstrap';
@@ -42,9 +42,10 @@ const form = (props) => {
   `;
 
   const [Email, sentEmail] = useState(false);
-
+  const refText = useRef('');
   const [Mail, addMail] = useState('');
   const [createEvent, { error, loading, data }] = useMutation(Event);
+
   return (
     <Layout>
       <Header style={false} />
@@ -78,6 +79,7 @@ const form = (props) => {
                       <label htmlFor="name" />
                       <h5> Team Name </h5>
                       <input
+                        ref={refText}
                         style={{
                           height: '7.5vh',
                           width: '30em',
@@ -139,6 +141,7 @@ const form = (props) => {
                       <Flex justifyCenter>
                         <Button
                           onClick={() => {
+                            addMail(refText.current.value);
                             sentEmail(true);
                             createEvent({
                               variables: {
@@ -188,7 +191,7 @@ const form = (props) => {
                     <FiCheck style={{ fontSize: '3em' }} />
                     <div style={{ paddingRight: '10px', paddingTop: '3px' }}>
                       <h4 style={{ textAlign: 'center' }}>
-                        An Email has been sent to <b> {Mail} </b>
+                        An Email has been sent to <b> {Mail}</b>
                         . <br />
                         Click the confirmation link to begin with Remotify
                       </h4>

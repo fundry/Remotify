@@ -1,6 +1,6 @@
 import { useMutation } from '@apollo/react-hooks';
 import { Form, Formik } from 'formik';
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { Card } from 'react-bootstrap';
 import { FiCheck } from 'react-icons/fi';
 import { Planet } from 'react-kawaii';
@@ -41,7 +41,7 @@ const form = () => {
   `;
 
   const [Email, sentEmail] = useState(false);
-
+  const refText = useRef('');
   const [Mail, addMail] = useState('');
 
   const [createOrganization, { error, loading, data }] = useMutation(
@@ -82,6 +82,7 @@ const form = () => {
                       <label htmlFor="name" />
                       <h5> Team Name </h5>
                       <input
+                        ref={refText}
                         style={{
                           height: '7.5vh',
                           width: '30em',
@@ -143,6 +144,7 @@ const form = () => {
                       <Flex justifyCenter>
                         <Button
                           onClick={() => {
+                            addMail(refText.current.value);
                             sentEmail(true);
                             createOrganization({
                               variables: {
