@@ -11,7 +11,7 @@ import * as Yup from 'yup';
 
 import Layout from '../../components/layout';
 import Header from '../head/header';
-import { Group } from '../../data/mutations';
+import { Event } from '../../data/mutations';
 
 const validation = Yup.object().shape({
   name: Yup.string()
@@ -44,7 +44,7 @@ const form = (props) => {
   const [Email, sentEmail] = useState(false);
 
   const [Mail, addMail] = useState('');
-  const [createGroup, { error, loading, data }] = useMutation(Group);
+  const [createEvent, { error, loading, data }] = useMutation(Event);
   return (
     <Layout>
       <Header style={false} />
@@ -56,7 +56,7 @@ const form = (props) => {
           <Flex justifyCenter>
             <div style={{ padding: '1em' }}>
               <h2 style={{ textAlign: 'center' }}>
-                Create <b> Group </b>
+                Create An <b> Event </b> Account
               </h2>
               <hr />
               <Formik
@@ -140,7 +140,7 @@ const form = (props) => {
                         <Button
                           onClick={() => {
                             sentEmail(true);
-                            createGroup({
+                            createEvent({
                               variables: {
                                 name: values.name,
                                 password: values.name,
@@ -148,9 +148,6 @@ const form = (props) => {
                                 description: values.name,
                                 country: values.name,
                                 state: values.name,
-                                website: values.name,
-                                teams: 0,
-                                leads: 0,
                               },
                             });
                           }}

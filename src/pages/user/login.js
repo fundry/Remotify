@@ -8,7 +8,7 @@ import { useMutation } from '@apollo/react-hooks';
 
 import Layout from '../../components/layout';
 import Header from '../head/header';
-import { Login } from '../../data/mutations';
+import { LoginOrganization } from '../../data/mutations';
 
 const login = () => {
   const Button = styled.button`
@@ -45,7 +45,9 @@ const login = () => {
       .required('must have a name '),
   });
 
-  const [loginOrganization, { error, loading, data }] = useMutation(Login);
+  const [loginOrganization, { error, loading, data }] = useMutation(
+    LoginOrganization
+  );
   console.log(error, loading, data);
 
   return (

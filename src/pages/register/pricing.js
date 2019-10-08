@@ -90,7 +90,7 @@ const Register = (props) => {
               borderRadius: '10px',
             }}
           >
-            <h3 style={{ fontWeight: 'bold' }}> Group </h3>
+            <h3 style={{ fontWeight: 'bold' }}> Event </h3>
             <h5> 000$ </h5>
           </Card.Header>
           <Card.Body
@@ -209,7 +209,7 @@ const Register = (props) => {
               </ol>
             </ul>
 
-            <Link to="/register/group.form">
+            <Link to="/register/event.form">
               <Flex justifyCenter>
                 <Button> Purchase Remote Acess </Button>
               </Flex>
@@ -234,7 +234,7 @@ const Register = (props) => {
               borderRadius: '10px',
             }}
           >
-            <h3 style={{ fontWeight: 'bold' }}> Team </h3>
+            <h3 style={{ fontWeight: 'bold' }}> Group </h3>
             <h5> 000$ </h5>
           </Card.Header>
           <Card.Body
@@ -353,9 +353,9 @@ const Register = (props) => {
               </ol>
             </ul>
 
-            <Link to="//register/team.form">
+            <Link to="//register/group.form">
               <Flex justifyCenter>
-                <Button> Purchase Team Acess </Button>
+                <Button> Purchase Group Acess </Button>
               </Flex>
             </Link>
             <br />

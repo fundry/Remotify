@@ -1,8 +1,52 @@
 import gql from 'graphql-tag';
 
+const Event = gql`
+  mutation Event(
+    $name: String!
+    $website: String
+    $password: String!
+    $description: String
+    $leads: Int
+    $members: Int
+    $teams: Int
+    $email: String
+  ) {
+    createGroup(
+      name: $name
+      password: $password
+      description: $description
+      email: $email
+      website: $website
+      leads: $leads
+      teams: $teams
+      members: $members
+    ) {
+      name
+    }
+  }
+`;
+
 const Group = gql`
-  mutation Group($name: String) {
-    createGroup(name: $name) {
+  mutation Group(
+    $name: String!
+    $website: String
+    $password: String!
+    $description: String
+    $leads: Int
+    $members: Int
+    $teams: Int
+    $email: String
+  ) {
+    createGroup(
+      name: $name
+      password: $password
+      description: $description
+      email: $email
+      website: $website
+      leads: $leads
+      teams: $teams
+      members: $members
+    ) {
       name
     }
   }
@@ -16,6 +60,7 @@ const Organization = gql`
     $description: String
     $email: String
     $password: String
+    $website: String
   ) {
     createOrganization(
       name: $name
@@ -24,13 +69,14 @@ const Organization = gql`
       state: $state
       email: $email
       country: $country
+      website: $website
     ) {
       name
     }
   }
 `;
 
-const Login = gql`
+const LoginOrganization = gql`
   mutation loginOrg($email: String!, $name: String!, $password: String!) {
     loginOrganization(
       where: { email: $email }
@@ -46,4 +92,4 @@ const Login = gql`
   }
 `;
 
-export { Group, Organization, Login };
+export { Group, LoginOrganization, Organization, Event };
