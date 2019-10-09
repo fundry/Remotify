@@ -27,7 +27,8 @@ exports.components = {
   "component---src-pages-user-list-js": () => import("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\user\\List.js" /* webpackChunkName: "component---src-pages-user-list-js" */),
   "component---src-pages-user-login-js": () => import("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\user\\login.js" /* webpackChunkName: "component---src-pages-user-login-js" */),
   "component---src-pages-user-profile-js": () => import("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\user\\profile.js" /* webpackChunkName: "component---src-pages-user-profile-js" */),
+  "component---src-pages-user-ref-js": () => import("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\user\\ref.js" /* webpackChunkName: "component---src-pages-user-ref-js" */),
   "component---src-pages-user-workers-js": () => import("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\user\\workers.js" /* webpackChunkName: "component---src-pages-user-workers-js" */),
-  "component---src-pages-user-ref-js": () => import("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\user\\ref.js" /* webpackChunkName: "component---src-pages-user-ref-js" */)
+  "component---src-pages-register-test-test-js": () => import("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\register\\test\\test.js" /* webpackChunkName: "component---src-pages-register-test-test-js" */)
 }
 
