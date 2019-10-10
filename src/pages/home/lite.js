@@ -4,6 +4,7 @@ import posed from 'react-pose';
 import { DiTrello, DiGithub, DiWordpress, DiCloud9 } from 'react-icons/di';
 import { FiArrowRight, FiCodesandbox } from 'react-icons/fi';
 import Flex from 'styled-flex-component';
+import { Link } from 'gatsby';
 
 const Lite = () => {
   const Body = styled.div`padding: 1em;`;
@@ -50,7 +51,7 @@ const Lite = () => {
   const Card = styled.div({
     height: '13vh',
     padding: '1em',
-    paddingTop: '2.5em',
+    paddingTop: '2em',
     width: '9em',
     borderRadius: '5px',
     boxShadow: '0px 4px 6px grey',
@@ -65,9 +66,9 @@ const Lite = () => {
     border-radius: 2px;
     color: #361f94;
     padding: 0.50em 2.50em;
+    padding-top: 15px;
     :hover {
-      border: 2px solid #0e2f5a;
-      font-size: 1em;
+      border: 1.5px solid #0e2f5a;
     }
   `;
 
@@ -83,12 +84,15 @@ const Lite = () => {
         <Text>
           Your working tools made installable within the Remotify environment.{' '}
         </Text>
-        <Button>
-          <Flex justifyAround>
-            <Discover> Discover Apps </Discover>
-            <FiArrowRight style={{ fontSize: '1.5em' }} />
-          </Flex>
-        </Button>
+
+        <Link to="/home/addLite">
+          <Button>
+            <Flex justifyAround>
+              <Discover> Discover Apps </Discover>
+              <FiArrowRight style={{ fontSize: '1.5em' }} />
+            </Flex>
+          </Button>
+        </Link>
       </Header>
       <Apps>
         <Bounce>
@@ -127,7 +131,7 @@ const Lite = () => {
           </Card>
         </Bounce>
 
-     <Bounce>
+        <Bounce>
           <Card>
             <DiCloud9 style={{ fontSize: '3.5em' }} />
           </Card>
@@ -144,7 +148,6 @@ const Lite = () => {
             <DiTrello style={{ fontSize: '3.5em' }} />
           </Card>
         </Bounce>
-
       </Apps>{' '}
     </Body>
   );
