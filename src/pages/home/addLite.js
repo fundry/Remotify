@@ -1,9 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import Flex from 'styled-flex-component';
 import posed from 'react-pose';
-import { DiTrello, DiGithub, DiWordpress, DiCloud9 } from 'react-icons/di';
-import { FiCodesandbox } from 'react-icons/fi';
+import { DiTrello } from 'react-icons/di';
 
 import Header from '../head/header';
 import Layout from '../../components/layout';
@@ -82,6 +81,22 @@ const AddLite = () => {
     cursor: 'pointer',
   });
 
+  const Button = styled.button`
+    background: #361f94;
+    text-align: right;
+    border: 1px solid #0e2f5a;
+    border-radius: 7px;
+    color: #fff;
+    margin: 0 1em;
+    padding: 1em 3em;
+    :hover {
+      border: 2px solid #0e2f5a;
+      font-size: 1em;
+    }
+  `;
+
+  const [Request, setRequest] = useState(false);
+
   return (
     <Layout>
       <Header style={false} />
@@ -101,13 +116,42 @@ const AddLite = () => {
             })}
           </Apps>
         </Contain>
+        <Flex justifyCenter>
+          {!Request ? (
+            <Button
+              onClick={() => {
+                setRequest(true);
+              }}
+              style={{ boxShadow: '0px 3px 5px #0b33a2' }}
+            >
+              Make App Request{' '}
+            </Button>
+          ) : (
+            <Contain>
+              <div>
+                <input
+                  style={{
+                    height: '7.5vh',
+                    width: '30em',
+                    borderRadius: '5px',
+                    paddingLeft: '15px',
+                    border: '1px solid  #361f94 ',
+                    fontSize: '1.2em',
+                  }}
+                  type="text"
+                  placeholder="Make Request"
+                />{' '}
+                <br />
+              </div>
 
-        <Contain>
-          <Title style={{ textAlign: 'left', fontSize: '1.5em' }}>
-            {' '}
-            Request App{' '}
-          </Title>
-        </Contain>
+              <Flex justifyCenter>
+                <br />
+                <Button> Submit </Button>
+              </Flex>
+            </Contain>
+          )}
+        </Flex>{' '}
+        <br />
       </Body>
     </Layout>
   );
