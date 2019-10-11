@@ -12,6 +12,7 @@ exports.components = {
   "component---src-pages-footer-footer-js": hot(preferDefault(require("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\footer\\footer.js"))),
   "component---src-pages-head-banner-js": hot(preferDefault(require("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\head\\banner.js"))),
   "component---src-pages-head-header-js": hot(preferDefault(require("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\head\\header.js"))),
+  "component---src-pages-home-add-lite-js": hot(preferDefault(require("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\home\\addLite.js"))),
   "component---src-pages-home-features-js": hot(preferDefault(require("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\home\\features.js"))),
   "component---src-pages-home-home-js": hot(preferDefault(require("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\home\\home.js"))),
   "component---src-pages-home-integrate-js": hot(preferDefault(require("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\home\\integrate.js"))),
@@ -27,11 +28,11 @@ exports.components = {
   "component---src-pages-register-services-js": hot(preferDefault(require("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\register\\services.js"))),
   "component---src-pages-testers-testers-js": hot(preferDefault(require("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\testers\\testers.js"))),
   "component---src-pages-user-chart-js": hot(preferDefault(require("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\user\\chart.js"))),
+  "component---src-pages-user-details-departments-js": hot(preferDefault(require("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\user\\details\\departments.js"))),
   "component---src-pages-user-list-js": hot(preferDefault(require("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\user\\List.js"))),
   "component---src-pages-user-login-js": hot(preferDefault(require("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\user\\login.js"))),
   "component---src-pages-user-profile-js": hot(preferDefault(require("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\user\\profile.js"))),
   "component---src-pages-user-ref-js": hot(preferDefault(require("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\user\\ref.js"))),
-  "component---src-pages-user-workers-js": hot(preferDefault(require("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\user\\workers.js"))),
-  "component---src-pages-home-add-lite-js": hot(preferDefault(require("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\home\\addLite.js")))
+  "component---src-pages-user-workers-js": hot(preferDefault(require("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\user\\workers.js")))
 }
 

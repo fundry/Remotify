@@ -9,6 +9,7 @@ exports.components = {
   "component---src-pages-footer-footer-js": () => import("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\footer\\footer.js" /* webpackChunkName: "component---src-pages-footer-footer-js" */),
   "component---src-pages-head-banner-js": () => import("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\head\\banner.js" /* webpackChunkName: "component---src-pages-head-banner-js" */),
   "component---src-pages-head-header-js": () => import("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\head\\header.js" /* webpackChunkName: "component---src-pages-head-header-js" */),
+  "component---src-pages-home-add-lite-js": () => import("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\home\\addLite.js" /* webpackChunkName: "component---src-pages-home-add-lite-js" */),
   "component---src-pages-home-features-js": () => import("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\home\\features.js" /* webpackChunkName: "component---src-pages-home-features-js" */),
   "component---src-pages-home-home-js": () => import("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\home\\home.js" /* webpackChunkName: "component---src-pages-home-home-js" */),
   "component---src-pages-home-integrate-js": () => import("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\home\\integrate.js" /* webpackChunkName: "component---src-pages-home-integrate-js" */),
@@ -24,11 +25,11 @@ exports.components = {
   "component---src-pages-register-services-js": () => import("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\register\\services.js" /* webpackChunkName: "component---src-pages-register-services-js" */),
   "component---src-pages-testers-testers-js": () => import("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\testers\\testers.js" /* webpackChunkName: "component---src-pages-testers-testers-js" */),
   "component---src-pages-user-chart-js": () => import("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\user\\chart.js" /* webpackChunkName: "component---src-pages-user-chart-js" */),
+  "component---src-pages-user-details-departments-js": () => import("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\user\\details\\departments.js" /* webpackChunkName: "component---src-pages-user-details-departments-js" */),
   "component---src-pages-user-list-js": () => import("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\user\\List.js" /* webpackChunkName: "component---src-pages-user-list-js" */),
   "component---src-pages-user-login-js": () => import("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\user\\login.js" /* webpackChunkName: "component---src-pages-user-login-js" */),
   "component---src-pages-user-profile-js": () => import("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\user\\profile.js" /* webpackChunkName: "component---src-pages-user-profile-js" */),
   "component---src-pages-user-ref-js": () => import("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\user\\ref.js" /* webpackChunkName: "component---src-pages-user-ref-js" */),
-  "component---src-pages-user-workers-js": () => import("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\user\\workers.js" /* webpackChunkName: "component---src-pages-user-workers-js" */),
-  "component---src-pages-home-add-lite-js": () => import("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\home\\addLite.js" /* webpackChunkName: "component---src-pages-home-add-lite-js" */)
+  "component---src-pages-user-workers-js": () => import("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\user\\workers.js" /* webpackChunkName: "component---src-pages-user-workers-js" */)
 }
 

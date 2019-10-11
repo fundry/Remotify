@@ -20,4 +20,13 @@ const Organization = gql`
   }
 `;
 
-export { Test, Organization };
+const FetchDepartment = gql`
+  query getDepartment {
+    department(where: { id: "ck1kvb4ue00040739vm08hjfi" }) {
+      name
+      description
+    }
+  }
+`;
+
+export { Test, Organization, FetchDepartment };

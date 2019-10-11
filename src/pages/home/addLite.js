@@ -140,7 +140,7 @@ const AddLite = () => {
                   }}
                   type="text"
                   placeholder="Make Request"
-                />{' '}
+                />
                 <br />
               </div>
 

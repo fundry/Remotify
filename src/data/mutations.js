@@ -92,4 +92,12 @@ const LoginOrganization = gql`
   }
 `;
 
-export { Group, LoginOrganization, Organization, Event };
+const CreateTeam = gql`
+  mutation createTeam($name: String!, $description: String, $leads: Int) {
+    createDepartment(name: $name, description: $description, leads: $leads) {
+      name
+    }
+  }
+`;
+
+export { Group, LoginOrganization, Organization, Event, CreateTeam };

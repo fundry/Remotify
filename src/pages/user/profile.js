@@ -1,64 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import styled from 'styled-components';
 import Flex from 'styled-flex-component';
-import posed from 'react-pose';
 import { Link } from 'gatsby';
-import { FiX } from 'react-icons/fi';
-import { Query } from 'react-apollo';
-import { useQuery } from '@apollo/react-hooks';
+import { useMutation } from '@apollo/react-hooks';
 
 import Charts from './chart';
 import Header from '../head/header';
-import { Modal } from 'react-bootstrap';
 import Layout from '../../components/layout';
-import { Organization, Test } from '../../data/queries';
+import { CreateTeam } from '../../data/mutations';
+import Department from './details/departments';
 
 const profile = () => {
-  const autoGrid = (minColumnWidth = 200, gridGap = 0) => ({
-    display: 'grid',
-    gridTemplateColumns: `repeat(auto-fill, minmax(${minColumnWidth}px, 1fr))`,
-    gridGap,
-  });
-
-  const Cards = styled.div({
-    ...autoGrid(220, 20),
-    padding: '3em',
-    marginLeft: '1.5em',
-  });
-
-  const Card = styled.div({
-    height: '20vh',
-    padding: '1em',
-    paddingTop: '2.5em',
-    width: '15em',
-    borderRadius: '10px',
-    boxShadow: '0px 4px 6px grey',
-    background: 'black',
-    color: 'white',
-    cursor: 'pointer',
-  });
-
   const Head = styled.div({
     padding: '0.5em',
     width: '100%',
     background: '#361f94',
     color: 'white',
-  });
-
-  const Bounce = posed.div({
-    hoverable: true,
-    init: {
-      scale: 1,
-      boxShadow: '0px 0px 0px rgba(0,0,0,0)',
-      textAlign: 'center',
-    },
-    hover: {
-      scale: 1.1,
-    },
-    press: {
-      scale: 1.1,
-      boxShadow: '0px 2px 5px rgba(0,0,0,0.1)',
-    },
   });
 
   const Button = styled.button`
@@ -77,28 +34,21 @@ const profile = () => {
     }
   `;
 
-  const ModalHead = styled.div({
-    background: 'black',
-    padding: '0.5em',
-    color: '#fff',
-  });
-
-  const ModalBody = styled.div({
-    padding: '0.5em',
-  });
-
   const Hover = styled.div({
     cursor: 'pointer',
   });
 
   const [Create, setCreate] = useState(false);
   const [Chart, setChart] = useState(false);
-  const [teamModal, setteamModal] = useState(false);
   const [Error, setError] = useState(false);
 
   const createButton = () => {
     setCreate(false);
   };
+
+  const [createDepartment, { loading }] = useMutation(CreateTeam);
+
+  const refDepartment = useRef('');
 
   return (
     <Layout>
@@ -112,7 +62,7 @@ const profile = () => {
           <Flex justifyBetween>
             {!Create ? (
               <Button onClick={() => setCreate(true)}>
-                <p>Create Team </p>
+                <p>Create Department </p>
               </Button>
             ) : (
               <div>
@@ -126,12 +76,18 @@ const profile = () => {
                       paddingLeft: '2em',
                       width: '20em',
                     }}
-                    placeholder="Team Name"
+                    ref={refDepartment}
+                    placeholder="Department Name"
                   />
 
                   <Button
                     onClick={() => {
                       createButton();
+                      createDepartment({
+                        variables: {
+                          name: refDepartment.current.value,
+                        },
+                      });
                     }}
                   >
                     Create{' '}
@@ -140,7 +96,7 @@ const profile = () => {
               </div>
             )}
 
-            <p> Teams / Profile </p>
+            <p> Departments / Profile </p>
 
             <Hover>
               {!Chart ? (
@@ -165,33 +121,6 @@ const profile = () => {
         </Head>
         <br />
         <br />
-        <Modal
-          show={teamModal}
-          onhide={() => {
-            setteamModal(false);
-          }}
-          style={{
-            boxShadow: '0px 4px 6px grey',
-          }}
-        >
-          <ModalHead>
-            <Flex justifyBetween>
-              <p> Frontend </p>
-
-              <Hover
-                onClick={() => {
-                  setteamModal(false);
-                }}
-              >
-                <FiX />
-              </Hover>
-            </Flex>
-          </ModalHead>
-
-          <ModalBody>
-            <p> Team Details </p>
-          </ModalBody>
-        </Modal>
         <Flex justifyCenter>
           <Link to="./user/workers">
             <Hover>
@@ -201,67 +130,10 @@ const profile = () => {
           </Link>{' '}
         </Flex>
         <h4 style={{ textAlign: 'center' }}> {Error} </h4>
+        {/* DEPARTMENT AND CHART BOARD CONTROLLER   */}
         <div>
           {!Chart ? (
-            <Cards>
-              <Bounce
-                onClick={() => {
-                  setteamModal(true);
-                }}
-              >
-                <Card>
-                  <div style={{ textAlign: 'center' }}>
-                    <h5> Frontend Team </h5>
-                    <p> 5 members </p>
-                  </div>
-                </Card>
-              </Bounce>
-
-              <Bounce>
-                <Card>
-                  <div style={{ textAlign: 'center' }}>
-                    <h5> Frontend Team </h5>
-                    <p> 5 members </p>
-                  </div>
-                </Card>
-              </Bounce>
-
-              <Bounce>
-                <Card>
-                  <div style={{ textAlign: 'center' }}>
-                    <h5> Frontend Team </h5>
-                    <p> 5 members </p>
-                  </div>
-                </Card>
-              </Bounce>
-
-              <Bounce>
-                <Card>
-                  <div style={{ textAlign: 'center' }}>
-                    <h5> Frontend Team </h5>
-                    <p> 5 members </p>
-                  </div>
-                </Card>
-              </Bounce>
-
-              <Bounce>
-                <Card>
-                  <div style={{ textAlign: 'center' }}>
-                    <h5> Frontend Team </h5>
-                    <p> 5 members </p>
-                  </div>
-                </Card>
-              </Bounce>
-
-              <Bounce>
-                <Card>
-                  <div style={{ textAlign: 'center' }}>
-                    <h5> Frontend Team </h5>
-                    <p> 5 members </p>
-                  </div>
-                </Card>
-              </Bounce>
-            </Cards>
+            <Department />
           ) : (
             <div>
               <Charts />
@@ -270,7 +142,8 @@ const profile = () => {
         </div>
         <br />{' '}
       </div>
-      );
+
+      {/*  END OF CONTROLLER */}
     </Layout>
   );
 };
