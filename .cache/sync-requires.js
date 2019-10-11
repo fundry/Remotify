@@ -28,10 +28,12 @@ exports.components = {
   "component---src-pages-register-services-js": hot(preferDefault(require("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\register\\services.js"))),
   "component---src-pages-testers-testers-js": hot(preferDefault(require("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\testers\\testers.js"))),
   "component---src-pages-user-chart-js": hot(preferDefault(require("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\user\\chart.js"))),
+  "component---src-pages-user-dashboard-js": hot(preferDefault(require("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\user\\dashboard.js"))),
+  "component---src-pages-user-details-department-modal-js": hot(preferDefault(require("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\user\\details\\departmentModal.js"))),
   "component---src-pages-user-details-departments-js": hot(preferDefault(require("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\user\\details\\departments.js"))),
+  "component---src-pages-user-details-profile-js": hot(preferDefault(require("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\user\\details\\profile.js"))),
   "component---src-pages-user-list-js": hot(preferDefault(require("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\user\\List.js"))),
   "component---src-pages-user-login-js": hot(preferDefault(require("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\user\\login.js"))),
-  "component---src-pages-user-profile-js": hot(preferDefault(require("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\user\\profile.js"))),
   "component---src-pages-user-ref-js": hot(preferDefault(require("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\user\\ref.js"))),
   "component---src-pages-user-workers-js": hot(preferDefault(require("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\user\\workers.js")))
 }

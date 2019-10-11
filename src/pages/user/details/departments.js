@@ -7,6 +7,7 @@ import { useQuery } from '@apollo/react-hooks';
 import { Modal } from 'react-bootstrap';
 
 import { FetchDepartment } from '../../../data/queries';
+import DepartmentModal from './departmentModal';
 
 const profile = () => {
   const autoGrid = (minColumnWidth = 200, gridGap = 0) => ({
@@ -49,22 +50,6 @@ const profile = () => {
     },
   });
 
-  const Button = styled.button`
-    background: #fff;
-    text-align: right;
-    border-radius: 3px;
-    height: 35px;
-    border: 1px solid #0e2f5a;
-    color: #361f94;
-    margin: 0 1em;
-    padding: 0.25em 1.5em;
-    font-size: 1em;
-    &:hover {
-      color: #fff;
-      background: transparent;
-    }
-  `;
-
   const ModalHead = styled.div({
     background: 'black',
     padding: '0.5em',
@@ -101,59 +86,56 @@ const profile = () => {
 
   return (
     <div>
-      <div>
-        <br />
-        <br />
-        <Modal
-          show={teamModal}
-          onhide={() => {
-            setteamModal(false);
-          }}
-          style={{
-            boxShadow: '0px 4px 6px grey',
-          }}
-        >
-          <ModalHead>
-            <Flex justifyBetween>
-              <p> Frontend </p>
+      <Modal
+        show={teamModal}
+        onhide={() => {
+          setteamModal(false);
+        }}
+        style={{
+          boxShadow: '0px 4px 6px grey',
+        }}
+      >
+        <ModalHead>
+          <Flex justifyBetween>
+            <p> . </p>
 
-              <Hover
-                onClick={() => {
-                  setteamModal(false);
-                }}
-              >
-                <FiX />
-              </Hover>
-            </Flex>
-          </ModalHead>
+            <p style={{ fontSize: '1.2em' }}>FrontEnd Department </p>
 
-          <ModalBody>
-            <p> Department Details </p>
-          </ModalBody>
-        </Modal>
-        <div>
-          <Cards>
-            {data.map(({ i, name }) => {
-              return (
-                <Bounce
-                  onClick={() => {
-                    setteamModal(true);
-                  }}
-                  key={i}
-                >
-                  <Card>
-                    <div style={{ textAlign: 'center' }}>
-                      <h5> {name}</h5>
-                      <p> 5 members </p>
-                    </div>
-                  </Card>
-                </Bounce>
-              );
-            })}
-          </Cards>
-        </div>
-        <br />{' '}
-      </div>
+            <Hover
+              onClick={() => {
+                setteamModal(false);
+              }}
+            >
+              <FiX />
+            </Hover>
+          </Flex>
+        </ModalHead>
+
+        <ModalBody>
+          <DepartmentModal />
+        </ModalBody>
+      </Modal>
+
+      <Cards>
+        {data.map(({ i, name }) => {
+          return (
+            <Bounce
+              onClick={() => {
+                setteamModal(true);
+              }}
+              key={i}
+            >
+              <Card>
+                <div style={{ textAlign: 'center' }}>
+                  <h5> {name}</h5>
+                  <p> 5 members </p>
+                </div>
+              </Card>
+            </Bounce>
+          );
+        })}
+      </Cards>
+      <br />
     </div>
   );
 };

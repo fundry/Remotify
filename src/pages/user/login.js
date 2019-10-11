@@ -113,7 +113,7 @@ const login = () => {
               </div>{' '}
               <br />
               <div style={{ textAlign: 'center' }}>
-                <Link to="/user/profile">
+                <Link to="/user/dashboard">
                   <Button
                     onClick={() => {
                       loginOrganization({

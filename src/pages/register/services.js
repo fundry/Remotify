@@ -17,12 +17,12 @@ const Title = styled.h2({
 const Intro = styled.div({
   fontSize: '1.2em',
   paddingLeft: '20px',
-  padding: '2em',
+  padding: '1em',
 });
 
 const Motto = styled.h1({
   fontWeight: 'bold',
-  fontSize: '3.1em',
+  fontSize: '3em',
 });
 
 const Div = styled.div({
@@ -250,6 +250,7 @@ const services = () => {
         <Intro style={{ textAlign: 'center' }}>
           <Motto> Connect. Plan . Execute </Motto>
           <MottoText> Empowering remote teams. </MottoText>
+          <br />
           <Flex justifyAround>
             <Button1> Get started</Button1>
             <Button2

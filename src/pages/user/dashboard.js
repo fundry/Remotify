@@ -10,7 +10,7 @@ import Layout from '../../components/layout';
 import { CreateTeam } from '../../data/mutations';
 import Department from './details/departments';
 
-const profile = () => {
+const dashboard = () => {
   const Head = styled.div({
     padding: '0.5em',
     width: '100%',
@@ -37,6 +37,11 @@ const profile = () => {
   const Hover = styled.div({
     cursor: 'pointer',
   });
+
+  const Details = styled.div`
+    padding-left: 2.5em;
+    padding-right: 2.5em;
+  `;
 
   const [Create, setCreate] = useState(false);
   const [Chart, setChart] = useState(false);
@@ -90,7 +95,7 @@ const profile = () => {
                       });
                     }}
                   >
-                    Create{' '}
+                    Create
                   </Button>
                 </Flex>
               </div>
@@ -120,15 +125,28 @@ const profile = () => {
           </Flex>
         </Head>
         <br />
-        <br />
-        <Flex justifyCenter>
-          <Link to="./user/workers">
-            <Hover>
-              <h2> Cretella</h2>
-              <h5 style={{ textAlign: 'center' }}> 205 workers</h5>
-            </Hover>
-          </Link>{' '}
-        </Flex>
+
+        <Details>
+          <Flex justifyBetween>
+            <div>
+              <Link to="./user/details/profile">
+                <h2> Cretella</h2>
+              </Link>
+
+              <p style={{ color: 'grey', fontSize: '1.1em' }}>
+                12, Menlo Park , USA
+              </p>
+            </div>
+
+            <Link to="./user/workers">
+              <Hover>
+                <h5 style={{ textAlign: 'center' }}> 205 workers</h5>
+                <h6 style={{ textAlign: 'center' }}> 12 Departments </h6>
+              </Hover>
+            </Link>
+          </Flex>
+        </Details>
+
         <h4 style={{ textAlign: 'center' }}> {Error} </h4>
         {/* DEPARTMENT AND CHART BOARD CONTROLLER   */}
         <div>
@@ -140,7 +158,7 @@ const profile = () => {
             </div>
           )}
         </div>
-        <br />{' '}
+        <br />
       </div>
 
       {/*  END OF CONTROLLER */}
@@ -148,4 +166,4 @@ const profile = () => {
   );
 };
 
-export default profile;
+export default dashboard;
