@@ -6,6 +6,10 @@ import Header from '../head/header';
 import Updates from './updates';
 import Layout from '../../components/layout';
 
+import Apple from '../../images/apple.svg';
+import Win from '../../images/win.svg';
+import Mint from '../../images/mint.svg';
+
 const download = () => {
   const Title = styled.h4({});
 
@@ -57,6 +61,8 @@ const download = () => {
     }
   `;
 
+  const Body = styled.div`padding: 1.5em;`;
+
   const [Update, setUpdate] = useState(false);
   return (
     <Layout>
@@ -92,7 +98,9 @@ const download = () => {
         </Head>
 
         {!Update ? (
-          <div>
+          <Body>
+            <br />
+            <img src={Win} style={{ maxWidth: '10%', paddingLeft: '15px' }} />
             <Windows>
               <Title> Windows </Title>
               <Text> Remotify for windows </Text>
@@ -100,16 +108,26 @@ const download = () => {
               <Download> Download </Download>
             </Windows>
             <Mac>
+              {' '}
+              <img
+                src={Apple}
+                style={{ maxWidth: '10%', paddingLeft: '15px' }}
+              />
               <Title> MacOs </Title>
               <Text> Remotify for MacOs </Text>
               <Download> Download </Download>
             </Mac>
             <Linux>
+              {' '}
+              <img
+                src={Mint}
+                style={{ maxWidth: '10%', paddingLeft: '15px' }}
+              />
               <Title> Linux </Title>
               <Text> Remotify for Linux </Text>
               <Download> Download </Download>
             </Linux>{' '}
-          </div>
+          </Body>
         ) : (
           <Updates />
         )}
