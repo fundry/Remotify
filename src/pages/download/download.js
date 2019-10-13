@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import Flex from 'styled-flex-component';
+import posed from 'react-pose';
 
 import Header from '../head/header';
 import Updates from './updates';
@@ -15,13 +16,33 @@ const download = () => {
 
   const Text = styled.p({ fontSize: '1.3em' });
 
-  const Windows = styled.div({ padding: '1em' });
-  const Mac = styled.div({
-    textAlign: 'right',
+  const Windows = styled.div({
+    textAlign: 'center',
     padding: '1em',
   });
 
-  const Linux = styled.div({ padding: '1.5em' });
+  const Mac = styled.div({
+    textAlign: 'center',
+    padding: '1em',
+  });
+
+  const autoGrid = (minColumnWidth = 150, gridGap = 0) => ({
+    display: 'grid',
+    textAlign: 'center',
+    gridTemplateColumns: `repeat(auto-fill, minmax(${minColumnWidth}px, 1fr))`,
+    gridGap,
+  });
+
+  const Icons = styled.div({
+    ...autoGrid(170, 10),
+    padding: '1em',
+  });
+
+  const Linux = styled.div({
+    textAlign: 'center',
+
+    padding: '1em',
+  });
   const Head = styled.div({
     padding: '1em',
     paddingTop: '20px',
@@ -61,9 +82,6 @@ const download = () => {
     }
   `;
 
-  const Body = styled.div`padding: 1.5em;`;
-
-  const [Update, setUpdate] = useState(false);
   return (
     <Layout>
       <Header style="download" />
@@ -77,60 +95,36 @@ const download = () => {
           <div>
             <p> Version 0.0.1 updated 10 days ago.</p>
 
-            {!Update ? (
-              <Button
-                onClick={() => {
-                  setUpdate(true);
-                }}
-              >
-                View ChangeLog
-              </Button>
-            ) : (
-              <Button
-                onClick={() => {
-                  setUpdate(false);
-                }}
-              >
-                Download
-              </Button>
-            )}
+            <Button onClick={() => {}}>View ChangeLog</Button>
           </div>
         </Head>
 
-        {!Update ? (
-          <Body>
-            <br />
-            <img src={Win} style={{ maxWidth: '10%', paddingLeft: '15px' }} />
-            <Windows>
-              <Title> Windows </Title>
-              <Text> Remotify for windows </Text>
+        <Flex justifyBetween>
+          <br />
+          <Windows>
+            <img src={Win} style={{ maxWidth: '10%' }} />
+            <Title> Windows </Title>
+            <Text> Remotify for windows </Text>
 
-              <Download> Download </Download>
-            </Windows>
-            <Mac>
-              {' '}
-              <img
-                src={Apple}
-                style={{ maxWidth: '10%', paddingLeft: '15px' }}
-              />
-              <Title> MacOs </Title>
-              <Text> Remotify for MacOs </Text>
-              <Download> Download </Download>
-            </Mac>
-            <Linux>
-              {' '}
-              <img
-                src={Mint}
-                style={{ maxWidth: '10%', paddingLeft: '15px' }}
-              />
-              <Title> Linux </Title>
-              <Text> Remotify for Linux </Text>
-              <Download> Download </Download>
-            </Linux>{' '}
-          </Body>
-        ) : (
-          <Updates />
-        )}
+            <Download> Download </Download>
+          </Windows>
+          <Mac>
+            {' '}
+            <img src={Apple} style={{ maxWidth: '10%' }} />
+            <Title> MacOs </Title>
+            <Text> Remotify for MacOs </Text>
+            <Download> Download </Download>
+          </Mac>
+          <Linux>
+            {' '}
+            <img src={Mint} style={{ maxWidth: '10%' }} />
+            <Title> Linux </Title>
+            <Text> Remotify for Linux </Text>
+            <Download> Download </Download>
+          </Linux>{' '}
+        </Flex>
+
+        <Updates />
       </div>
     </Layout>
   );

@@ -11,7 +11,14 @@
           }
         }
       ],
-      "presets": [],
+      "presets": [
+        {
+          "name": "C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\node_modules\\@babel\\preset-typescript\\lib\\index.js",
+          "options": {
+            "plugins": []
+          }
+        }
+      ],
       "options": {
         "cacheDirectory": true,
         "sourceType": "unambiguous"
@@ -28,7 +35,14 @@
           }
         }
       ],
-      "presets": [],
+      "presets": [
+        {
+          "name": "C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\node_modules\\@babel\\preset-typescript\\lib\\index.js",
+          "options": {
+            "plugins": []
+          }
+        }
+      ],
       "options": {
         "cacheDirectory": true,
         "sourceType": "unambiguous"
@@ -45,7 +59,14 @@
           }
         }
       ],
-      "presets": [],
+      "presets": [
+        {
+          "name": "C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\node_modules\\@babel\\preset-typescript\\lib\\index.js",
+          "options": {
+            "plugins": []
+          }
+        }
+      ],
       "options": {
         "cacheDirectory": true,
         "sourceType": "unambiguous"
@@ -62,7 +83,14 @@
           }
         }
       ],
-      "presets": [],
+      "presets": [
+        {
+          "name": "C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\node_modules\\@babel\\preset-typescript\\lib\\index.js",
+          "options": {
+            "plugins": []
+          }
+        }
+      ],
       "options": {
         "cacheDirectory": true,
         "sourceType": "unambiguous"

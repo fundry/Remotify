@@ -5,11 +5,15 @@ import styled from 'styled-components';
 import Flex from 'styled-flex-component';
 // import useWindowWidth from "../../hook_style"
 
-const Header = (props) => {
+interface Props {
+   style : Boolean
+}
+
+const Header = ({style} : Props)  => {
   const Div = {
     padding: '1em',
     paddingTop: '1em',
-    backgroundColor: props.style == 'download' ? '#f2f5ff' : 'transparent',
+    backgroundColor: style == 'download' ? '#f2f5ff' : 'transparent',
     paddingTop: '1%',
     boxShadow: '0px 7px 7px #D87E2C',
   };
@@ -61,7 +65,7 @@ const Header = (props) => {
   // const hooks = useWindowWidth()
   return (
     <div>
-      {props.style == false ? (
+      {style == false ? (
         <div style={Head}>
           <nav>
             <Flex justifyBetween>

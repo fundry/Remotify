@@ -43,6 +43,27 @@ const dashboard = () => {
     padding-right: 2.5em;
   `;
 
+  const Sidebar = styled.div`
+    position: fixed;
+    background: #ccc;
+    height: 100vh;
+    padding-top: 0em;
+  `;
+
+  const NavLinks = styled.ul`
+    list-style: none;
+    padding: 0;
+    color: #000;
+  `;
+
+  const Link = styled.li`
+    display: block;
+    padding: 0.8em;
+    color: black;
+    text-decoration: none;
+  `;
+
+
   const [Create, setCreate] = useState(false);
   const [Chart, setChart] = useState(false);
   const [Error, setError] = useState(false);
@@ -58,6 +79,7 @@ const dashboard = () => {
   return (
     <Layout>
       <Header style={false} />
+
       <div>
         <Head
           style={{
@@ -124,28 +146,34 @@ const dashboard = () => {
             </Hover>
           </Flex>
         </Head>
-        <br />
 
-        <Details>
-          <Flex justifyBetween>
-            <div>
-              <Link to="./user/details/profile">
+        <Sidebar>
+          <Details>
+            <Flex column>
+              <div>
+                <Link to="./user/details/profile">
                 <h2> Cretella</h2>
+                </Link>
+
+                <p style={{ color: 'grey', fontSize: '1.1em' }}>
+                12, Menlo Park , USA
+                </p>
+                </div>
+
+              <Link to="./user/workers">
+                  <Hover>
+                      <h5 style={{ textAlign: 'center' }}> 205 workers</h5>
+                      <h6 style={{ textAlign: 'center' }}> 12 Departments </h6>
+                  </Hover>
               </Link>
 
-              <p style={{ color: 'grey', fontSize: '1.1em' }}>
-                12, Menlo Park , USA
-              </p>
-            </div>
+            </Flex>
+          </Details>
 
-            <Link to="./user/workers">
-              <Hover>
-                <h5 style={{ textAlign: 'center' }}> 205 workers</h5>
-                <h6 style={{ textAlign: 'center' }}> 12 Departments </h6>
-              </Hover>
-            </Link>
-          </Flex>
-        </Details>
+      </Sidebar>
+
+        <br />
+
 
         <h4 style={{ textAlign: 'center' }}> {Error} </h4>
         {/* DEPARTMENT AND CHART BOARD CONTROLLER   */}

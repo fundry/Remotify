@@ -1,4 +1,4 @@
-import React from "react"
+import React, { ReactNode } from "react"
 import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
 import { Helmet } from "react-helmet"
@@ -6,7 +6,11 @@ import { Helmet } from "react-helmet"
 import "./layout.css"
 import Footer from "../pages/footer/footer"
 
-const Layout = ({ children }, props) => (
+interface Props {
+   children : ReactNode
+}
+
+const Layout = ({ children } :  Props) => (
 
   <StaticQuery
     query={graphql`
