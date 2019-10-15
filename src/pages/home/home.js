@@ -32,16 +32,26 @@ const Home = () => {
 
   const Buttons = styled.button`
     background: #361f94;
-    text-align: right;
     border: 1px solid #0e2f5a;
     border-radius: 7px;
     color: #fff;
     margin: 0 1em;
     padding: 1em 3em;
     :hover {
-      border: 2px solid #0e2f5a;
       font-size: 1em;
     }
+    ${media.lessThan("medium")`
+      padding: 0.70em 1em;
+      margin: 0 0.50em;
+      border-radius: 5px;
+    `};
+  `
+
+  const SystemType = styled.h5`
+    padding-left: 50px ${media.lessThan("medium")`
+        padding-left: 10px;
+        font-size : 1.2em
+    `};
   `
 
   const Box = posed.div({
@@ -167,9 +177,9 @@ const Home = () => {
                       </p>
                     </Flex>
                   </Buttons>
-                  <h5 style={{ paddingTop: "0.7em", paddingLeft: "50px" }}>
+                  <SystemType style={{ paddingTop: "0.75em" }}>
                     macOs , Windows , Linux
-                  </h5>
+                  </SystemType>
                 </div>
               </Flex>
             )}
