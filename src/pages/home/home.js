@@ -71,6 +71,11 @@ const Home = () => {
   })
 
   const [Download, setDownload] = useState(false)
+  const [Width, setWidth] = useState(null)
+
+  setTimeout(function() {
+    setWidth(window.innerWidth)
+  }, 1000)
 
   return (
     <div>
@@ -90,12 +95,14 @@ const Home = () => {
           distractions.
         </Text>
 
-        <div style={{ padding: "2em" }}>
-          <Flex justifyCenter>
-            <Box>
-              <img src={Sample} style={{ maxWidth: "80%" }} />
-            </Box>
-          </Flex>
+        <div style={{ padding: "1em" }}>
+          {Width >= 530 ? (
+            <Flex justifyCenter>
+              <Box>
+                <img src={Sample} style={{ maxWidth: "80%" }} />
+              </Box>
+            </Flex>
+          ) : null}
           <div>
             {Download ? (
               <div>

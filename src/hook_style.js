@@ -1,30 +1,19 @@
-// import React, { Component } from 'react';
-
-// class Style extends Component {
-//   constructor(props) {
-//     super(props);
-//     this.state = {
-//       windowWidth: null
-//     };
-//   }
-
-//   handleResize() {
-//     this.setState({ windowWidth: window.innerWidth });
-//   }
-
-//   componentDidMount() {
-//     window.addEventListener('resize', this.handleResize.bind(this));
-//   }
-
-//   componentWillUnmount() {
-//     window.removeEventListener('resize', this.handleResize.bind(this));
-//   }
-
-//   renderNavigation() {
-//     if (this.state.windowWidth <= 1080) {
-//       return [<p> q</p>];
-//     }
-//   }
-// }
-
-// export default Style;
+// import { useState, useEffect } from "react";
+//
+// const useWindowWidth = () => {
+//   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+//
+//   const handleWindowResize = () => {
+//     setWindowWidth(window.innerWidth);
+//   };
+//
+//   useEffect(() => {
+//     window.addEventListener("resize", handleWindowResize);
+//     return () => window.removeEventListener("resize", handleWindowResize);
+//   }, []);
+//
+//   return windowWidth;
+// };
+//
+// export default useWindowWidth;
+//

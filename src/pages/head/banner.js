@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import media from "styled-media-query"
 import styled from "styled-components"
 import { Carousel } from "react-bootstrap"
@@ -28,6 +28,12 @@ const Banner = () => {
   `};
   `
 
+  const [Width, setWidth] = useState(null)
+
+  setTimeout(function() {
+    setWidth(window.innerWidth)
+  }, 1000)
+
   const testingGraphql = false
   return (
     <Contain>
@@ -52,16 +58,6 @@ const Banner = () => {
           </Carousel.Item>
         </Carousel>
 
-        {testingGraphql ? (
-          <Query query={Test}>
-            {({ loading, error, data: { info } }) => {
-              if (loading) return <p> loadinsg </p>
-              if (error) return <p> error </p>
-
-              return <p> {info} </p>
-            }}
-          </Query>
-        ) : null}
       </Body>
     </Contain>
   )
