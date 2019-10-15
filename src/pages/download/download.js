@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import Flex from 'styled-flex-component';
 import posed from 'react-pose';
+import {FiDownload} from 'react-icons/fi'
 
 import Header from '../head/header';
 import Updates from './updates';
@@ -44,7 +45,7 @@ const download = () => {
     padding: '1em',
   });
   const Head = styled.div({
-    padding: '1em',
+    padding: '1.2em',
     paddingTop: '20px',
     paddingBottom: '20px',
     textAlign: 'center',
@@ -53,18 +54,18 @@ const download = () => {
   });
 
   const Button = styled.button`
-    background: transparent;
+    background: #361f94;
     text-align: right;
-    border: 2px solid #0e2f5a;
+    border: 1px solid #0e2f5a;
     border-radius: 4px;
-    color: #000;
+    color: #fff;
     margin: 0 1em;
-    padding: 1em 3em;
+    padding: 1em 2.7em;
     :hover {
       font-size: 1em;
-      cursor: pointer;
     }
   `;
+
 
   const Download = styled.button`
     background: transparent;
@@ -99,28 +100,59 @@ const download = () => {
           </div>
         </Head>
 
+
+<br />
         <Flex justifyBetween>
           <br />
           <Windows>
-            <img src={Win} style={{ maxWidth: '10%' }} />
+            <img src={Win} style={{ maxWidth: '15%' }} />
             <Title> Windows </Title>
-            <Text> Remotify for windows </Text>
-
-            <Download> Download </Download>
+              <Download>
+                 <Flex>
+                  <FiDownload
+                    style={{
+                      color: 'black',
+                      fontSize: '2em',
+                      paddingTop: '1px',
+                      paddingRight: '5px',
+                    }}
+                  />
+                  <p style={{ paddingTop: '5px' }}> Windows</p>
+                </Flex> </Download>
           </Windows>
           <Mac>
-            {' '}
-            <img src={Apple} style={{ maxWidth: '10%' }} />
+
+            <img src={Apple} style={{ maxWidth: '15%' }} />
             <Title> MacOs </Title>
-            <Text> Remotify for MacOs </Text>
-            <Download> Download </Download>
+            <Download>
+               <Flex>
+                <FiDownload
+                  style={{
+                    color: 'black',
+                    fontSize: '2em',
+                    paddingTop: '1px',
+                    paddingRight: '5px',
+                  }}
+                />
+                <p style={{ paddingTop: '5px' }}> Windows</p>
+              </Flex> </Download>
           </Mac>
           <Linux>
             {' '}
-            <img src={Mint} style={{ maxWidth: '10%' }} />
+            <img src={Mint} style={{ maxWidth: '15%' }} />
             <Title> Linux </Title>
-            <Text> Remotify for Linux </Text>
-            <Download> Download </Download>
+              <Download>
+                 <Flex>
+                  <FiDownload
+                    style={{
+                      color: 'black',
+                      fontSize: '2em',
+                      paddingTop: '1px',
+                      paddingRight: '5px',
+                    }}
+                  />
+                  <p style={{ paddingTop: '5px' }}> Windows</p>
+                </Flex> </Download>
           </Linux>{' '}
         </Flex>
 

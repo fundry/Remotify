@@ -1,58 +1,70 @@
-import React from 'react';
-import media from 'styled-media-query';
-import styled from 'styled-components';
-import { Carousel } from 'react-bootstrap';
-import { Query } from 'react-apollo';
+import React from "react"
+import media from "styled-media-query"
+import styled from "styled-components"
+import { Carousel } from "react-bootstrap"
+import { Query } from "react-apollo"
 
-import Header from './header';
-import { Test } from '../../data/queries';
+import Header from "./header"
+import { Test } from "../../data/queries"
 
 const Banner = () => {
   const Contain = styled.div`
-    background: #f0b65f ${media.lessThan('medium')`
-    background: #F0B65F 
-    `};
-  `;
+    background: #f0b65f;
+  `
 
-  const testingGraphql = false;
+  const Motto = styled.h2`
+    ${media.lessThan("medium")`
+    font-size: 1.6em
+  `};
+    font-weight: bold;
+  `
+
+  const Body = styled.div`
+    height: 30vh;
+    padding-top: 7em;
+    ${media.lessThan("medium")`
+      height: 23vh;
+      padding-top: 4em;
+  `};
+  `
+
+  const testingGraphql = false
   return (
     <Contain>
       <Header />
 
-      <div
+      <Body
         style={{
-          paddingTop: '5.5em',
-          height: '27vh',
-          textAlign: 'center',
-          color: '#fff',
-          cursor: 'grab',
+          textAlign: "center",
+          color: "#fff",
+          cursor: "grab",
         }}
       >
         <Carousel indicators={false}>
           <Carousel.Item>
-            <h2 style={{ fontWeight: 'bold' }}> Productivity Centralized. </h2>
+            <Motto> Productivity Centralized. </Motto>
           </Carousel.Item>
           <Carousel.Item>
-            <h2 style={{ fontWeight: 'bold' }}>Project Files Together. </h2>
+            <Motto>Project Files Together. </Motto>
           </Carousel.Item>
           <Carousel.Item>
-            <h2 style={{ fontWeight: 'bold' }}> Secret Keys Management. </h2>
+            <Motto> Secret Keys Management. </Motto>
           </Carousel.Item>
         </Carousel>
 
         {testingGraphql ? (
           <Query query={Test}>
             {({ loading, error, data: { info } }) => {
-              if (loading) return <p> loadinsg </p>;
-              if (error) return <p> error </p>;
+              if (loading) return <p> loadinsg </p>
+              if (error) return <p> error </p>
 
-              return <p> {info} </p>;
+              return <p> {info} </p>
             }}
           </Query>
         ) : null}
-      </div>
+      </Body>
     </Contain>
-  );
-};
+  )
+}
 
-export default Banner;
+export default Banner
