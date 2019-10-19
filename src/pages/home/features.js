@@ -58,12 +58,14 @@ const Features = () => {
                 <Flex justifyBetween>
                   <Hover>
                     <img
+                      alt="Workspace"
                       src={Sample}
                       style={{ maxWidth: "120%", paddingRight: "4em" }}
                     />{" "}
                   </Hover>{" "}
                   <Hover>
                     <img
+                      alt="Workspace"
                       src={Sample}
                       style={{ maxWidth: "120% ", paddingLeft: "4em" }}
                     />{" "}
@@ -84,12 +86,12 @@ const Features = () => {
                 </p>
               </div>
               <Hover>
-                <img src={Sample} style={{ maxWidth: "70%" }} />{" "}
+                <img alt="Workspace" src={Sample} style={{ maxWidth: "70%" }} />{" "}
               </Hover>
             </Flex>
             <Flex justifyCenter>
               <Hover>
-                <img src={Sample} style={{ maxWidth: "70%" }} />{" "}
+                <img alt="Workspace" src={Sample} style={{ maxWidth: "70%" }} />{" "}
               </Hover>
               <div style={{ padding: "2em", width: "70%" }}>
                 <h2 style={{ textAlign: "center" }}> Track working hours </h2>
@@ -112,7 +114,11 @@ const Features = () => {
               </p>{" "}
               <Flex justifyCenter>
                 <Hover>
-                  <img src={Sample} style={{ maxWidth: "75%" }} />{" "}
+                  <img
+                    alt="Workspace"
+                    src={Sample}
+                    style={{ maxWidth: "75%" }}
+                  />{" "}
                 </Hover>
               </Flex>
             </div>
@@ -129,7 +135,11 @@ const Features = () => {
               </p>{" "}
               <Flex justifyCenter>
                 <Hover>
-                  <img src={Sample} style={{ maxWidth: "75%" }} />{" "}
+                  <img
+                    alt="Workspace"
+                    src={Sample}
+                    style={{ maxWidth: "75%" }}
+                  />{" "}
                 </Hover>
               </Flex>
             </div>
@@ -143,7 +153,11 @@ const Features = () => {
               </p>{" "}
               <Flex justifyCenter>
                 <Hover>
-                  <img src={Sample} style={{ maxWidth: "75%" }} />{" "}
+                  <img
+                    alt="Workspace"
+                    src={Sample}
+                    style={{ maxWidth: "75%" }}
+                  />{" "}
                 </Hover>
               </Flex>
             </div>

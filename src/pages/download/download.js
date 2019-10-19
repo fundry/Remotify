@@ -1,57 +1,44 @@
-import React, { useState } from 'react';
-import styled from 'styled-components';
-import Flex from 'styled-flex-component';
-import posed from 'react-pose';
-import {FiDownload} from 'react-icons/fi'
+import React, { useState, useEffect } from "react"
+import styled from "styled-components"
+import Flex from "styled-flex-component"
+import { FiDownload } from "react-icons/fi"
 
-import Header from '../head/header';
-import Updates from './updates';
-import Layout from '../../components/layout';
+import Header from "../head/header"
+import Updates from "./updates"
+import Layout from "../../components/layout"
 
-import Apple from '../../images/apple.svg';
-import Win from '../../images/win.svg';
-import Mint from '../../images/mint.svg';
+import Apple from "../../images/apple.svg"
+import Win from "../../images/win.svg"
+import Mint from "../../images/mint.svg"
 
 const download = () => {
-  const Title = styled.h4({});
+  const Title = styled.h4({})
 
-  const Text = styled.p({ fontSize: '1.3em' });
+  const Text = styled.p({ fontSize: "1.3em" })
 
   const Windows = styled.div({
-    textAlign: 'center',
-    padding: '1em',
-  });
+    textAlign: "center",
+    padding: "1em",
+  })
 
   const Mac = styled.div({
-    textAlign: 'center',
-    padding: '1em',
-  });
-
-  const autoGrid = (minColumnWidth = 150, gridGap = 0) => ({
-    display: 'grid',
-    textAlign: 'center',
-    gridTemplateColumns: `repeat(auto-fill, minmax(${minColumnWidth}px, 1fr))`,
-    gridGap,
-  });
-
-  const Icons = styled.div({
-    ...autoGrid(170, 10),
-    padding: '1em',
-  });
+    textAlign: "center",
+    padding: "1em",
+  })
 
   const Linux = styled.div({
-    textAlign: 'center',
+    textAlign: "center",
 
-    padding: '1em',
-  });
+    padding: "1em",
+  })
   const Head = styled.div({
-    padding: '1.2em',
-    paddingTop: '20px',
-    paddingBottom: '20px',
-    textAlign: 'center',
-    backgroundColor: '#f2f5ff',
-    boxShadow: '0px 3px 5px grey',
-  });
+    padding: "1.2em",
+    paddingTop: "20px",
+    paddingBottom: "20px",
+    textAlign: "center",
+    backgroundColor: "#f2f5ff",
+    boxShadow: "0px 3px 5px grey",
+  })
 
   const Button = styled.button`
     background: #361f94;
@@ -64,8 +51,7 @@ const download = () => {
     :hover {
       font-size: 1em;
     }
-  `;
-
+  `
 
   const Download = styled.button`
     background: transparent;
@@ -81,11 +67,26 @@ const download = () => {
       font-size: 1em;
       cursor: pointer;
     }
-  `;
+  `
+
+  const [Width, setWidth] = useState(null)
+
+  setTimeout(function() {
+    setWidth(window.innerWidth)
+  }, 1000)
+
+  const handleResize = value => {
+    setWidth(value)
+  }
+
+  useEffect(() => {
+    window.addEventListener("resize", handleResize.bind(this))
+    return () => window.removeEventListener("resize", handleResize.bind(this))
+  }, [])
 
   return (
     <Layout>
-      <Header style="download" />
+      <Header style={"download"} />
       <div>
         <Head>
           <Text>
@@ -100,66 +101,124 @@ const download = () => {
           </div>
         </Head>
 
+        <br />
 
-<br />
-        <Flex justifyBetween>
-          <br />
-          <Windows>
-            <img src={Win} style={{ maxWidth: '15%' }} />
-            <Title> Windows </Title>
+        {Width >= 770 ? (
+          <Flex justifyBetween>
+            <br />
+            <Windows>
+              <img alt="windows" src={Win} style={{ maxWidth: "15%" }} />
+              <Title> Windows </Title>
               <Download>
-                 <Flex>
+                <Flex>
                   <FiDownload
                     style={{
-                      color: 'black',
-                      fontSize: '2em',
-                      paddingTop: '1px',
-                      paddingRight: '5px',
+                      color: "black",
+                      fontSize: "2em",
+                      paddingTop: "1px",
+                      paddingRight: "5px",
                     }}
                   />
-                  <p style={{ paddingTop: '5px' }}> Windows</p>
-                </Flex> </Download>
-          </Windows>
-          <Mac>
-
-            <img src={Apple} style={{ maxWidth: '15%' }} />
-            <Title> MacOs </Title>
-            <Download>
-               <Flex>
-                <FiDownload
-                  style={{
-                    color: 'black',
-                    fontSize: '2em',
-                    paddingTop: '1px',
-                    paddingRight: '5px',
-                  }}
-                />
-                <p style={{ paddingTop: '5px' }}> Windows</p>
-              </Flex> </Download>
-          </Mac>
-          <Linux>
-            {' '}
-            <img src={Mint} style={{ maxWidth: '15%' }} />
-            <Title> Linux </Title>
+                  <p style={{ paddingTop: "5px" }}> Windows</p>
+                </Flex>{" "}
+              </Download>
+            </Windows>
+            <Mac>
+              <img alt="Apple-macOs" src={Apple} style={{ maxWidth: "15%" }} />
+              <Title> MacOs </Title>
               <Download>
-                 <Flex>
+                <Flex>
                   <FiDownload
                     style={{
-                      color: 'black',
-                      fontSize: '2em',
-                      paddingTop: '1px',
-                      paddingRight: '5px',
+                      color: "black",
+                      fontSize: "2em",
+                      paddingTop: "1px",
+                      paddingRight: "5px",
                     }}
                   />
-                  <p style={{ paddingTop: '5px' }}> Windows</p>
-                </Flex> </Download>
-          </Linux>{' '}
-        </Flex>
+                  <p style={{ paddingTop: "5px" }}> Windows</p>
+                </Flex>{" "}
+              </Download>
+            </Mac>
+            <Linux>
+              <img alt="linux-mint" src={Mint} style={{ maxWidth: "15%" }} />
+              <Title> Linux </Title>
+              <Download>
+                <Flex>
+                  <FiDownload
+                    style={{
+                      color: "black",
+                      fontSize: "2em",
+                      paddingTop: "1px",
+                      paddingRight: "5px",
+                    }}
+                  />
+                  <p style={{ paddingTop: "5px" }}> Windows</p>
+                </Flex>{" "}
+              </Download>
+            </Linux>{" "}
+          </Flex>
+        ) : (
+          <Flex column>
+            <br />
+            <Windows>
+              <img alt="windows" src={Win} style={{ maxWidth: "15%" }} />
+              <Title> Windows </Title>
+              <Download>
+                <Flex>
+                  <FiDownload
+                    style={{
+                      color: "black",
+                      fontSize: "2em",
+                      paddingTop: "1px",
+                      paddingRight: "5px",
+                    }}
+                  />
+                  <p style={{ paddingTop: "5px" }}> Windows</p>
+                </Flex>{" "}
+              </Download>
+            </Windows>
+            <Mac>
+              <img alt="Apple-macOs" src={Apple} style={{ maxWidth: "15%" }} />
+              <Title> MacOs </Title>
+              <Download>
+                <Flex>
+                  <FiDownload
+                    style={{
+                      color: "black",
+                      fontSize: "2em",
+                      paddingTop: "1px",
+                      paddingRight: "5px",
+                    }}
+                  />
+                  <p style={{ paddingTop: "5px" }}> Windows</p>
+                </Flex>{" "}
+              </Download>
+            </Mac>
+            <Linux>
+              <img alt="linux-mint" src={Mint} style={{ maxWidth: "15%" }} />
+              <Title> Linux </Title>
+              <Download>
+                <Flex>
+                  <FiDownload
+                    style={{
+                      color: "black",
+                      fontSize: "2em",
+                      paddingTop: "1px",
+                      paddingRight: "5px",
+                    }}
+                  />
+                  <p style={{ paddingTop: "5px" }}> Windows</p>
+                </Flex>{" "}
+              </Download>
+            </Linux>{" "}
+          </Flex>
+        )}
 
         <Updates />
       </div>
     </Layout>
-  );
-};
+  )
+}
 
-export default download;
+export default download

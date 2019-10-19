@@ -16,6 +16,10 @@ exports.components = {
   "component---src-pages-home-integrate-js": () => import("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\home\\integrate.js" /* webpackChunkName: "component---src-pages-home-integrate-js" */),
   "component---src-pages-home-lite-js": () => import("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\home\\lite.js" /* webpackChunkName: "component---src-pages-home-lite-js" */),
   "component---src-pages-index-js": () => import("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\index.js" /* webpackChunkName: "component---src-pages-index-js" */),
+  "component---src-pages-message-main-js": () => import("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\message\\main.js" /* webpackChunkName: "component---src-pages-message-main-js" */),
+  "component---src-pages-message-official-js": () => import("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\message\\official.js" /* webpackChunkName: "component---src-pages-message-official-js" */),
+  "component---src-pages-message-overview-js": () => import("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\message\\overview.js" /* webpackChunkName: "component---src-pages-message-overview-js" */),
+  "component---src-pages-message-private-js": () => import("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\message\\private.js" /* webpackChunkName: "component---src-pages-message-private-js" */),
   "component---src-pages-register-details-js": () => import("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\register\\details.js" /* webpackChunkName: "component---src-pages-register-details-js" */),
   "component---src-pages-register-event-form-js": () => import("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\register\\event.form.js" /* webpackChunkName: "component---src-pages-register-event-form-js" */),
   "component---src-pages-register-group-form-js": () => import("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\register\\group.form.js" /* webpackChunkName: "component---src-pages-register-group-form-js" */),
@@ -34,10 +38,6 @@ exports.components = {
   "component---src-pages-user-details-profile-info-tsx": () => import("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\user\\details\\profileInfo.tsx" /* webpackChunkName: "component---src-pages-user-details-profile-info-tsx" */),
   "component---src-pages-user-list-js": () => import("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\user\\List.js" /* webpackChunkName: "component---src-pages-user-list-js" */),
   "component---src-pages-user-login-js": () => import("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\user\\login.js" /* webpackChunkName: "component---src-pages-user-login-js" */),
-  "component---src-pages-user-workers-js": () => import("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\user\\workers.js" /* webpackChunkName: "component---src-pages-user-workers-js" */),
-  "component---src-pages-message-main-js": () => import("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\message\\main.js" /* webpackChunkName: "component---src-pages-message-main-js" */),
-  "component---src-pages-message-overview-js": () => import("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\message\\overview.js" /* webpackChunkName: "component---src-pages-message-overview-js" */),
-  "component---src-pages-message-private-js": () => import("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\message\\private.js" /* webpackChunkName: "component---src-pages-message-private-js" */),
-  "component---src-pages-message-official-js": () => import("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\message\\official.js" /* webpackChunkName: "component---src-pages-message-official-js" */)
+  "component---src-pages-user-workers-js": () => import("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\user\\workers.js" /* webpackChunkName: "component---src-pages-user-workers-js" */)
 }
 

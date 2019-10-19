@@ -1,5 +1,5 @@
 import { Link } from "gatsby"
-import React from "react"
+import React, { useState, useEffect } from "react"
 import Img from "react-image"
 import styled from "styled-components"
 import Flex from "styled-flex-component"
@@ -16,7 +16,6 @@ const Header = ({ style }: Props) => {
     padding: "1em",
     paddingTop: "1em",
     backgroundColor: style == "download" ? "#f2f5ff" : "transparent",
-    paddingTop: "1%",
     boxShadow: "0px 7px 7px #D87E2C",
   }
 
@@ -25,7 +24,6 @@ const Header = ({ style }: Props) => {
     paddingTop: "1em",
     backgroundColor: "transparent",
     Color: "#0b33a2",
-    paddingTop: "1%",
   }
 
   const A = styled.a`
@@ -78,86 +76,148 @@ const Header = ({ style }: Props) => {
     margin-left: 2%;
   `
 
+  const [Width, setWidth] = useState(null)
+
+  setTimeout(function() {
+    setWidth(window.innerWidth)
+  }, 1000)
+
+  const handleResize = value => {
+    setWidth(value)
+  }
+
+  useEffect(() => {
+    window.addEventListener("resize", handleResize.bind(this))
+    return () => window.removeEventListener("resize", handleResize.bind(this))
+  }, [])
+
   // const hooks = useWindowWidth()
   return (
     <div>
-      {style == false ? (
-        <div style={Head}>
-          <nav>
-            <Flex justifyBetween>
-              <NameDiv>
-                <Flex>
-                  <Image
-                    src={
-                      "https:/a/res.cloudinary.com/dkfptto8m/image/upload/v1558070244/Mongodb%20hackathon%20project/thunder.png"
-                    }
-                  />
-                  <Link href="/">
-                    <A>Remotify</A>
-                  </Link>
+      {Width >= 600 ? (
+        <div>
+          {style == false ? (
+            <div style={Head}>
+              <nav>
+                <Flex justifyBetween>
+                  <NameDiv>
+                    <Flex>
+                      <Image
+                        src={
+                          "https:/a/res.cloudinary.com/dkfptto8m/image/upload/v1558070244/Mongodb%20hackathon%20project/thunder.png"
+                        }
+                      />
+                      <A>Remotify</A>
+                    </Flex>
+                  </NameDiv>
+                  <Flex>
+                    <div style={{ paddingRight: "20px" }}>
+                      <Link to="/">
+                        <Title> Team </Title>
+                      </Link>
+                    </div>
+                    <div style={{ paddingRight: "20px" }}>
+                      <Link to="/">
+                        <Title> Resources </Title>
+                      </Link>
+                    </div>{" "}
+                    <div style={{ paddingRight: "20px" }}>
+                      <Link to="user/login">
+                        <Title> Login </Title>
+                      </Link>
+                    </div>
+                    <Link to="/download/download">
+                      <Button> Download </Button>
+                    </Link>
+                  </Flex>
                 </Flex>
-              </NameDiv>
-              <Flex>
-                <div style={{ paddingRight: "20px" }}>
-                  <Link to="/">
-                    <Title> Team </Title>
-                  </Link>
-                </div>
-                <div style={{ paddingRight: "20px" }}>
-                  <Link to="/">
-                    <Title> Resources </Title>
-                  </Link>
-                </div>{" "}
-                <div style={{ paddingRight: "20px" }}>
-                  <Link to="user/login">
-                    <Title> Login </Title>
-                  </Link>
-                </div>
-                <Link to="/download/download">
-                  <Button> Download </Button>
-                </Link>
-              </Flex>
-            </Flex>
-          </nav>
+              </nav>
+            </div>
+          ) : (
+            <div style={Div}>
+              <nav>
+                <Flex justifyBetween>
+                  <NameDiv>
+                    <Flex>
+                      <Image
+                        src={
+                          "https:/a/res.cloudinary.com/dkfptto8m/image/upload/v1558070244/Mongodb%20hackathon%20project/thunder.png"
+                        }
+                      />
+                      <A>Remotify</A>
+                    </Flex>
+                  </NameDiv>
+                  <Flex>
+                    <div style={{ paddingRight: "30px" }}>
+                      <Link to="/">
+                        <Title> Team </Title>
+                      </Link>
+                    </div>
+                    <div style={{ paddingRight: "30px" }}>
+                      <Link to="/">
+                        <Title> Resources </Title>
+                      </Link>
+                    </div>{" "}
+                    <div style={{ paddingRight: "30px" }}>
+                      <Link to="user/login">
+                        <Title> Login </Title>
+                      </Link>
+                    </div>
+                    <Link to="/download/download">
+                      <Button> Download </Button>
+                    </Link>
+                  </Flex>
+                </Flex>
+              </nav>
+            </div>
+          )}{" "}
         </div>
       ) : (
-        <div style={Div}>
-          <nav>
-            <Flex justifyBetween>
-              <NameDiv>
-                <Flex>
-                  <Image
-                    src={
-                      "https:/a/res.cloudinary.com/dkfptto8m/image/upload/v1558070244/Mongodb%20hackathon%20project/thunder.png"
-                    }
-                  />
-                  <Link href="/">
-                    <A>Remotify</A>
+        // {/* MOBILE RESPONSIVENESS   */}
+        <div>
+          {style == false ? (
+            <div style={Head}>
+              <nav>
+                <Flex justifyBetween>
+                  <NameDiv>
+                    <Flex>
+                      <Image
+                        src={
+                          "https:/a/res.cloudinary.com/dkfptto8m/image/upload/v1558070244/Mongodb%20hackathon%20project/thunder.png"
+                        }
+                      />
+                      <A>Remotify</A>
+                    </Flex>
+                  </NameDiv>
+
+                  <Link to="/download/download">
+                    <Button> Download </Button>
                   </Link>
                 </Flex>
-              </NameDiv>
-              <Flex>
-                <div style={{ paddingRight: "30px" }}>
-                  <Link to="/">
-                    <Title> Team </Title>
+              </nav>
+            </div>
+          ) : (
+            <div style={Div}>
+              <nav>
+                <Flex justifyBetween>
+                  <NameDiv>
+                    <Flex>
+                      <Image
+                        src={
+                          "https:/a/res.cloudinary.com/dkfptto8m/image/upload/v1558070244/Mongodb%20hackathon%20project/thunder.png"
+                        }
+                      />
+                      <A>Remotify</A>
+                    </Flex>
+                  </NameDiv>
+
+                  <Link to="/download/download">
+                    <Button> Download </Button>
                   </Link>
-                </div>
-                <div style={{ paddingRight: "30px" }}>
-                  <Link to="/">
-                    <Title> Resources </Title>
-                  </Link>
-                </div>{" "}
-                <div style={{ paddingRight: "30px" }}>
-                  <Link to="user/login">
-                    <Title> Login </Title>
-                  </Link>
-                </div>
-                <Link to="/download/download">
-                  <Button> Download </Button>
-                </Link>
-              </Flex>
-            </Flex>
-          </nav>
+                </Flex>
+              </nav>
+            </div>
+          )}{" "}
         </div>
       )}
     </div>
