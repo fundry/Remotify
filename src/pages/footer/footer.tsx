@@ -1,47 +1,47 @@
-import React, { useState } from 'react';
-import styled from 'styled-components';
-import Flex from 'styled-flex-component';
-import { Modal } from 'react-bootstrap';
-
-import { FiGithub, FiTwitter, FiFacebook } from 'react-icons/fi';
+import React, { useState, useEffect } from "react"
+import styled from "styled-components"
+import Flex from "styled-flex-component"
+import { Modal } from "react-bootstrap"
+import { FiGithub, FiTwitter, FiFacebook } from "react-icons/fi"
+import media from "styled-media-query"
 
 const Footer = () => {
   const Div = {
-    backgroundColor: '#5919AB',
-    width: ' 100%',
-  };
+    backgroundColor: "#5919AB",
+    width: " 100%",
+  }
 
   const Head = {
-    fontSize: '0.9em ',
-    fontWeight: 'bold',
-    color: '#fff',
-  };
+    fontSize: "0.9em ",
+    fontWeight: "bold",
+    color: "#fff",
+  }
 
   const Title = {
-    fontSize: '0.8em',
-    color: '#fff',
-  };
+    fontSize: "0.8em",
+    color: "#fff",
+  }
 
   const Testing = styled.div({
-    textAlign: 'center',
-    background: '#0e2f5a',
-    padding: '1em',
-    color: '#fff',
-  });
+    textAlign: "center",
+    background: "#0e2f5a",
+    padding: "1em",
+    color: "#fff",
+  })
 
   const Input = styled.input({
-    padding: '1em',
-    paddingLeft: '2em',
-    width: '26em',
-    border: '0px',
-    background: 'transparent',
-  });
+    padding: "1em",
+    paddingLeft: "2em",
+    width: "26em",
+    border: "0px",
+    background: "transparent",
+  })
 
   const Box = styled.div({
-    border: '1px solid #361f94 ',
-    borderRadius: '0px 15px 15px 0px',
-    height: '7vh',
-  });
+    border: "1px solid #361f94 ",
+    borderRadius: "0px 15px 15px 0px",
+    height: "7vh",
+  })
 
   const Button = styled.button`
     background: #5919ab;
@@ -55,7 +55,7 @@ const Footer = () => {
       border: 2px solid #0e2f5a;
       font-size: 1em;
     }
-  `;
+  `
 
   const ModalButton = styled.button`
     background: #5919ab;
@@ -69,34 +69,51 @@ const Footer = () => {
       border: 2px solid #0e2f5a;
       font-size: 1em;
     }
-  `;
+  `
 
   const Test = styled.p`
     font-size: 1.2em;
     padding-top: 10px;
-  `;
-
-  const [TestModal, setTestModal] = useState(false);
+    ${media.lessThan("medium")`
+      font-size: 1em
+  `};
+  `
 
   const Body = styled.div({
-    padding: '1.4em',
-  });
+    padding: "1.4em",
+  })
 
   const Header = styled.h3({
-    textAlign: 'center',
-  });
+    textAlign: "center",
+  })
 
   const Text = styled.p({
-    padding: '0.5em',
-    textAlign: 'center',
-  });
+    padding: "0.5em",
+    textAlign: "center",
+  })
+
+  const [TestModal, setTestModal] = useState(false)
+  const [Width, setWidth] = useState(null)
+
+  setTimeout(function() {
+    setWidth(window.innerWidth)
+  }, 1000)
+
+  const handleResize = value => {
+    setWidth(value)
+  }
+
+  useEffect(() => {
+    window.addEventListener("resize", handleResize.bind(this))
+    return () => window.removeEventListener("resize", handleResize.bind(this))
+  }, [])
 
   return (
     <div>
       <Modal
         show={TestModal}
         onHide={() => setTestModal(false)}
-        style={{ paddingTop: '10%' }}
+        style={{ paddingTop: "10%" }}
       >
         <Body>
           <Header> Remotify Beta Testing </Header>
@@ -114,7 +131,7 @@ const Footer = () => {
 
                 <ModalButton
                   onClick={() => {
-                    setTestModal(false);
+                    setTestModal(false)
                   }}
                 >
                   Invite
@@ -127,62 +144,125 @@ const Footer = () => {
 
       <Testing>
         <Flex justifyBetween>
-          <Test style={{ paddingLeft: '30px' }}>
+          <Test style={{ paddingLeft: Width >= 500 ? "50px" : "2px" }}>
             Join the Remotify beta testing program !
           </Test>
 
-          <Button
-            onClick={() => {
-              setTestModal(true);
-            }}
-            style={{ paddingRight: '20px', fontSize: '1.1em' }}
-          >
-            Join Program
-          </Button>
+          {Width >= 470 ? (
+            <Button
+              onClick={() => {
+                setTestModal(true)
+              }}
+              style={{
+                paddingRight: "15px",
+                marginRight: "25px",
+                fontSize: "1.1em",
+              }}
+            >
+              Join Program
+            </Button>
+          ) : (
+            <Button
+              onClick={() => {
+                setTestModal(true)
+              }}
+              style={{
+                paddingRight: "15px",
+                fontSize: "1.1em",
+              }}
+            >
+              Join
+            </Button>
+          )}
         </Flex>
       </Testing>
 
       <footer style={Div}>
-        <div style={{ padding: '2%' }}>
-          <Flex justifyAround>
-            <div>
-              <h5 style={{ marginTop: '1em', color: '#fff' }}>Remotify.Inc</h5>
+        {Width >= 500 ? (
+          <div style={{ padding: "2%" }}>
+            <Flex justifyAround>
+              <div>
+                <h5 style={{ marginTop: "1em", color: "#fff" }}>
+                  Remotify.Inc
+                </h5>
 
-              <Flex justifyCenter>
-                <FiFacebook style={{ color: 'black', fontSize: '1.5em' }} />
-                <FiTwitter style={{ color: 'blue', fontSize: '1.5em' }} />
-                <FiGithub style={{ color: 'black', fontSize: '1.5em' }} />
+                <Flex justifyAround>
+                  <FiFacebook style={{ color: "black", fontSize: "1.5em" }} />
+                  <FiTwitter style={{ color: "blue", fontSize: "1.5em" }} />
+                  <FiGithub style={{ color: "black", fontSize: "1.5em" }} />
+                </Flex>
+              </div>
+              <Flex column>
+                <p style={Head}> PRODUCT </p>
+                <p style={Title}> Create Team </p>
+                <p style={Title}> Documentation </p>
+                <p style={Title}> Billing </p>
               </Flex>
-            </div>
-            <Flex column>
-              <p style={Head}> PRODUCT </p>
-              <p style={Title}> Create Team </p>
-              <p style={Title}> Documentation </p>
-              <p style={Title}> Billing </p>
+              <Flex column>
+                <p style={Head}> HELP </p>
+                <p style={Title}> Integrations </p>
+                <p style={Title}> Guides </p>
+                <p style={Title}> About Us </p>
+              </Flex>
+
+              <Flex column>
+                <p style={Head}> MORE </p>
+                <p style={Title}> Social </p>
+                <p style={Title}> Careers </p>
+                <p style={Title}> Legal terms </p>
+              </Flex>
             </Flex>
-            <Flex column>
-              <p style={Head}> HELP </p>
-              <p style={Title}> Integrations </p>
-              <p style={Title}> Guides </p>
-              <p style={Title}> About Us </p>
+          </div>
+        ) : (
+          <div style={{ padding: "0.5%" }}>
+            <Flex justifyCenter>
+              <div>
+                <h5 style={{ marginTop: "1em", color: "#fff" }}>
+                  Remotify.Inc
+                </h5>
+
+                <Flex justifyAround>
+                  <FiFacebook style={{ color: "black", fontSize: "1.5em" }} />
+                  <FiTwitter style={{ color: "blue", fontSize: "1.5em" }} />
+                  <FiGithub style={{ color: "black", fontSize: "1.5em" }} />
+                </Flex>
+              </div>
             </Flex>
 
-            <Flex column>
-              <p style={Head}> MORE </p>
-              <p style={Title}> Social </p>
-              <p style={Title}> Careers </p>
-              <p style={Title}> Legal terms </p>
+            <br />
+            <Flex justifyAround>
+              <Flex column>
+                <p style={Head}> PRODUCT </p>
+                <p style={Title}> Create Team </p>
+                <p style={Title}> Documentation </p>
+                <p style={Title}> Billing </p>
+              </Flex>
+              <Flex column>
+                <p style={Head}> HELP </p>
+                <p style={Title}> Integrations </p>
+                <p style={Title}> Guides </p>
+                <p style={Title}> About Us </p>
+              </Flex>
+
+              <Flex column>
+                <p style={Head}> MORE </p>
+                <p style={Title}> Social </p>
+                <p style={Title}> Careers </p>
+                <p style={Title}> Legal terms </p>
+              </Flex>
             </Flex>
-          </Flex>
-        </div>
+          </div>
+        )}
 
         <div
           style={{
-            textAlign: 'center',
-            padding: '0.7%',
-            backgroundColor: ' #361f94',
-            fontSize: '0.8em',
-            color: '#fff',
+            marginTop: "1em",
+            paddingTop: "0.5em",
+            textAlign: "center",
+            padding: "0.7%",
+            backgroundColor: " #361f94",
+            fontSize: "0.8em",
+            color: "#fff",
           }}
         >
           <p>
@@ -194,7 +274,7 @@ const Footer = () => {
         </div>
       </footer>
     </div>
-  );
-};
+  )
+}
 
-export default Footer;
+export default Footer
