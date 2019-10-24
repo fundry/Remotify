@@ -3,7 +3,6 @@ import styled from "styled-components"
 import Flex from "styled-flex-component"
 import { Card } from "react-bootstrap"
 import { Planet } from "react-kawaii"
-import { FiCheck } from "react-icons/fi"
 import { useMutation } from "@apollo/react-hooks"
 import media from "styled-media-query"
 

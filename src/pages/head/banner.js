@@ -7,7 +7,7 @@ import { Query } from "react-apollo"
 import Header from "./header"
 import { Test } from "../../data/queries"
 
-const Banner = () => {
+const Banner = props => {
   const Contain = styled.div`
     background: #f0b65f;
   `
@@ -57,7 +57,6 @@ const Banner = () => {
             <Motto> Secret Keys Management. </Motto>
           </Carousel.Item>
         </Carousel>
-
       </Body>
     </Contain>
   )
