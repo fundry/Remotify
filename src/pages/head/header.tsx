@@ -26,9 +26,9 @@ const Header = ({ style }: Props) => {
     Color: "#0b33a2",
   }
 
-  const A = styled.a`
+  const Brand = styled.p`
     color: #0b33a2;
-    text-decoration: none;
+    text-decoration#: none;
     font-size: 25px;
     font-family: comic sans ms;
     font-weight: bold;
@@ -107,7 +107,9 @@ const Header = ({ style }: Props) => {
                           "https:/a/res.cloudinary.com/dkfptto8m/image/upload/v1558070244/Mongodb%20hackathon%20project/thunder.png"
                         }
                       />
-                      <A>Remotify</A>
+                      <Link to="/">
+                        <Brand>Remotify</Brand>
+                      </Link>
                     </Flex>
                   </NameDiv>
                   <Flex>
@@ -144,7 +146,9 @@ const Header = ({ style }: Props) => {
                           "https:/a/res.cloudinary.com/dkfptto8m/image/upload/v1558070244/Mongodb%20hackathon%20project/thunder.png"
                         }
                       />
-                      <A>Remotify</A>
+                      <Link to="/">
+                        <Brand>Remotify</Brand>
+                      </Link>
                     </Flex>
                   </NameDiv>
                   <Flex>
@@ -186,7 +190,9 @@ const Header = ({ style }: Props) => {
                           "https:/a/res.cloudinary.com/dkfptto8m/image/upload/v1558070244/Mongodb%20hackathon%20project/thunder.png"
                         }
                       />
-                      <A>Remotify</A>
+                      <Link to="/">
+                        <Brand>Remotify</Brand>
+                      </Link>
                     </Flex>
                   </NameDiv>
 
@@ -207,7 +213,9 @@ const Header = ({ style }: Props) => {
                           "https:/a/res.cloudinary.com/dkfptto8m/image/upload/v1558070244/Mongodb%20hackathon%20project/thunder.png"
                         }
                       />
-                      <A>Remotify</A>
+                      <Link to="/">
+                        <Brand>Remotify</Brand>
+                      </Link>
                     </Flex>
                   </NameDiv>
 

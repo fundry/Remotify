@@ -3,12 +3,29 @@ import Flex from "styled-flex-component"
 import Sample from "./svg/console_sample.svg"
 import posed from "react-pose"
 
+import styled from "styled-components"
+import media from "styled-media-query"
+
 const Features = () => {
-  const Div = {
-    background: "linear-gradient(to bottom, #2b44ff, #0C0233)",
-    color: "#fff",
-    padding: "2em",
-  }
+  const Div = styled.div`
+    padding: 1em;
+  `
+
+  const Title = styled.h2`
+    ${media.lessThan("medium")`
+      font-size: 1.3em
+  `};
+  `
+
+  const Text = styled.p`
+    font-size: 1.2em ${media.lessThan("medium")`
+    font-size: 1em
+`};
+  `
+
+  //   ${media.lessThan("medium")`
+  //     font-size: 20px
+  // `};
 
   const Hover = posed.div({
     hoverable: true,
@@ -42,127 +59,136 @@ const Features = () => {
 
   return (
     <div>
-      {Width >= 1000 ? (
-        <div>
-          <div style={Div}>
-            <Flex justifyCenter>
-              <div style={{ padding: "2em", width: "70%" }}>
-                <h2 style={{ textAlign: "center" }}>
-                  {" "}
-                  Customizable Interface{" "}
-                </h2>
-                <p style={{ textAlign: "center", fontSize: "1.2em" }}>
-                  Switch between colors and layouts to give the unique
-                  development environemt.
-                </p>
-                <Flex justifyBetween>
-                  <Hover>
-                    <img
-                      alt="Workspace"
-                      src={Sample}
-                      style={{ maxWidth: "120%", paddingRight: "4em" }}
-                    />{" "}
-                  </Hover>{" "}
-                  <Hover>
-                    <img
-                      alt="Workspace"
-                      src={Sample}
-                      style={{ maxWidth: "120% ", paddingLeft: "4em" }}
-                    />{" "}
-                  </Hover>{" "}
-                </Flex>
-              </div>
-            </Flex>
-
-            <Flex justifyCenter>
-              <div style={{ padding: "2em", width: "70%" }}>
-                <h2 style={{ textAlign: "center" }}>
-                  {" "}
-                  Monitor working performance{" "}
-                </h2>
-                <p style={{ textAlign: "center", fontSize: "1.2em" }}>
-                  Switch between colors and layouts to give the unique
-                  development environemt.
-                </p>
-              </div>
-              <Hover>
-                <img alt="Workspace" src={Sample} style={{ maxWidth: "70%" }} />{" "}
-              </Hover>
-            </Flex>
-            <Flex justifyCenter>
-              <Hover>
-                <img alt="Workspace" src={Sample} style={{ maxWidth: "70%" }} />{" "}
-              </Hover>
-              <div style={{ padding: "2em", width: "70%" }}>
-                <h2 style={{ textAlign: "center" }}> Track working hours </h2>
-                <p style={{ textAlign: "center", fontSize: "1.2em" }}>
-                  Switch between colors and layouts to give the unique
-                  development environemt.
-                </p>
-              </div>
-            </Flex>
-          </div>{" "}
-        </div>
-      ) : (
-        <div style={Div}>
+      {Width >= 1100 ? (
+        <Div
+          style={{
+            color: "#fff",
+            background: "linear-gradient(to bottom, #2b44ff, #0c0233)",
+          }}
+        >
           <Flex justifyCenter>
-            <div style={{ padding: "2em" }}>
-              <h3 style={{ textAlign: "center" }}> Customizable Interface </h3>
-              <p style={{ textAlign: "center", fontSize: "1.35em" }}>
+            <div style={{ padding: "2em", width: "70%" }}>
+              <Title style={{ textAlign: "center" }}>
+                Customizable Interface
+              </Title>
+              <Text style={{ textAlign: "center", fontSize: "1.2em" }}>
+                Switch between colors and layouts to give the unique development
+                environemt.
+              </Text>
+              <Flex justifyBetween>
+                <Hover>
+                  <img
+                    alt="Workspace"
+                    src={Sample}
+                    style={{ maxWidth: "130%", paddingRight: "5em" }}
+                  />
+                </Hover>
+                <Hover>
+                  <img
+                    alt="Workspace"
+                    src={Sample}
+                    style={{ maxWidth: "130% ", paddingLeft: "5em" }}
+                  />
+                </Hover>
+              </Flex>
+            </div>
+          </Flex>
+
+          <Flex justifyCenter>
+            <div style={{ padding: "2em", width: "70%" }}>
+              <Title style={{ textAlign: "center" }}>
+                Monitor working performance
+              </Title>
+              <Text style={{ textAlign: "center", fontSize: "1.2em" }}>
+                Switch between colors and layouts to give the unique development
+                environemt.
+              </Text>
+            </div>
+            <Hover>
+              <img alt="Workspace" src={Sample} style={{ maxWidth: "70%" }} />
+            </Hover>
+          </Flex>
+          <Flex justifyCenter>
+            <Hover>
+              <img alt="Workspace" src={Sample} style={{ maxWidth: "70%" }} />
+            </Hover>
+            <div style={{ padding: "2em", width: "70%" }}>
+              <Title style={{ textAlign: "center" }}>Track working hours</Title>
+              <Text style={{ textAlign: "center", fontSize: "1.2em" }}>
+                Switch between colors and layouts to give the unique development
+                environemt.
+              </Text>
+            </div>
+          </Flex>
+        </Div>
+      ) : (
+        <Div
+          style={{
+            color: "#fff",
+            background: "linear-gradient(to bottom, #2b44ff, #0c0233)",
+          }}
+        >
+          <Flex justifyCenter>
+            <div style={{ padding: "1em" }}>
+              <Title style={{ textAlign: "center" }}>
+                Customizable Interface
+              </Title>
+              <Text style={{ textAlign: "center" }}>
                 Switch between colors and layouts to create your unique working
                 environemt environemt.
-              </p>{" "}
+              </Text>
               <Flex justifyCenter>
                 <Hover>
                   <img
                     alt="Workspace"
                     src={Sample}
                     style={{ maxWidth: "75%" }}
-                  />{" "}
+                  />
                 </Hover>
               </Flex>
             </div>
           </Flex>
           <Flex justifyCenter>
-            <div style={{ padding: "2em" }}>
-              <h3 style={{ textAlign: "center" }}>
-                {" "}
-                Monitor working performance{" "}
-              </h3>
-              <p style={{ textAlign: "center", fontSize: "1.35em" }}>
+            <div style={{ padding: "1em" }}>
+              <Title style={{ textAlign: "center" }}>
+                Monitor working performance
+              </Title>
+              <Text style={{ textAlign: "center" }}>
                 Switch between colors and lyouts to give the unique development
                 environemt.
-              </p>{" "}
+              </Text>
               <Flex justifyCenter>
                 <Hover>
                   <img
                     alt="Workspace"
                     src={Sample}
                     style={{ maxWidth: "75%" }}
-                  />{" "}
-                </Hover>
-              </Flex>
-            </div>
-          </Flex>{" "}
-          <Flex justifyCenter>
-            <div style={{ padding: "2em" }}>
-              <h3 style={{ textAlign: "center" }}> Track working hours.</h3>
-              <p style={{ textAlign: "center", fontSize: "1.35em" }}>
-                Switch between colors and lyouts to give the unique development
-                environemt.
-              </p>{" "}
-              <Flex justifyCenter>
-                <Hover>
-                  <img
-                    alt="Workspace"
-                    src={Sample}
-                    style={{ maxWidth: "75%" }}
-                  />{" "}
+                  />
                 </Hover>
               </Flex>
             </div>
           </Flex>
-        </div>
+          <Flex justifyCenter>
+            <div style={{ padding: "1em" }}>
+              <Title style={{ textAlign: "center" }}>
+                Track working hours.
+              </Title>
+              <Text style={{ textAlign: "center" }}>
+                Switch between colors and lyouts to give the unique development
+                environemt.
+              </Text>
+              <Flex justifyCenter>
+                <Hover>
+                  <img
+                    alt="Workspace"
+                    src={Sample}
+                    style={{ maxWidth: "75%" }}
+                  />
+                </Hover>
+              </Flex>
+            </div>
+          </Flex>
+        </Div>
       )}
     </div>
   )
