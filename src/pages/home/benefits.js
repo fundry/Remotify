@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import styled from "styled-components"
 import Flex from "styled-flex-component"
 import media from "styled-media-query"
@@ -19,26 +19,38 @@ const Benefits = () => {
     `};
   `
 
-  const Header = {
-    color: "#0b33a2",
-  }
-
   const Title = styled.li`
     font-size: 1.2em;
-
     ${media.lessThan("medium")`
       font-size: 1em
       padding-left : 20px
+      padding-right : 5px
   `};
   `
 
   const ListBody = styled.div`
+    margin-right : 10%
     padding-right: 20%
     padding-top: 15px
     ${media.lessThan("medium")`
         margin-right : 10%
     `};
   `
+
+  const [Width, setWidth] = useState(null)
+
+  setTimeout(function() {
+    setWidth(window.innerWidth)
+  }, 1000)
+
+  const handleResize = value => {
+    setWidth(value)
+  }
+
+  useEffect(() => {
+    window.addEventListener("resize", handleResize.bind(this))
+    return () => window.removeEventListener("resize", handleResize.bind(this))
+  }, [])
 
   return (
     <Div>
@@ -54,22 +66,51 @@ const Benefits = () => {
       </Head>
 
       <div style={{ padding: "1em" }}>
-        <Flex justifyBetween>
-          <img src={Worker} style={{ paddingLeft: "20%" }} />
+        {Width >= 450 ? (
+          <Flex justifyBetween>
+            <img
+              src={Worker}
+              style={{ paddingLeft: "20%" }}
+              alt="ilustration"
+            />
 
-          <ListBody
-            style={{
-              color: "#0e2f5a",
-            }}
-          >
-            <Flex column>
-              <Title> Customizable Interface </Title>
-              <Title> Integrate external tools </Title>
-              <Title> Monitor Perfomance </Title>
-              <Title> Control over time spent. </Title>
+            <ListBody
+              style={{
+                color: "#0e2f5a",
+              }}
+            >
+              <Flex column>
+                <Title> Customizable Interface </Title>
+                <Title> Integrate external tools </Title>
+                <Title> Monitor Perfomance </Title>
+                <Title> Control over time spent. </Title>
+              </Flex>
+            </ListBody>
+          </Flex>
+        ) : (
+          <div>
+            <Flex justifyCenter>
+              <img
+                src={Worker}
+                style={{ textAlign: "center", maxWidth: "30%" }}
+                alt="ilustration"
+              />{" "}
             </Flex>
-          </ListBody>
-        </Flex>
+
+            <ListBody
+              style={{
+                color: "#0e2f5a",
+              }}
+            >
+              <Flex column>
+                <Title> Customizable Interface </Title>
+                <Title> Integrate external tools </Title>
+                <Title> Monitor Perfomance </Title>
+                <Title> Control over time spent. </Title>
+              </Flex>
+            </ListBody>
+          </div>
+        )}
       </div>
 
       <br />
