@@ -4,6 +4,7 @@ import Flex from "styled-flex-component"
 import { FiCheck } from "react-icons/fi"
 import { Card } from "react-bootstrap"
 import { Link } from "gatsby"
+import media from "styled-media-query"
 
 const autoGrid = (minColumnWidth = 250, gridGap = 0) => ({
   display: "grid",
@@ -29,6 +30,11 @@ const Button = styled.button`
     border: 2px solid #0e2f5a;
     font-size: 1em;
   }
+  ${media.lessThan("medium")`
+  font-size: 0.9em
+  border-radius: 2px;
+  padding: 0.5em 1.5em;
+`};
 `
 
 const Div = {
@@ -88,31 +94,66 @@ const Register = props => {
     return () => window.removeEventListener("resize", handleResize.bind(this))
   }, [])
 
+  const Title = styled.h2`
+    ${media.lessThan("medium")`
+    font-size: 1.5em
+  `};
+  `
+
+  const Details = styled.p`
+    font-size: 1.4em ${media.lessThan("medium")`
+    font-size: 1.1em
+  `};
+  `
+
+  const Warning = styled.p`
+    font-size: 1.2em ${media.lessThan("medium")`
+  font-size: 1em
+`};
+  `
+
+  const Item = styled.p`
+    font-size: 1.5em ${media.lessThan("medium")`
+ font-size: 1.1em
+ `};
+  `
+
+  const Name = styled.h2`
+    ${media.lessThan("medium")`
+  font-size: 1.4em
+  `};
+  `
+
+  const Price = styled.h3`
+    ${media.lessThan("medium")`
+  font-size: 1.2em
+  `};
+  `
+
   return (
     <div>
       <div style={Div}>
         <Flex justifyCenter>
           <div style={{ padding: "1em", width: "90%" }}>
-            <h2 style={{ textAlign: "center", fontWeight: "bold" }}>
+            <Title style={{ textAlign: "center", fontWeight: "bold" }}>
               Pricing.
-            </h2>
+            </Title>
 
             <code>
-              <p
+              <Warning
                 style={{
                   color: "red",
                   textAlign: "center",
-                  fontSize: "1.2em",
                 }}
               >
                 Remotify is currently in a Beta release and would remain free
                 untill a stable release.
-              </p>
+              </Warning>
             </code>
-            <p style={{ textAlign: "center", fontSize: "1.5em" }}>
+            <Details style={{ textAlign: "center" }}>
               Our Flexible Pricing models are designed to give you the same
               quality of your money.
-            </p>
+            </Details>
           </div>
         </Flex>
 
@@ -140,12 +181,12 @@ const Register = props => {
                       textAlign: "center",
                       backgroundColor: "blue",
                       color: "#fff",
-                      padding: "2em",
-                      borderRadius: "10px",
+                      padding: "1.7em",
+                      borderRadius: "0px 0px 15px 15px",
                     }}
                   >
-                    <h3 style={{ fontWeight: "bold" }}> {name} </h3>
-                    <h5> 000$ </h5>
+                    <Name style={{ fontWeight: "bold" }}> {name} </Name>
+                    <Price> 000$ </Price>
                   </Card.Header>
                   <Card.Body
                     style={{
@@ -205,37 +246,36 @@ const Register = props => {
                     textAlign: "center",
                     backgroundColor: "blue",
                     color: "#fff",
-                    padding: "2em",
-                    borderRadius: "10px",
+                    padding: Width >= 600 ? "2em" : "1em",
+                    borderRadius: "0px 0px 15px 15px",
                   }}
                 >
-                  <h3 style={{ fontWeight: "bold" }}> {name} </h3>
-                  <h5> 000$ </h5>
+                  <Name style={{ fontWeight: "bold" }}> {name} </Name>
+                  <Price> 000$ </Price>
                 </Card.Header>
                 <Card.Body
                   style={{
                     color: "#000",
-                    padding: "0.5em",
+                    padding: "0.2em",
                   }}
                 >
                   <ul>
                     {Benefits.map(({ name }) => {
                       return (
-                        <ol style={{ padding: "0.5em" }}>
+                        <ol style={{ padding: "0.3em" }}>
                           <Flex>
                             <FiCheck
                               style={{
-                                fontSize: "2em",
+                                fontSize: "1.5em",
                               }}
                             />
-                            <p
+                            <Item
                               style={{
-                                fontSize: "1.5em",
-                                paddingLeft: "15px",
+                                paddingLeft: "10px",
                               }}
                             >
                               {name}
-                            </p>
+                            </Item>
                           </Flex>
                         </ol>
                       )

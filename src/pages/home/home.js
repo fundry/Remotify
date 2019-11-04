@@ -79,7 +79,7 @@ const Home = () => {
 
   return (
     <div>
-      <div style={{ padding: "2em", backgroundColor: "#f2f5ff" }}>
+      <div style={{ padding: "1.5em", backgroundColor: "#f2f5ff" }}>
         <Title style={{ textAlign: "center", fontWeight: "bold" }}>
           Maximising the Remote Worker{" "}
         </Title>

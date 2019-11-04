@@ -113,67 +113,156 @@ const Lite = () => {
           </Button>
         </Link>
       </Header>
-      <Apps>
-        <Bounce>
-          <Card>
-            <DiTrello style={{ fontSize: Width >= 550 ? "3.5em" : "2.7em" }} />
-          </Card>
-        </Bounce>
 
-        <Bounce>
-          <Card>
-            <DiGithub style={{ fontSize: Width >= 550 ? "3.5em" : "2.7em" }} />
-          </Card>
-        </Bounce>
+      {Width >= 1300 ? (
+        <Flex justifyAround>
+          <Bounce>
+            <Card>
+              <DiTrello
+                style={{ fontSize: Width >= 550 ? "3.5em" : "2.7em" }}
+              />
+            </Card>
+          </Bounce>
 
-        <Bounce>
-          <Card>
-            <DiWordpress
-              style={{ fontSize: Width >= 550 ? "3.5em" : "2.7em" }}
-            />
-          </Card>
-        </Bounce>
+          <Bounce>
+            <Card>
+              <DiGithub
+                style={{ fontSize: Width >= 550 ? "3.5em" : "2.7em" }}
+              />
+            </Card>
+          </Bounce>
 
-        <Bounce>
-          <Card>
-            <DiCloud9 style={{ fontSize: Width >= 550 ? "3.5em" : "2.7em" }} />
-          </Card>
-        </Bounce>
+          <Bounce>
+            <Card>
+              <DiWordpress
+                style={{ fontSize: Width >= 550 ? "3.5em" : "2.7em" }}
+              />
+            </Card>
+          </Bounce>
 
-        <Bounce>
-          <Card>
-            <FiCodesandbox
-              style={{ fontSize: Width >= 550 ? "3.5em" : "2.7em" }}
-            />
-          </Card>
-        </Bounce>
+          <Bounce>
+            <Card>
+              <DiCloud9
+                style={{ fontSize: Width >= 550 ? "3.5em" : "2.7em" }}
+              />
+            </Card>
+          </Bounce>
 
-        <Bounce>
-          <Card>
-            <DiTrello style={{ fontSize: Width >= 550 ? "3.5em" : "2.7em" }} />
-          </Card>
-        </Bounce>
+          <Bounce>
+            <Card>
+              <FiCodesandbox
+                style={{ fontSize: Width >= 550 ? "3.5em" : "2.7em" }}
+              />
+            </Card>
+          </Bounce>
 
-        <Bounce>
-          <Card>
-            <DiCloud9 style={{ fontSize: Width >= 550 ? "3.5em" : "2.7em" }} />
-          </Card>
-        </Bounce>
+          <Bounce>
+            <Card>
+              <DiTrello
+                style={{ fontSize: Width >= 550 ? "3.5em" : "2.7em" }}
+              />
+            </Card>
+          </Bounce>
 
-        <Bounce>
-          <Card>
-            <FiCodesandbox
-              style={{ fontSize: Width >= 550 ? "3.5em" : "2.7em" }}
-            />
-          </Card>
-        </Bounce>
+          <Bounce>
+            <Card>
+              <DiCloud9
+                style={{ fontSize: Width >= 550 ? "3.5em" : "2.7em" }}
+              />
+            </Card>
+          </Bounce>
 
-        <Bounce>
-          <Card>
-            <DiTrello style={{ fontSize: Width >= 550 ? "3.5em" : "2.7em" }} />
-          </Card>
-        </Bounce>
-      </Apps>{" "}
+          <Bounce>
+            <Card>
+              <FiCodesandbox
+                style={{ fontSize: Width >= 550 ? "3.5em" : "2.7em" }}
+              />
+            </Card>
+          </Bounce>
+
+          <Bounce>
+            <Card>
+              <DiTrello
+                style={{ fontSize: Width >= 550 ? "3.5em" : "2.7em" }}
+              />
+            </Card>
+          </Bounce>
+        </Flex>
+      ) : (
+        <Apps>
+          <Bounce>
+            <Card>
+              <DiTrello
+                style={{ fontSize: Width >= 550 ? "3.5em" : "2.7em" }}
+              />
+            </Card>
+          </Bounce>
+
+          <Bounce>
+            <Card>
+              <DiGithub
+                style={{ fontSize: Width >= 550 ? "3.5em" : "2.7em" }}
+              />
+            </Card>
+          </Bounce>
+
+          <Bounce>
+            <Card>
+              <DiWordpress
+                style={{ fontSize: Width >= 550 ? "3.5em" : "2.7em" }}
+              />
+            </Card>
+          </Bounce>
+
+          <Bounce>
+            <Card>
+              <DiCloud9
+                style={{ fontSize: Width >= 550 ? "3.5em" : "2.7em" }}
+              />
+            </Card>
+          </Bounce>
+
+          <Bounce>
+            <Card>
+              <FiCodesandbox
+                style={{ fontSize: Width >= 550 ? "3.5em" : "2.7em" }}
+              />
+            </Card>
+          </Bounce>
+
+          <Bounce>
+            <Card>
+              <DiTrello
+                style={{ fontSize: Width >= 550 ? "3.5em" : "2.7em" }}
+              />
+            </Card>
+          </Bounce>
+
+          <Bounce>
+            <Card>
+              <DiCloud9
+                style={{ fontSize: Width >= 550 ? "3.5em" : "2.7em" }}
+              />
+            </Card>
+          </Bounce>
+
+          <Bounce>
+            <Card>
+              <FiCodesandbox
+                style={{ fontSize: Width >= 550 ? "3.5em" : "2.7em" }}
+              />
+            </Card>
+          </Bounce>
+
+          <Bounce>
+            <Card>
+              <DiTrello
+                style={{ fontSize: Width >= 550 ? "3.5em" : "2.7em" }}
+              />
+            </Card>
+          </Bounce>
+        </Apps>
+      )}
     </Body>
   )
 }
