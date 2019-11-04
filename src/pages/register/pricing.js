@@ -14,7 +14,7 @@ const autoGrid = (minColumnWidth = 250, gridGap = 0) => ({
 
 const Cards = styled.div({
   ...autoGrid(350, 20),
-  padding: "4em",
+  padding: "1em",
 })
 
 const Button = styled.button`
@@ -114,18 +114,18 @@ const Register = props => {
 
   const Item = styled.p`
     font-size: 1.5em ${media.lessThan("medium")`
- font-size: 1.1em
+ font-size: 1.2em
  `};
   `
 
   const Name = styled.h2`
-    ${media.lessThan("medium")`
+    font-size: 1.7em ${media.lessThan("medium")`
   font-size: 1.4em
   `};
   `
 
   const Price = styled.h3`
-    ${media.lessThan("medium")`
+    font-size: 1.4em ${media.lessThan("medium")`
   font-size: 1.2em
   `};
   `
@@ -236,7 +236,8 @@ const Register = props => {
             return (
               <Card
                 style={{
-                  margin: "0.5em",
+                  marginRight: "2em",
+                  margin: "0.7em",
                   boxShadow: "0px 5px 5px grey",
                   borderRadius: "10px",
                 }}
@@ -259,28 +260,26 @@ const Register = props => {
                     padding: "0.2em",
                   }}
                 >
-                  <ul>
-                    {Benefits.map(({ name }) => {
-                      return (
-                        <ol style={{ padding: "0.3em" }}>
-                          <Flex>
-                            <FiCheck
-                              style={{
-                                fontSize: "1.5em",
-                              }}
-                            />
-                            <Item
-                              style={{
-                                paddingLeft: "10px",
-                              }}
-                            >
-                              {name}
-                            </Item>
-                          </Flex>
-                        </ol>
-                      )
-                    })}
-                  </ul>
+                  {Benefits.map(({ name }) => {
+                    return (
+                      <ol style={{ padding: "0.3em" }}>
+                        <Flex>
+                          <FiCheck
+                            style={{
+                              fontSize: "1.5em",
+                            }}
+                          />
+                          <Item
+                            style={{
+                              paddingLeft: "10px",
+                            }}
+                          >
+                            {name}
+                          </Item>
+                        </Flex>
+                      </ol>
+                    )
+                  })}
 
                   <Link to={link}>
                     <Flex justifyCenter>
