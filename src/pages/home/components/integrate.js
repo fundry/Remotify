@@ -3,7 +3,7 @@ import Flex from "styled-flex-component"
 import styled from "styled-components"
 import media from "styled-media-query"
 
-import Integration from "./svg/integration.svg"
+import Integration from "../svg/integration.svg"
 
 const Integrate = () => {
   const Div = styled.div({

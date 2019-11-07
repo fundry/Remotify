@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import styled from "styled-components"
 import posed from "react-pose"
 import { DiTrello, DiGithub, DiWordpress, DiCloud9 } from "react-icons/di"
@@ -68,6 +68,15 @@ const Lite = () => {
     setWidth(window.innerWidth)
   }, 1000)
 
+  const handleResize = value => {
+    setWidth(value)
+  }
+
+  useEffect(() => {
+    window.addEventListener("resize", handleResize.bind(this))
+    return () => window.removeEventListener("resize", handleResize.bind(this))
+  }, [])
+
   const autoGrid = (minColumnWidth = 150, gridGap = 0) => ({
     display: "grid",
     gridTemplateColumns: `repeat(auto-fill, minmax(${minColumnWidth}px, 1fr))`,
@@ -97,7 +106,7 @@ const Lite = () => {
   })
 
   return (
-    <Body>
+    <Body style={{ backgroundColor: "#f2f5ff" }}>
       <Header>
         <Title> Installable Lite Apps </Title>
         <Text>

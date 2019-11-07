@@ -1,85 +1,85 @@
-import React, { useState } from 'react';
-import styled from 'styled-components';
-import Flex from 'styled-flex-component';
-import posed from 'react-pose';
-import { DiTrello } from 'react-icons/di';
+import React, { useState } from "react"
+import styled from "styled-components"
+import Flex from "styled-flex-component"
+import posed from "react-pose"
+import { DiTrello } from "react-icons/di"
 
-import Header from '../head/header';
-import Layout from '../../components/layout';
+import Header from "../../head/header"
+import Layout from "../../../components/layout"
 
 const List = [
-  { name: '' },
-  { name: '' },
-  { name: '' },
-  { name: '' },
-  { name: '' },
-  { name: '' },
-  { name: '' },
-  { name: '' },
-  { name: '' },
-  { name: '' },
-  { name: '' },
-  { name: '' },
-  { name: '' },
-  { name: '' },
-  { name: '' },
-  { name: '' },
-  { name: '' },
-  { name: '' },
-];
+  { name: "" },
+  { name: "" },
+  { name: "" },
+  { name: "" },
+  { name: "" },
+  { name: "" },
+  { name: "" },
+  { name: "" },
+  { name: "" },
+  { name: "" },
+  { name: "" },
+  { name: "" },
+  { name: "" },
+  { name: "" },
+  { name: "" },
+  { name: "" },
+  { name: "" },
+  { name: "" },
+]
 
 const AddLite = () => {
   const Body = styled.div({
-    padding: '0.5em',
-  });
+    padding: "0.5em",
+  })
 
   const Title = styled.h3({
-    textAlign: 'center',
-  });
+    textAlign: "center",
+  })
 
   const Contain = styled.div({
-    padding: '1em',
-  });
+    padding: "1em",
+  })
 
   const autoGrid = (minColumnWidth = 70, gridGap = 0) => ({
-    display: 'grid',
+    display: "grid",
     gridTemplateColumns: `repeat(auto-fill, minmax(${minColumnWidth}px, 1fr))`,
     gridGap,
-  });
+  })
 
   const Apps = styled.div({
     ...autoGrid(120, 10),
-    padding: '1.5em',
-    marginLeft: '1em',
-  });
+    padding: "1.5em",
+    marginLeft: "1em",
+  })
 
   const Bounce = posed.div({
     hoverable: true,
     init: {
       scale: 0.9,
-      boxShadow: '0px 0px 0px rgba(0,0,0,0)',
-      textAlign: 'center',
+      boxShadow: "0px 0px 0px rgba(0,0,0,0)",
+      textAlign: "center",
     },
     hover: {
       scale: 1,
     },
     press: {
       scale: 1.1,
-      boxShadow: '0px 2px 5px rgba(0,0,0,0.1)',
+      boxShadow: "0px 2px 5px rgba(0,0,0,0.1)",
     },
-  });
+  })
 
   const Card = styled.div({
-    height: '10vh',
-    padding: '1em',
-    paddingTop: '1.7em',
-    width: '7em',
-    borderRadius: '5px',
-    boxShadow: '0px 4px 6px grey',
-    background: 'black',
-    color: 'white',
-    cursor: 'pointer',
-  });
+    height: "10vh",
+    padding: "1em",
+    paddingTop: "1.7em",
+    width: "7em",
+    borderRadius: "5px",
+    boxShadow: "0px 4px 6px grey",
+    background: "black",
+    color: "white",
+    cursor: "pointer",
+  })
 
   const Button = styled.button`
     background: #361f94;
@@ -93,9 +93,9 @@ const AddLite = () => {
       border: 2px solid #0e2f5a;
       font-size: 1em;
     }
-  `;
+  `
 
-  const [Request, setRequest] = useState(false);
+  const [Request, setRequest] = useState(false)
 
   return (
     <Layout>
@@ -109,10 +109,10 @@ const AddLite = () => {
               return (
                 <Bounce key={i}>
                   <Card>
-                    <DiTrello style={{ fontSize: '2.7em' }} />
+                    <DiTrello style={{ fontSize: "2.7em" }} />
                   </Card>
                 </Bounce>
-              );
+              )
             })}
           </Apps>
         </Contain>
@@ -120,23 +120,23 @@ const AddLite = () => {
           {!Request ? (
             <Button
               onClick={() => {
-                setRequest(true);
+                setRequest(true)
               }}
-              style={{ boxShadow: '0px 3px 5px #0b33a2' }}
+              style={{ boxShadow: "0px 3px 5px #0b33a2" }}
             >
-              Make App Request{' '}
+              Make App Request{" "}
             </Button>
           ) : (
             <Contain>
               <div>
                 <input
                   style={{
-                    height: '7.5vh',
-                    width: '30em',
-                    borderRadius: '5px',
-                    paddingLeft: '15px',
-                    border: '1px solid  #361f94 ',
-                    fontSize: '1.2em',
+                    height: "7.5vh",
+                    width: "30em",
+                    borderRadius: "5px",
+                    paddingLeft: "15px",
+                    border: "1px solid  #361f94 ",
+                    fontSize: "1.2em",
                   }}
                   type="text"
                   placeholder="Make Request"
@@ -150,11 +150,11 @@ const AddLite = () => {
               </Flex>
             </Contain>
           )}
-        </Flex>{' '}
+        </Flex>{" "}
         <br />
       </Body>
     </Layout>
-  );
-};
+  )
+}
 
-export default AddLite;
+export default AddLite

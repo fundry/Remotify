@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
 import Flex from "styled-flex-component"
-import Sample from "./svg/console_sample.svg"
+import Sample from "../svg/console_sample.svg"
 import posed from "react-pose"
 
 import styled from "styled-components"
@@ -142,7 +142,7 @@ const Features = () => {
                   <img
                     alt="Workspace"
                     src={Sample}
-                    style={{ maxWidth: "75%" }}
+                    style={{ maxWidth: "95%" }}
                   />
                 </Hover>
               </Flex>
@@ -162,7 +162,7 @@ const Features = () => {
                   <img
                     alt="Workspace"
                     src={Sample}
-                    style={{ maxWidth: "75%" }}
+                    style={{ maxWidth: "95%" }}
                   />
                 </Hover>
               </Flex>
@@ -182,7 +182,7 @@ const Features = () => {
                   <img
                     alt="Workspace"
                     src={Sample}
-                    style={{ maxWidth: "75%" }}
+                    style={{ maxWidth: "95%" }}
                   />
                 </Hover>
               </Flex>

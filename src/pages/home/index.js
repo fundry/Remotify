@@ -1,0 +1,6 @@
+export { default as Lite } from "./components/lite"
+export { default as Benefits } from "./components/benefits"
+export { default as Features } from "./components/features"
+export { default as Integrate } from "./components/integrate"
+export { default as Time } from "./components/time"
+export { default as AddLite } from "./components/addLite"

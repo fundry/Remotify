@@ -7,12 +7,11 @@ import posed from "react-pose"
 import { Link } from "gatsby"
 import media from "styled-media-query"
 
-import Benefits from "./benefits"
-import Integrate from "./integrate"
+import * as Icons from "react-icons"
+
+import { Benefits, Integrate, Features, Lite, Time } from "./"
 import Sample from "./svg/console_sample.svg"
-import Features from "./features"
 import Pricing from "../register/pricing"
-import Lite from "./lite"
 
 const Home = () => {
   const Title = styled.h3`
@@ -21,7 +20,6 @@ const Home = () => {
       font-size: 1.5em
     `};
   `
-
   const Text = styled.p`
     font-size: 1.2em;
     color: #0e2f5a;
@@ -99,7 +97,11 @@ const Home = () => {
           {Width >= 530 ? (
             <Flex justifyCenter>
               <Box>
-                <img src={Sample} style={{ maxWidth: "80%" }} />
+                <img
+                  alt="Sample Desktop"
+                  src={Sample}
+                  style={{ maxWidth: Width >= 700 ? "60%" : "70%" }}
+                />
               </Box>
             </Flex>
           ) : null}
@@ -196,6 +198,7 @@ const Home = () => {
 
       <div>
         <Benefits />
+        <Time />
         <Lite />
         <Features />
         <Integrate />

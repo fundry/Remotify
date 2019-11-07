@@ -34,7 +34,6 @@ const Banner = props => {
     setWidth(window.innerWidth)
   }, 1000)
 
-  const testingGraphql = false
   return (
     <Contain>
       <Header />

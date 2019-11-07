@@ -3,7 +3,7 @@ import styled from "styled-components"
 import Flex from "styled-flex-component"
 import media from "styled-media-query"
 
-import Worker from "./svg/worker.svg"
+import Worker from "../svg/worker.svg"
 
 const Benefits = () => {
   const Div = styled.div`
@@ -17,6 +17,13 @@ const Benefits = () => {
       font-size: 1.4em
       padding-right: 10%
     `};
+  `
+
+  const Subheader = styled.h4`
+    padding-right: 20% ${media.lessThan("medium")`
+    font-size: 1.2em
+    padding-right: 10%
+`};
   `
 
   const Title = styled.li`
@@ -55,15 +62,27 @@ const Benefits = () => {
   return (
     <Div>
       <br />
-      <Head
-        style={{
-          textAlign: "right",
-          fontWeight: "bold",
-          color: "#0b33a2",
-        }}
-      >
-        Enhance Performance, <br /> Reduce Distractions.
-      </Head>
+
+      <Flex column>
+        <Head
+          style={{
+            textAlign: "right",
+            fontWeight: "bold",
+            color: "#0b33a2",
+          }}
+        >
+          Enhance Performance, <br /> Reduce Distractions.
+        </Head>
+        <Subheader
+          style={{
+            textAlign: "right",
+            fontWeight: "normal",
+            color: "#0b33a2",
+          }}
+        >
+          With a Virtual Assistant
+        </Subheader>
+      </Flex>
 
       <div style={{ padding: "1em" }}>
         {Width >= 450 ? (
