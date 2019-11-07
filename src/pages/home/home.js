@@ -7,9 +7,7 @@ import posed from "react-pose"
 import { Link } from "gatsby"
 import media from "styled-media-query"
 
-import * as Icons from "react-icons"
-
-import { Benefits, Integrate, Features, Lite, Time } from "./"
+import { Benefits, Integrate, Features, Lite, Time } from "./index"
 import Sample from "./svg/console_sample.svg"
 import Pricing from "../register/pricing"
 
