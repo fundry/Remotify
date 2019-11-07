@@ -1,42 +1,42 @@
-import React, { useState } from 'react';
-import styled from 'styled-components';
-import Flex from 'styled-flex-component';
-import { Modal } from 'react-bootstrap';
-import { FiX } from 'react-icons/fi';
-import * as Yup from 'yup';
-import { Formik } from 'formik';
+import React, { useState } from "react"
+import styled from "styled-components"
+import Flex from "styled-flex-component"
+import { Modal } from "react-bootstrap"
+import { FiX } from "react-icons/fi"
+import * as Yup from "yup"
+import { Formik } from "formik"
 
-import Header from '../head/header';
-import Layout from '../../components/layout';
+import Header from "../head/header"
+import Layout from "../../components/layout"
 
 const Title = styled.h2({
-  padding: '0.2em',
-  fontWeight: 'bold',
-});
+  padding: "0.2em",
+  fontWeight: "bold",
+})
 
 const Intro = styled.div({
-  fontSize: '1.2em',
-  paddingLeft: '20px',
-  padding: '1em',
-});
+  fontSize: "1.2em",
+  paddingLeft: "20px",
+  padding: "1em",
+})
 
 const Motto = styled.h1({
-  fontWeight: 'bold',
-  fontSize: '3em',
-});
+  fontWeight: "bold",
+  fontSize: "3em",
+})
 
 const Div = styled.div({
-  padding: '0.3em',
-});
+  padding: "0.3em",
+})
 
 const Body = styled.div({
-  padding: '1em',
-});
+  padding: "1em",
+})
 
 const MottoText = styled.p({
-  fontSize: '1.1em',
-  color: 'grey',
-});
+  fontSize: "1.1em",
+  color: "grey",
+})
 
 const Button1 = styled.button`
   background: #361f94;
@@ -50,7 +50,7 @@ const Button1 = styled.button`
     font-size: 1em;
     cursor: pointer;
   }
-`;
+`
 
 const Button2 = styled.button`
   background: transparent;
@@ -64,7 +64,7 @@ const Button2 = styled.button`
   :hover {
     cursor: pointer;
   }
-`;
+`
 
 const Button3 = styled.button`
   background: transparent;
@@ -78,7 +78,7 @@ const Button3 = styled.button`
   :hover {
     cursor: pointer;
   }
-`;
+`
 
 const Submit = styled.button`
   background: #0e2f5a;
@@ -92,40 +92,44 @@ const Submit = styled.button`
   :hover {
     cursor: pointer;
   }
-`;
+`
 
 const ModalBody = styled.div({
-  padding: '2em',
-});
+  padding: "2em",
+})
 
 const ModalHead = styled.div({
-  padding: '0.5em',
-  paddingLeft: '2em',
-});
+  padding: "0.5em",
+  paddingLeft: "2em",
+})
 
 const Text = styled.p({
-  textAlign: 'center',
-  padding: '0.5em',
-  fontSize: '1.2em',
-});
+  textAlign: "center",
+  padding: "0.5em",
+  fontSize: "1.2em",
+})
 
-const Form = styled.form`padding: 1em;`;
+const Form = styled.form`
+  padding: 1em;
+`
 
 const services = () => {
-  const [EvalModal, setEvalModal] = useState(false);
-  const [Evaluation, setEvaluation] = useState(false);
+  const [EvalModal, setEvalModal] = useState(false)
+  const [Evaluation, setEvaluation] = useState(false)
 
   const validation = Yup.object().shape({
     name: Yup.string()
-      .min(3, 'Not less than 3')
-      .max(24, 'More than 24')
-      .required('must have a name '),
+      .min(3, "Not less than 3")
+      .max(24, "More than 24")
+      .required("must have a name "),
     email: Yup.string()
-      .email('Must be an email')
-      .max(37, 'More than 37')
-      .required('must have a name '),
-    password: Yup.string().max(37, 'More than 37').min(5, 'must have a name '),
-  });
+      .email("Must be an email")
+      .max(37, "More than 37")
+      .required("must have a name "),
+    password: Yup.string()
+      .max(37, "More than 37")
+      .min(5, "must have a name "),
+  })
 
   return (
     <Layout>
@@ -133,42 +137,42 @@ const services = () => {
       <Modal
         show={EvalModal}
         onHide={() => {
-          setEvalModal(false);
+          setEvalModal(false)
         }}
         style={{
-          paddingTop: '3%',
-          padding: '5em',
+          paddingTop: "3%",
+          padding: "5em",
         }}
         size="xl"
       >
         <ModalHead>
           <FiX
-            style={{ fontSize: '2em', textAlign: 'right', cursor: 'pointer' }}
+            style={{ fontSize: "2em", textAlign: "right", cursor: "pointer" }}
             onClick={() => {
-              setEvalModal(false);
+              setEvalModal(false)
             }}
           />
         </ModalHead>
 
         <ModalBody>
-          <h3 style={{ textAlign: 'center' }}> Remotify Evaluation </h3>
+          <h3 style={{ textAlign: "center" }}> Remotify Evaluation </h3>
 
           <Text>
             Test run and evaluate Remotify to see if it fits your team needs for
-            14days .{' '}
+            14days .{" "}
           </Text>
 
           {!Evaluation ? (
             <Button3
               onClick={() => {
-                setEvaluation(true);
+                setEvaluation(true)
               }}
             >
               Begin Evaluation.
             </Button3>
           ) : (
             <Formik
-              initialValues={{ email: '', name: '', password: '' }}
+              initialValues={{ email: "", name: "", password: "" }}
               validationSchema={validation}
             >
               {({ handleChange, handleBlur, values, errors }) => (
@@ -176,13 +180,13 @@ const services = () => {
                   <div>
                     <input
                       style={{
-                        height: '7.5vh',
-                        width: '30em',
-                        borderRadius: '5px',
-                        paddingLeft: '10px',
+                        height: "7.5vh",
+                        width: "30em",
+                        borderRadius: "5px",
+                        paddingLeft: "10px",
                         border: !errors.name
-                          ? '1px solid  #361f94 '
-                          : '2.5px solid  red ',
+                          ? "1px solid  #361f94 "
+                          : "2.5px solid  red ",
                       }}
                       value={values.name}
                       onChange={handleChange}
@@ -197,13 +201,13 @@ const services = () => {
                   <div>
                     <input
                       style={{
-                        height: '7.5vh',
-                        width: '30em',
-                        borderRadius: '5px',
-                        paddingLeft: '10px',
+                        height: "7.5vh",
+                        width: "30em",
+                        borderRadius: "5px",
+                        paddingLeft: "10px",
                         border: !errors.email
-                          ? '1px solid  #361f94 '
-                          : '2.5px solid  red ',
+                          ? "1px solid  #361f94 "
+                          : "2.5px solid  red ",
                       }}
                       value={values.email}
                       onChange={handleChange}
@@ -218,13 +222,13 @@ const services = () => {
                   <div>
                     <input
                       style={{
-                        height: '7.5vh',
-                        width: '30em',
-                        borderRadius: '5px',
-                        paddingLeft: '10px',
+                        height: "7.5vh",
+                        width: "30em",
+                        borderRadius: "5px",
+                        paddingLeft: "10px",
                         border: !errors.password
-                          ? '1px solid  #361f94 '
-                          : '2.5px solid  red ',
+                          ? "1px solid  #361f94 "
+                          : "2.5px solid  red ",
                       }}
                       value={values.password}
                       onChange={handleChange}
@@ -247,15 +251,18 @@ const services = () => {
       </Modal>
 
       <Div>
-        <Intro style={{ textAlign: 'center' }}>
-          <Motto> Connect. Plan . Execute </Motto>
+        <Intro style={{ textAlign: "center" }}>
+          <Motto style={{ wordSpacing: "0.5em" }}>
+            {" "}
+            Connect. Plan. Execute{" "}
+          </Motto>
           <MottoText> Empowering remote teams. </MottoText>
           <br />
           <Flex justifyAround>
             <Button1> Get started</Button1>
             <Button2
               onClick={() => {
-                setEvalModal(true);
+                setEvalModal(true)
               }}
             >
               Evaluate Remotify
@@ -302,7 +309,7 @@ const services = () => {
         </Body>
       </Div>
     </Layout>
-  );
-};
+  )
+}
 
-export default services;
+export default services

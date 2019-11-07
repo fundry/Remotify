@@ -4,6 +4,7 @@ import Flex from "styled-flex-component"
 import { Modal } from "react-bootstrap"
 import { FiGithub, FiTwitter, FiFacebook } from "react-icons/fi"
 import media from "styled-media-query"
+import { Link } from "gatsby"
 
 const Footer = () => {
   const Div = {
@@ -92,7 +93,6 @@ const Footer = () => {
     textAlign: "center",
   })
 
-  const [TestModal, setTestModal] = useState(false)
   const [Width, setWidth] = useState(null)
 
   setTimeout(function() {
@@ -110,38 +110,6 @@ const Footer = () => {
 
   return (
     <div>
-      <Modal
-        show={TestModal}
-        onHide={() => setTestModal(false)}
-        style={{ paddingTop: "10%" }}
-      >
-        <Body>
-          <Header> Remotify Beta Testing </Header>
-
-          <Text>
-            Testing program Testing program Testing program Testing program
-            Testing program Testing program Testing program Testing program
-            Testing program Testing program
-          </Text>
-
-          <Flex justifyCenter>
-            <Box>
-              <Flex justifyBetween>
-                <Input placeholder="Email Address" />
-
-                <ModalButton
-                  onClick={() => {
-                    setTestModal(false)
-                  }}
-                >
-                  Invite
-                </ModalButton>
-              </Flex>
-            </Box>
-          </Flex>
-        </Body>
-      </Modal>
-
       <Testing>
         <Flex justifyBetween>
           <Test style={{ paddingLeft: Width >= 500 ? "50px" : "2px" }}>
@@ -149,30 +117,34 @@ const Footer = () => {
           </Test>
 
           {Width >= 470 ? (
-            <Button
-              onClick={() => {
-                setTestModal(true)
-              }}
-              style={{
-                paddingRight: "15px",
-                marginRight: "25px",
-                fontSize: "1.1em",
-              }}
-            >
-              Join Program
-            </Button>
+            <Link to="/testing/testers">
+              <Button
+                onClick={() => {
+                  setTestModal(true)
+                }}
+                style={{
+                  paddingRight: "15px",
+                  marginRight: "25px",
+                  fontSize: "1.1em",
+                }}
+              >
+                Join Program
+              </Button>
+            </Link>
           ) : (
-            <Button
-              onClick={() => {
-                setTestModal(true)
-              }}
-              style={{
-                paddingRight: "15px",
-                fontSize: "1.1em",
-              }}
-            >
-              Join
-            </Button>
+            <Link to="/testing/testers">
+              <Button
+                onClick={() => {
+                  setTestModal(true)
+                }}
+                style={{
+                  paddingRight: "15px",
+                  fontSize: "1.1em",
+                }}
+              >
+                Join
+              </Button>
+            </Link>
           )}
         </Flex>
       </Testing>

@@ -30,7 +30,7 @@ exports.components = {
   "component---src-pages-register-organization-form-js": hot(preferDefault(require("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\register\\organization.form.js"))),
   "component---src-pages-register-pricing-js": hot(preferDefault(require("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\register\\pricing.js"))),
   "component---src-pages-register-services-js": hot(preferDefault(require("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\register\\services.js"))),
-  "component---src-pages-testers-testers-js": hot(preferDefault(require("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\testers\\testers.js"))),
+  "component---src-pages-testing-testers-js": hot(preferDefault(require("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\testing\\testers.js"))),
   "component---src-pages-user-chart-js": hot(preferDefault(require("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\user\\chart.js"))),
   "component---src-pages-user-dashboard-js": hot(preferDefault(require("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\user\\dashboard.js"))),
   "component---src-pages-user-details-activity-tsx": hot(preferDefault(require("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\user\\details\\activity.tsx"))),
