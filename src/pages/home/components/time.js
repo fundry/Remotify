@@ -2,10 +2,7 @@ import React, { useState, useEffect } from "react"
 import styled from "styled-components"
 import Flex from "styled-flex-component"
 import media from "styled-media-query"
-// import { Carousel } from "react-bootstrap"
-import { Carousel } from "react-bootstrap"
-
-import Sample from "../svg/console_sample.svg"
+import Sample from "../svg/scheduler.svg"
 
 const Benefits = () => {
   const Div = styled.div`
@@ -38,88 +35,28 @@ const Benefits = () => {
 
   return (
     <Div>
-      <br />
-
-      <Head
-        style={{
-          textAlign: "left",
-          fontWeight: "bold",
-          color: "#0b33a2",
-        }}
-      >
-        Organize , Plan <br /> Your working hours .
-      </Head>
-
       <div style={{ padding: "1em" }}>
-        {Width >= 470 ? (
-          <Flex justifyCenter>
-            <Carousel>
-              <Carousel.Item>
-                <Flex justifyCenter>
-                  <img
-                    src={Sample}
-                    style={{ textAlign: "center", maxWidth: "60%" }}
-                    alt="ilustration"
-                  />
-                </Flex>
-              </Carousel.Item>
+        <Flex justifyCenter>
+          <div>
+            <Flex justifyCenter>
+              <img
+                src={Sample}
+                style={{ textAlign: "center", maxWidth: "90%" }}
+                alt="ilustration"
+              />
+            </Flex>
 
-              <Carousel.Item>
-                <Flex justifyCenter>
-                  <img
-                    src={Sample}
-                    style={{ textAlign: "center", maxWidth: "60%" }}
-                    alt="ilustration"
-                  />
-                </Flex>
-              </Carousel.Item>
-
-              <Carousel.Item>
-                <Flex justifyCenter>
-                  <img
-                    src={Sample}
-                    style={{ textAlign: "center", maxWidth: "60%" }}
-                    alt="ilustration"
-                  />
-                </Flex>
-              </Carousel.Item>
-            </Carousel>
-          </Flex>
-        ) : (
-          <Flex justifyCenter>
-            <Carousel>
-              <Carousel.Item>
-                <Flex justifyCenter>
-                  <img
-                    src={Sample}
-                    style={{ textAlign: "center", maxWidth: "90%" }}
-                    alt="ilustration"
-                  />
-                </Flex>
-              </Carousel.Item>
-
-              <Carousel.Item>
-                <Flex justifyCenter>
-                  <img
-                    src={Sample}
-                    style={{ textAlign: "center", maxWidth: "90%" }}
-                    alt="ilustration"
-                  />
-                </Flex>
-              </Carousel.Item>
-
-              <Carousel.Item>
-                <Flex justifyCenter>
-                  <img
-                    src={Sample}
-                    style={{ textAlign: "center", maxWidth: "90%" }}
-                    alt="ilustration"
-                  />
-                </Flex>
-              </Carousel.Item>
-            </Carousel>
-          </Flex>
-        )}
+            <Head
+              style={{
+                fontWeight: "normal",
+                color: "#0b33a2",
+                textAlign: "center",
+              }}
+            >
+              Organize , Plan Your working hours.
+            </Head>
+          </div>
+        </Flex>
       </div>
 
       <br />

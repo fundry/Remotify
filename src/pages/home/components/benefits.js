@@ -86,7 +86,7 @@ const Benefits = () => {
 
       <div style={{ padding: "1em" }}>
         {Width >= 450 ? (
-          <Flex justifyBetween>
+          <Flex justifyAround>
             <img
               src={Worker}
               style={{ paddingLeft: "20%" }}
