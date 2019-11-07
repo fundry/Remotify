@@ -43,6 +43,7 @@ exports.components = {
   "component---src-pages-user-details-profile-info-tsx": hot(preferDefault(require("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\user\\details\\profileInfo.tsx"))),
   "component---src-pages-user-list-js": hot(preferDefault(require("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\user\\List.js"))),
   "component---src-pages-user-login-js": hot(preferDefault(require("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\user\\login.js"))),
-  "component---src-pages-user-workers-js": hot(preferDefault(require("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\user\\workers.js")))
+  "component---src-pages-user-workers-js": hot(preferDefault(require("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\user\\workers.js"))),
+  "component---src-pages-home-rbsc-33-s-js": hot(preferDefault(require("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\home\\$RBSC33S.js")))
 }
 

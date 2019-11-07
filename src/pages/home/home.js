@@ -7,14 +7,15 @@ import posed from "react-pose"
 import { Link } from "gatsby"
 import media from "styled-media-query"
 
+import { Benefits, Integrate, Features, Lite, Time } from "./index"
 import Sample from "./svg/console_sample.svg"
 import Pricing from "../register/pricing"
 
-import Benefits from "./components/benefits"
-import Integrate from "./components/integrate"
-import Features from "./components/features"
-import Lite from "./components/lite"
-import Time from "./components/time"
+// import Benefits from './components/benefits'
+// import Integrate from './components/integrate'
+// import Features from './components/features'
+// import Lite from './components/lite'
+// import Time from './components/time'
 
 const Home = () => {
   const Title = styled.h3`

@@ -40,6 +40,7 @@ exports.components = {
   "component---src-pages-user-details-profile-info-tsx": () => import("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\user\\details\\profileInfo.tsx" /* webpackChunkName: "component---src-pages-user-details-profile-info-tsx" */),
   "component---src-pages-user-list-js": () => import("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\user\\List.js" /* webpackChunkName: "component---src-pages-user-list-js" */),
   "component---src-pages-user-login-js": () => import("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\user\\login.js" /* webpackChunkName: "component---src-pages-user-login-js" */),
-  "component---src-pages-user-workers-js": () => import("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\user\\workers.js" /* webpackChunkName: "component---src-pages-user-workers-js" */)
+  "component---src-pages-user-workers-js": () => import("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\user\\workers.js" /* webpackChunkName: "component---src-pages-user-workers-js" */),
+  "component---src-pages-home-rbsc-33-s-js": () => import("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\home\\$RBSC33S.js" /* webpackChunkName: "component---src-pages-home-rbsc-33-s-js" */)
 }
 
