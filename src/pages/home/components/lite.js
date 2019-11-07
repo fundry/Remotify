@@ -188,14 +188,6 @@ const Lite = () => {
               />
             </Card>
           </Bounce>
-
-          <Bounce>
-            <Card>
-              <DiTrello
-                style={{ fontSize: Width >= 550 ? "3.5em" : "2.7em" }}
-              />
-            </Card>
-          </Bounce>
         </Flex>
       ) : (
         <Apps>
@@ -258,14 +250,6 @@ const Lite = () => {
           <Bounce>
             <Card>
               <FiCodesandbox
-                style={{ fontSize: Width >= 550 ? "3.5em" : "2.7em" }}
-              />
-            </Card>
-          </Bounce>
-
-          <Bounce>
-            <Card>
-              <DiTrello
                 style={{ fontSize: Width >= 550 ? "3.5em" : "2.7em" }}
               />
             </Card>
