@@ -5,7 +5,8 @@ import { onError } from 'apollo-link-error';
 import { ApolloLink } from 'apollo-link';
 import fetch from 'isomorphic-fetch';
 
-const ENDPOINT = 'http://localhost:4000/';
+const ENDPOINT = 
+'https://remotify-server-7050e23715.herokuapp.com/default/default'; 
 
 const Client = new ApolloClient({
   link: ApolloLink.from([
