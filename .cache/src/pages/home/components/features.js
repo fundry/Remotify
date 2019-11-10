@@ -113,9 +113,7 @@ const Features = () => {
               <img alt="Workspace" src={Sample} style={{ maxWidth: "70%" }} />
             </Hover>
             <div style={{ padding: "2em", width: "70%" }}>
-              <Title style={{ textAlign: "center" }}>
-                Efficent Communication
-              </Title>
+              <Title style={{ textAlign: "center" }}>Track working hours</Title>
               <Text style={{ textAlign: "center", fontSize: "1.2em" }}>
                 Switch between colors and layouts to give the unique development
                 environemt.
@@ -173,7 +171,7 @@ const Features = () => {
           <Flex justifyCenter>
             <div style={{ padding: "1em" }}>
               <Title style={{ textAlign: "center" }}>
-                Efficent Communication.
+                Track working hours.
               </Title>
               <Text style={{ textAlign: "center" }}>
                 Switch between colors and lyouts to give the unique development

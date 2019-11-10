@@ -19,7 +19,6 @@ exports.components = {
   "component---src-pages-home-components-lite-js": hot(preferDefault(require("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\home\\components\\lite.js"))),
   "component---src-pages-home-components-time-js": hot(preferDefault(require("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\home\\components\\time.js"))),
   "component---src-pages-home-home-js": hot(preferDefault(require("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\home\\home.js"))),
-  "component---src-pages-home-index-js": hot(preferDefault(require("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\home\\index.js"))),
   "component---src-pages-index-js": hot(preferDefault(require("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\index.js"))),
   "component---src-pages-message-main-js": hot(preferDefault(require("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\message\\main.js"))),
   "component---src-pages-message-official-js": hot(preferDefault(require("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\message\\official.js"))),
@@ -32,6 +31,7 @@ exports.components = {
   "component---src-pages-register-organization-form-js": hot(preferDefault(require("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\register\\organization.form.js"))),
   "component---src-pages-register-pricing-js": hot(preferDefault(require("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\register\\pricing.js"))),
   "component---src-pages-register-services-js": hot(preferDefault(require("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\register\\services.js"))),
+  "component---src-pages-register-use-cases-js": hot(preferDefault(require("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\register\\useCases.js"))),
   "component---src-pages-testing-testers-js": hot(preferDefault(require("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\testing\\testers.js"))),
   "component---src-pages-user-chart-js": hot(preferDefault(require("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\user\\chart.js"))),
   "component---src-pages-user-dashboard-js": hot(preferDefault(require("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\user\\dashboard.js"))),
@@ -44,6 +44,6 @@ exports.components = {
   "component---src-pages-user-list-js": hot(preferDefault(require("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\user\\List.js"))),
   "component---src-pages-user-login-js": hot(preferDefault(require("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\user\\login.js"))),
   "component---src-pages-user-workers-js": hot(preferDefault(require("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\user\\workers.js"))),
-  "component---src-pages-home-rbsc-33-s-js": hot(preferDefault(require("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\home\\$RBSC33S.js")))
+  "component---src-pages-register-evaluate-js": hot(preferDefault(require("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\register\\evaluate.js")))
 }
 

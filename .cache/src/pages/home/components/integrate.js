@@ -17,24 +17,13 @@ const Integrate = () => {
   `};
   `
 
-  const Text = styled.p`
-    font-size: 1.3em ${media.lessThan("medium")`
-font-size: 1.1em
-`};
-  `
-
   return (
     <Div>
       <Flex justifyCenter>
         <div style={{ padding: "1em", width: "80%" }}>
           <Title style={{ textAlign: "center", fontWeight: "bold" }}>
-            Migrating to Remotify made easier!
+            Perfect Office for every worker.
           </Title>
-
-          <Text style={{ textAlign: "center" }}>
-            Upload a csv , or txt file containing emails and names of those
-            within your organization to add them to remotify.
-          </Text>
         </div>
       </Flex>
     </Div>

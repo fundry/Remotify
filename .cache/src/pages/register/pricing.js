@@ -6,8 +6,6 @@ import { Card } from "react-bootstrap"
 import { Link } from "gatsby"
 import media from "styled-media-query"
 
-import Cases from "./useCases"
-
 const autoGrid = (minColumnWidth = 250, gridGap = 0) => ({
   display: "grid",
   gridTemplateColumns: `repeat(auto-fill, minmax(${minColumnWidth}px, 1fr))`,

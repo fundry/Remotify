@@ -33,6 +33,18 @@ const Lite = () => {
     `};
   `
 
+  const Card = styled.div({
+    height: "13vh",
+    padding: "1em",
+    paddingTop: "2em",
+    width: "9em",
+    borderRadius: "5px",
+    boxShadow: "0px 4px 6px grey",
+    background: "black",
+    color: "white",
+    cursor: "pointer",
+  })
+
   const Button = styled.button`
     background: transparent;
     border: 1.3px solid #0e2f5a;
@@ -73,8 +85,8 @@ const Lite = () => {
 
   const Apps = styled.div({
     ...autoGrid(130, 7),
-    padding: Width >= 550 ? "1.25em" : "1em",
-    marginLeft: Width >= 550 ? "1.50em" : "1em",
+    padding: Width >= 550 ? "1.25em" : "0.70em",
+    marginLeft: Width >= 550 ? "1.50em" : "0.50em",
   })
 
   const Bounce = posed.div({
@@ -91,18 +103,6 @@ const Lite = () => {
       scale: 1.1,
       boxShadow: "0px 2px 5px rgba(0,0,0,0.1)",
     },
-  })
-
-  const Card = styled.div({
-    height: "13vh",
-    padding: Width >= 450 ? "1em" : "0.5em",
-    paddingTop: Width >= 450 ? "2em" : "1em",
-    width: Width >= 450 ? "9em" : "6em",
-    borderRadius: "5px",
-    boxShadow: "0px 4px 6px grey",
-    background: "black",
-    color: "white",
-    cursor: "pointer",
   })
 
   return (
