@@ -16,6 +16,7 @@ import Integrate from "./components/integrate"
 import Features from "./components/features"
 import Lite from "./components/lite"
 import Time from "./components/time"
+import Storage from "./components/storage"
 
 const Home = () => {
   const Title = styled.h3`
@@ -202,6 +203,7 @@ const Home = () => {
 
       <div>
         <Benefits />
+        <Storage />
         <Time />
         <Lite />
         <Features />

@@ -14,6 +14,7 @@ exports.components = {
   "component---src-pages-home-components-features-js": () => import("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\home\\components\\features.js" /* webpackChunkName: "component---src-pages-home-components-features-js" */),
   "component---src-pages-home-components-integrate-js": () => import("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\home\\components\\integrate.js" /* webpackChunkName: "component---src-pages-home-components-integrate-js" */),
   "component---src-pages-home-components-lite-js": () => import("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\home\\components\\lite.js" /* webpackChunkName: "component---src-pages-home-components-lite-js" */),
+  "component---src-pages-home-components-storage-js": () => import("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\home\\components\\storage.js" /* webpackChunkName: "component---src-pages-home-components-storage-js" */),
   "component---src-pages-home-components-time-js": () => import("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\home\\components\\time.js" /* webpackChunkName: "component---src-pages-home-components-time-js" */),
   "component---src-pages-home-home-js": () => import("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\home\\home.js" /* webpackChunkName: "component---src-pages-home-home-js" */),
   "component---src-pages-index-js": () => import("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\index.js" /* webpackChunkName: "component---src-pages-index-js" */),
@@ -22,6 +23,7 @@ exports.components = {
   "component---src-pages-message-overview-js": () => import("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\message\\overview.js" /* webpackChunkName: "component---src-pages-message-overview-js" */),
   "component---src-pages-message-private-js": () => import("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\message\\private.js" /* webpackChunkName: "component---src-pages-message-private-js" */),
   "component---src-pages-register-details-js": () => import("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\register\\details.js" /* webpackChunkName: "component---src-pages-register-details-js" */),
+  "component---src-pages-register-evaluate-js": () => import("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\register\\evaluate.js" /* webpackChunkName: "component---src-pages-register-evaluate-js" */),
   "component---src-pages-register-event-form-js": () => import("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\register\\event.form.js" /* webpackChunkName: "component---src-pages-register-event-form-js" */),
   "component---src-pages-register-group-form-js": () => import("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\register\\group.form.js" /* webpackChunkName: "component---src-pages-register-group-form-js" */),
   "component---src-pages-register-integration-js": () => import("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\register\\integration.js" /* webpackChunkName: "component---src-pages-register-integration-js" */),
@@ -40,7 +42,6 @@ exports.components = {
   "component---src-pages-user-details-profile-info-tsx": () => import("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\user\\details\\profileInfo.tsx" /* webpackChunkName: "component---src-pages-user-details-profile-info-tsx" */),
   "component---src-pages-user-list-js": () => import("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\user\\List.js" /* webpackChunkName: "component---src-pages-user-list-js" */),
   "component---src-pages-user-login-js": () => import("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\user\\login.js" /* webpackChunkName: "component---src-pages-user-login-js" */),
-  "component---src-pages-user-workers-js": () => import("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\user\\workers.js" /* webpackChunkName: "component---src-pages-user-workers-js" */),
-  "component---src-pages-register-evaluate-js": () => import("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\register\\evaluate.js" /* webpackChunkName: "component---src-pages-register-evaluate-js" */)
+  "component---src-pages-user-workers-js": () => import("C:\\Users\\Iamnwani\\Desktop\\ROJECT\\Remotify\\src\\pages\\user\\workers.js" /* webpackChunkName: "component---src-pages-user-workers-js" */)
 }
 

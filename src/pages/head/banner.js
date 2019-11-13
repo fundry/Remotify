@@ -2,10 +2,8 @@ import React, { useState } from "react"
 import media from "styled-media-query"
 import styled from "styled-components"
 import { Carousel } from "react-bootstrap"
-import { Query } from "react-apollo"
 
 import Header from "./header"
-import { Test } from "../../data/queries"
 
 const Banner = props => {
   const Contain = styled.div`
