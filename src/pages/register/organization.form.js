@@ -1,27 +1,27 @@
-import { useMutation } from "@apollo/react-hooks"
-import { Form, Formik } from "formik"
-import React, { useState, useRef, useEffect } from "react"
-import { Card } from "react-bootstrap"
-import { Planet } from "react-kawaii"
-import styled from "styled-components"
-import Flex from "styled-flex-component"
-import * as Yup from "yup"
-import media from "styled-media-query"
+import { useMutation } from '@apollo/react-hooks';
+import { Form, Formik } from 'formik';
+import React, { useState, useRef, useEffect } from 'react';
+import { Card } from 'react-bootstrap';
+import { Planet } from 'react-kawaii';
+import styled from 'styled-components';
+import Flex from 'styled-flex-component';
+import * as Yup from 'yup';
+import media from 'styled-media-query';
 
-import Layout from "../../components/layout"
-import { Organization } from "../../data/mutations"
-import Header from "../head/header"
+import Layout from '../../components/layout';
+import { Organization } from '../../data/mutations';
+import Header from '../head/header';
 
 const validation = Yup.object().shape({
   name: Yup.string()
-    .min(3, "Not less than 3")
-    .max(24, "More than 24")
-    .required("must have a name "),
+    .min(3, 'Not less than 3')
+    .max(24, 'More than 24')
+    .required('must have a name '),
   email: Yup.string()
-    .email("Must be an email")
-    .max(37, "More than 37")
-    .required("must have a name "),
-})
+    .email('Must be an email')
+    .max(37, 'More than 37')
+    .required('must have a name '),
+});
 
 const Button = styled.button`
   background: #361f94;
@@ -37,45 +37,47 @@ const Button = styled.button`
     font-size: 1em;
     cursor: pointer;
   }
-`
+`;
 
 const Congrats = styled.h4`
   text-align: center;
-  ${media.lessThan("medium")`
+  ${media.lessThan('medium')`
     font-size: 1.2em
 `};
-`
+`;
 
 const form = () => {
-  const [Email, sentEmail] = useState(false)
-  const refText = useRef("")
-  const [Mail, addMail] = useState("")
+  const [Email, sentEmail] = useState(false);
+  const refText = useRef('');
+  const [Mail, addMail] = useState('');
 
-  const [Width, setWidth] = useState(null)
+  const [Width, setWidth] = useState(null);
 
   setTimeout(function() {
-    setWidth(window.innerWidth)
-  }, 1000)
+    setWidth(window.innerWidth);
+  }, 1000);
 
-  const handleResize = value => {
-    setWidth(value)
-  }
+  const handleResize = (value) => {
+    setWidth(value);
+  };
 
   useEffect(() => {
-    window.addEventListener("resize", handleResize.bind(this))
-    return () => window.removeEventListener("resize", handleResize.bind(this))
-  }, [])
+    window.addEventListener('resize', handleResize.bind(this));
+    return () => window.removeEventListener('resize', handleResize.bind(this));
+  }, []);
 
   const Input = styled.input({
-    height: Width >= 500 ? "7.5vh" : "6vh",
-    width: Width >= 500 ? "30em" : "20em",
-    borderRadius: Width >= 500 ? "5px" : "2px",
-    paddingLeft: "15px",
-  })
+    height: Width >= 500 ? '7.5vh' : '6vh',
+    width: Width >= 500 ? '30em' : '20em',
+    borderRadius: Width >= 500 ? '5px' : '2px',
+    paddingLeft: '15px',
+  });
 
   const [createOrganization, { error, loading, data }] = useMutation(
     Organization
-  )
+  );
+
+  console.log(process.env.GATSBY_FUNCTION_ENDPOINT + Email);
 
   return (
     <Layout>
@@ -86,16 +88,16 @@ const form = () => {
       <div>
         {!Email ? (
           <Flex justifyCenter>
-            <div style={{ padding: "1em" }}>
-              <h2 style={{ textAlign: "center" }}>
+            <div style={{ padding: '1em' }}>
+              <h2 style={{ textAlign: 'center' }}>
                 Create <b> Organization </b>
               </h2>
               <hr />
               <Formik
-                initialValues={{ email: "", name: "" }}
+                initialValues={{ email: '', name: '' }}
                 validationSchema={validation}
                 onSubmit={(values, { setSubmitting }) => {
-                  addMail(values.email)
+                  addMail(values.email);
                 }}
               >
                 {({
@@ -113,8 +115,8 @@ const form = () => {
                         ref={refText}
                         style={{
                           border: !errors.name
-                            ? "1px solid  #361f94 "
-                            : "2.5px solid  red ",
+                            ? '1px solid  #361f94 '
+                            : '2.5px solid  red ',
                         }}
                         id="name"
                         type="text"
@@ -132,8 +134,8 @@ const form = () => {
                       <Input
                         style={{
                           border: !errors.email
-                            ? "1px solid  #361f94 "
-                            : "2.5px solid  red ",
+                            ? '1px solid  #361f94 '
+                            : '2.5px solid  red ',
                         }}
                         value={values.email}
                         onChange={handleChange}
@@ -149,7 +151,7 @@ const form = () => {
                       <h5> Administrative Address (optional ) </h5>
                       <Input
                         style={{
-                          border: "1px solid  #361f94 ",
+                          border: '1px solid  #361f94 ',
                         }}
                         type="email"
                         placeholder="admin@email.com"
@@ -160,8 +162,8 @@ const form = () => {
                       <Flex justifyCenter>
                         <Button
                           onClick={() => {
-                            addMail(refText.current.value)
-                            sentEmail(true)
+                            addMail(refText.current.value);
+                            sentEmail(true);
                             createOrganization({
                               variables: {
                                 name: values.name,
@@ -171,13 +173,13 @@ const form = () => {
                                 country: values.name,
                                 state: values.name,
                               },
-                            })
+                            });
                           }}
                           disabled={isSubmitting}
                           style={{
                             background: !errors.name
-                              ? "#361f94"
-                              : "transparent",
+                              ? '#361f94'
+                              : 'transparent',
                           }}
                         >
                           <p> Continue </p>
@@ -195,9 +197,9 @@ const form = () => {
             <br />
             <Card
               style={{
-                marginBottom: "20px",
-                padding: Width >= 450 ? "1em 2em 2em" : "2em 4em 3em",
-                boxShadow: "0px 7px 7px grey",
+                marginBottom: '20px',
+                padding: Width >= 450 ? '1em 2em 2em' : '2em 4em 3em',
+                boxShadow: '0px 7px 7px grey',
               }}
             >
               <div>
@@ -207,8 +209,8 @@ const form = () => {
 
                 <br />
                 <Flex justifyCenter>
-                  <div style={{ padding: "1em", textAlign: "center" }}>
-                    <div style={{ paddingRight: "10px", paddingTop: "3px" }}>
+                  <div style={{ padding: '1em', textAlign: 'center' }}>
+                    <div style={{ paddingRight: '10px', paddingTop: '3px' }}>
                       <Congrats style={{}}>
                         An Email has been sent to <b> {Mail} </b>
                         . <br />
@@ -226,7 +228,7 @@ const form = () => {
                         <br />
                         <div>
                           <Flex>
-                            <h5 style={{ paddingRight: "20px" }}>
+                            <h5 style={{ paddingRight: '20px' }}>
                               {" Haven't recieved it?"}
                             </h5>
                             <a href="github.com/vickywane"> Resend Mail </a>
@@ -244,7 +246,7 @@ const form = () => {
         )}
       </div>
     </Layout>
-  )
-}
+  );
+};
 
-export default form
+export default form;

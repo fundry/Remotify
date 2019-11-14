@@ -54,6 +54,20 @@ const Button2 = styled.button`
   }
 `
 
+const Apply = styled.button`
+  background: transparent;
+  text-align: center;
+  border: 1px solid #0e2f5a;
+  border-radius: 5px;
+  color: #361f94;
+  margin: 0 1em;
+  font-size: 1.2em;
+  padding: 0.8em 2em;
+  :hover {
+    cursor: pointer;
+  }
+`
+
 const Text = styled.p({
   textAlign: "center",
   padding: "0.5em",
@@ -114,11 +128,15 @@ const services = () => {
             contest contest contest contest contest contest contest contest
             contest contest contest contest contest contest contest contest
           </Intro>
+
+          <div style={{ textAlign: "center", marginRight: "20px" }}>
+            <Apply>Create Workspace</Apply>
+          </div>
         </Body>
 
         <br />
         <Body>
-          <Title> Remotify for Hackathons </Title>
+          <Title style={{ textAlign: "center" }}>Remotify for Hackathons</Title>
           <Intro>
             contest contest contest contest contest contest contest contest
             contest contest contest contest contest contest contest contest
@@ -127,6 +145,10 @@ const services = () => {
             contest contest contest contest contest contest contest contest
             contest contest contest contest contest contest contest contest
           </Intro>
+
+          <div style={{ textAlign: "center" }}>
+            <Apply>Create Workspace</Apply>
+          </div>
         </Body>
 
         <br />
@@ -140,6 +162,10 @@ const services = () => {
             contest contest contest contest contest contest contest contest
             contest contest contest contest contest contest contest contest
           </Intro>
+
+          <div style={{ textAlign: "center", marginRight: "20px" }}>
+            <Apply>Create Workspace</Apply>
+          </div>
         </Body>
       </Div>
     </Layout>

@@ -23,4 +23,5 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-/pages/user/ref.js
+/pages/user/ref.js#
+.env

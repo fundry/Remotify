@@ -15,6 +15,7 @@
     "apollo-link-error": "^1.1.11",
     "apollo-link-http": "^1.5.15",
     "d3": "^5.12.0",
+    "dotenv": "^8.2.0",
     "formik": "^1.5.8",
     "gatsby": "^2.9.4",
     "gatsby-cli": "^2.7.41",

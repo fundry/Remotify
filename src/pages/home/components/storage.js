@@ -10,6 +10,9 @@ const Storage = () => {
   const Body = styled.div`
     padding: 1em;
     color: #361f94;
+    ${media.lessThan("medium")`
+      paddingLeft : 5em
+    `};
   `
 
   return (
