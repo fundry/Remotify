@@ -1,11 +1,11 @@
-import React from "react"
+import React from 'react';
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import Banner from "./head/banner"
-import Home from "./home/home"
+import Layout from '../components/layout';
+import SEO from '../components/seo';
+import Banner from './head/banner';
+import Home from './home/home';
 
-import { StateProvider, StateContext } from "../state/"
+import { StateProvider, StateContext } from '../state/';
 
 //layout component contains the footer component
 // home component holds the landing page component
@@ -15,15 +15,15 @@ const IndexPage = () => (
   <StateProvider>
     <StateContext.Consumer>
       {/* state will be consumed via props destructed & passed on here*/}
-      {({ test }) => (
+      {({ authenticated }) => (
         <Layout footer={true}>
           <SEO title="Home" />
-          <Banner message={test} />
+          <Banner auth={authenticated} />
           <Home />
         </Layout>
       )}
     </StateContext.Consumer>
   </StateProvider>
-)
+);
 
-export default IndexPage
+export default IndexPage;

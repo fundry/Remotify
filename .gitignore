@@ -24,4 +24,5 @@ yarn-debug.log*
 yarn-error.log*
 
 /pages/user/ref.js#
-.env
+.env.development
+.env.production

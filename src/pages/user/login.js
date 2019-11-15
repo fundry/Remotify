@@ -10,6 +10,8 @@ import Layout from '../../components/layout';
 import Header from '../head/header';
 import { LoginOrganization } from '../../data/mutations';
 
+import { StateProvider, StateContext } from '../../state/';
+
 const login = () => {
   const Button = styled.button`
     background: #361f94;
@@ -37,7 +39,7 @@ const login = () => {
   const validation = Yup.object().shape({
     email: Yup.string()
       .email('Not email')
-      .max(24, 'More than 24')
+      .max(35, 'More than 24')
       .required('must have a name '),
     password: Yup.string()
       .min(5, 'Not less than 5')
@@ -51,92 +53,111 @@ const login = () => {
   console.log(error, loading, data);
 
   return (
-    <Layout>
-      <Header style={false} />
-
-      <br />
-      <Flex justifyCenter>
-        <Formik
-          initialValues={{ email: '', name: '', password: '' }}
-          validationSchema={validation}
-          onSubmit={(values, { setSubmitting }) => {}}
-        >
-          {({ isSubmitting, handleChange, handleBlur, values, errors }) => (
-            <Form>
-              <br />
-              <div>
-                <Input
-                  value={values.name}
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  id="name"
-                  type="name"
-                  placeholder="Name"
-                  style={{
-                    border: !errors.name
-                      ? '1px solid  #361f94 '
-                      : '2px solid  red ',
-                  }}
-                />
-              </div>
-              <br />
-              <div>
-                <Input
-                  value={values.email}
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  id="email"
-                  type="email"
-                  placeholder="Email"
-                  style={{
-                    border: !errors.email
-                      ? '1px solid  #361f94 '
-                      : '2px solid  red ',
-                  }}
-                />
-              </div>
-              <br />
-              <div>
-                <Input
-                  value={values.password}
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  id="password"
-                  type="password"
-                  placeholder="Password"
-                  style={{
-                    border: !errors.email
-                      ? '1px solid  #361f94 '
-                      : '2px solid  red ',
-                  }}
-                />
-              </div>{' '}
-              <br />
-              <div style={{ textAlign: 'center' }}>
-                <Link to="/user/dashboard">
-                  <Button
-                    onClick={() => {
-                      loginOrganization({
-                        variables: {
-                          name: values.name,
-                          email: values.email,
-                          password: values.password,
-                        },
-                      });
-                    }}
-                  >
-                    {' '}
-                    Login{' '}
-                  </Button>
-                </Link>{' '}
-                <br />
-                <br />
-              </div>{' '}
-            </Form>
-          )}
-        </Formik>
-      </Flex>
-    </Layout>
+    <StateProvider>
+      <StateContext.Consumer>
+        {({ authenticated, authenticate }) => (
+          <Layout>
+            <Header style={false} />
+            <br />
+            <Flex justifyCenter>
+              <Formik
+                initialValues={{ email: '', name: '', password: '' }}
+                validationSchema={validation}
+                onSubmit={(values, { setSubmitting }) => {}}
+              >
+                {({
+                  isSubmitting,
+                  handleChange,
+                  handleBlur,
+                  values,
+                  errors,
+                }) => (
+                  <Form>
+                    <br />
+                    <p> i am :{authenticated} </p>
+                    <button
+                      onClick={() => {
+                        authenticate();
+                      }}
+                    >
+                      Auth
+                    </button>
+                    <div>
+                      <Input
+                        value={values.name}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        id="name"
+                        type="name"
+                        placeholder="Name"
+                        style={{
+                          border: !errors.name
+                            ? '1px solid  #361f94 '
+                            : '2px solid  red ',
+                        }}
+                      />
+                    </div>
+                    <br />
+                    <div>
+                      <Input
+                        value={values.email}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        id="email"
+                        type="email"
+                        placeholder="Email"
+                        style={{
+                          border: !errors.email
+                            ? '1px solid  #361f94 '
+                            : '2px solid  red ',
+                        }}
+                      />
+                    </div>
+                    <br />
+                    <div>
+                      <Input
+                        value={values.password}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        id="password"
+                        type="password"
+                        placeholder="Password"
+                        style={{
+                          border: !errors.email
+                            ? '1px solid  #361f94 '
+                            : '2px solid  red ',
+                        }}
+                      />
+                    </div>{' '}
+                    <br />
+                    <div style={{ textAlign: 'center' }}>
+                      <Link to="/user/dashboard">
+                        <Button
+                          onClick={() => {
+                            loginOrganization({
+                              variables: {
+                                name: values.name,
+                                email: values.email,
+                                password: values.password,
+                              },
+                            });
+                          }}
+                        >
+                          {' '}
+                          Login{' '}
+                        </Button>
+                      </Link>{' '}
+                      <br />
+                      <br />
+                    </div>{' '}
+                  </Form>
+                )}
+              </Formik>
+            </Flex>
+          </Layout>
+        )}
+      </StateContext.Consumer>
+    </StateProvider>
   );
 };
 
