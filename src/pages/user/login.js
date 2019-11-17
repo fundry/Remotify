@@ -20,7 +20,7 @@ const login = () => {
     height: 35px;
     border: 1px solid #0e2f5a;
     color: #fff;
-    padding: 0.50em 3em;
+    padding: 0.5em 3em;
     font-size: 1.1em;
     &:hover {
       color: #361f94;
@@ -47,10 +47,22 @@ const login = () => {
       .required('must have a name '),
   });
 
-  const [loginOrganization, { error, loading, data }] = useMutation(
-    LoginOrganization
-  );
-  console.log(error, loading, data);
+  const [
+    loginOrganization,
+    { loading, data },
+  ] = useMutation(LoginOrganization, {
+    ignoreResults: false,
+    onCompleted: (data) => {
+      console.log(data.loginOrganization.token);
+    },
+    onError: (error) => {
+      console.log(error, 'error has occurred');
+    },
+  });
+
+  const response = data;
+
+  console.log(response, loading);
 
   return (
     <StateProvider>
@@ -59,9 +71,16 @@ const login = () => {
           <Layout>
             <Header style={false} />
             <br />
+
+            {loading ? <p> LOADING</p> : <p> NOT LOADING </p>}
+
             <Flex justifyCenter>
               <Formik
-                initialValues={{ email: '', name: '', password: '' }}
+                initialValues={{
+                  email: 'helpdesk.remotif@gmail.com',
+                  name: 'Remotif',
+                  password: 'Remotify01!',
+                }}
                 validationSchema={validation}
                 onSubmit={(values, { setSubmitting }) => {}}
               >
@@ -131,10 +150,27 @@ const login = () => {
                     </div>{' '}
                     <br />
                     <div style={{ textAlign: 'center' }}>
-                      <Link to="/user/dashboard">
+                      <Button
+                        onClick={() => {
+                          loginOrganization({
+                            variables: {
+                              name: values.name,
+                              email: values.email,
+                              password: values.password,
+                            },
+                          });
+                        }}
+                      >
+                        {' '}
+                        Login{' '}
+                      </Button>
+
+                      {/*  <Link to="/user/dashboard">
                         <Button
                           onClick={() => {
                             loginOrganization({
+                              ignoreResults: false,
+
                               variables: {
                                 name: values.name,
                                 email: values.email,
@@ -146,7 +182,7 @@ const login = () => {
                           {' '}
                           Login{' '}
                         </Button>
-                      </Link>{' '}
+                        </Link>{' '} */}
                       <br />
                       <br />
                     </div>{' '}

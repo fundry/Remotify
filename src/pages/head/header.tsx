@@ -13,7 +13,7 @@ interface Props {
 }
 
 const Header = ({ style, auth }: Props) => {
-  console.log(auth, 'auth from header');
+  // console.log(auth, 'auth from header');
   const Div = {
     padding: '1em',
     paddingTop: '1em',
